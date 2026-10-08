@@ -131,3 +131,32 @@ def test_resumo_corta_para_caber_no_x():
     itens = [{"t": "Um Título Bem Comprido Número %d" % i, "plataforma": "Paramount+"} for i in range(7)]
     texto = posts.texto_resumo(itens)
     assert len(texto) <= posts.LIMITE_X and texto.endswith("🍿")
+
+
+# ---------------------------------------------------------------- Fase 3
+from radar import publicar
+
+
+def test_publicar_so_redes_com_secrets(monkeypatch, tmp_path):
+    for k in ("THREADS_TOKEN", "INSTAGRAM_TOKEN", "X_API_KEY", "X_API_SECRET",
+              "X_ACCESS_TOKEN", "X_ACCESS_SECRET"):
+        monkeypatch.delenv(k, raising=False)
+    monkeypatch.setenv("THREADS_TOKEN", "t")
+    chamadas = []
+    monkeypatch.setattr(publicar, "hospedar", lambda c, d: "https://exemplo/img.jpg")
+    monkeypatch.setattr(publicar, "threads", lambda u, t: chamadas.append(("threads", u)) or "1")
+    monkeypatch.setattr(publicar, "x", lambda c, t: chamadas.append(("x", c)) or "1")
+    lista = [posts.Post("alerta", "a.jpg", "oi"), posts.Post("alerta", "b.jpg", "oi")]
+    r = publicar.publicar_todos(lista, dt.date(2026, 10, 9), {"threads": 1})
+    assert r == {"threads": {"ok": 1, "erros": []}}
+    assert chamadas == [("threads", "https://exemplo/img.jpg")]
+
+
+def test_erro_numa_rede_nao_derruba_outra(monkeypatch):
+    monkeypatch.setenv("THREADS_TOKEN", "t")
+    monkeypatch.setenv("INSTAGRAM_TOKEN", "i")
+    monkeypatch.setattr(publicar, "hospedar", lambda c, d: "https://exemplo/img.jpg")
+    monkeypatch.setattr(publicar, "threads", lambda u, t: (_ for _ in ()).throw(RuntimeError("caiu")))
+    monkeypatch.setattr(publicar, "instagram", lambda u, t: "1")
+    r = publicar.publicar_todos([posts.Post("alerta", "a.jpg", "oi")], dt.date(2026, 10, 9))
+    assert r["instagram"]["ok"] == 1 and r["threads"]["erros"] == ["caiu"]

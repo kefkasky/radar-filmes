@@ -7,6 +7,7 @@ Uso:
 """
 
 import datetime as dt
+import html
 import json
 import os
 import sys
@@ -118,8 +119,68 @@ def rodar() -> int:
         except Exception as e:
             anotar("error", f"Falha ao publicar no canal: {e}")
             telegram.enviar(tg_token, tg_chat, f"❌ Falha ao publicar no canal: {e}")
-            return 1
+
+    # Threads, Instagram e X
+    return publicar_redes(tg_token, tg_chat, lista, agora.date())
+
+
+def publicar_redes(tg_token: str, tg_chat: str, lista: list, data) -> int:
+    from . import publicar
+
+    if not lista:
+        return 0
+    resultado = publicar.publicar_todos(lista, data)
+    if not resultado:
+        return 0
+    linhas, falhou = ["📤 <b>Publicação nas redes</b>"], False
+    for rede, r in resultado.items():
+        nome = {"x": "X", "threads": "Threads", "instagram": "Instagram"}[rede]
+        if r["erros"]:
+            falhou = True
+            linhas.append(f"⚠️ {nome}: {r['ok']} ok, {len(r['erros'])} erro(s)")
+            linhas += [f"   • {html.escape(e)}" for e in r["erros"][:3]]
+            for e in r["erros"]:
+                anotar("error", f"{nome}: {e}")
+        else:
+            linhas.append(f"✅ {nome}: {r['ok']} posts")
+            anotar("notice", f"{nome}: {r['ok']} posts publicados")
+    telegram.enviar(tg_token, tg_chat, "\n".join(linhas))
+    return 1 if falhou else 0
+
+
+def renovar() -> int:
+    from . import publicar
+
+    msgs = publicar.renovar_tokens()
+    for rede, m in msgs.items():
+        anotar("warning" if "falha" in m or "troc" in m else "notice", f"{rede}: {m}")
+    alertas = [f"⚠️ {r}: {m}" for r, m in msgs.items() if "falha" in m or "troc" in m]
+    if alertas:
+        telegram.enviar(os.environ.get("TELEGRAM_TOKEN", ""), os.environ.get("TELEGRAM_CHAT_ID", ""),
+                        "🔑 <b>Tokens das redes</b>\n" + "\n".join(html.escape(a) for a in alertas))
     return 0
+
+
+def testar_redes() -> int:
+    """Publica UM post de exemplo (com título real) nas redes ativas."""
+    retrato = carregar_retrato()
+    tg_token = os.environ.get("TELEGRAM_TOKEN", "")
+    tg_chat = os.environ.get("TELEGRAM_CHAT_ID", "")
+    falso = {}
+    for plataforma, itens in retrato.items():
+        ordem = sorted(({"chave": k, **v} for k, v in itens.items()), key=lambda i: i["p"], reverse=True)
+        falso[plataforma] = {"entrou": ordem[:1], "saiu": [], "suspeito": False}
+    generos = {}
+    try:
+        generos = ClienteTMDB(os.environ.get("TMDB_TOKEN", "")).generos()
+    except Exception:
+        pass
+    hoje = dt.datetime.now(ZoneInfo("America/Sao_Paulo")).date()
+    lista = [p for p in posts.montar(falso, generos, hoje, PASTA_POSTS) if p.tipo == "resumo"][:1]
+    if not lista:
+        anotar("error", "Não foi possível montar o post de teste.")
+        return 1
+    return publicar_redes(tg_token, tg_chat, lista, hoje)
 
 
 def teste_canal(so_visual: bool = False) -> int:
@@ -225,6 +286,10 @@ if __name__ == "__main__":
         sys.exit(mostrar_chat_id())
     if len(sys.argv) > 1 and sys.argv[1] == "previa":
         sys.exit(previa())
+    if len(sys.argv) > 1 and sys.argv[1] == "renovar-tokens":
+        sys.exit(renovar())
+    if len(sys.argv) > 1 and sys.argv[1] == "testar-redes":
+        sys.exit(testar_redes())
     if len(sys.argv) > 1 and sys.argv[1] == "teste-canal":
         sys.exit(teste_canal(so_visual="--so-visual" in sys.argv))
     sys.exit(rodar())

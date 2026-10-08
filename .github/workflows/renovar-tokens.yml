@@ -1,0 +1,23 @@
+name: Renovar tokens da Meta
+
+# Os tokens do Instagram e do Threads valem 60 dias; renova toda segunda.
+on:
+  schedule:
+    - cron: "17 12 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  renovar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+        run: python -m radar renovar-tokens
