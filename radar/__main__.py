@@ -107,6 +107,44 @@ def rodar() -> int:
         anotar("error", f"Falha ao gerar/enviar posts: {e}")
         traceback.print_exc()
         return 1
+
+    # Fase 3: publicação automática no canal do Telegram
+    canal = os.environ.get("TELEGRAM_CANAL_ID", "").strip()
+    if canal and lista:
+        try:
+            for p in lista:
+                telegram.enviar_foto(tg_token, canal, p.imagem, p.texto)
+            anotar("notice", f"{len(lista)} posts publicados no canal do Telegram")
+        except Exception as e:
+            anotar("error", f"Falha ao publicar no canal: {e}")
+            telegram.enviar(tg_token, tg_chat, f"❌ Falha ao publicar no canal: {e}")
+            return 1
+    return 0
+
+
+def teste_canal() -> int:
+    """Publica a mensagem de boas-vindas no canal."""
+    tg_token = os.environ.get("TELEGRAM_TOKEN", "")
+    canal = os.environ.get("TELEGRAM_CANAL_ID", "").strip()
+    if not canal:
+        anotar("error", "Secret TELEGRAM_CANAL_ID não configurado.")
+        return 1
+    from . import arte
+    os.makedirs(PASTA_POSTS, exist_ok=True)
+    logo = arte.gerar_logo(os.path.join(PASTA_POSTS, "logo.png"))
+    texto = (
+        "📡 Bem-vindo ao Radar da Tela!\n\n"
+        "Todo dia de manhã você recebe aqui o que entrou e o que saiu "
+        "do streaming no Brasil 🍿\n\n"
+        "• Resumo do dia\n• Destaques que acabaram de chegar\n• Despedidas do catálogo\n\n"
+        "Fica de olho que o primeiro radar sai amanhã cedo 👀"
+    )
+    try:
+        telegram.enviar_foto(tg_token, canal, logo, texto)
+    except Exception as e:
+        anotar("error", f"Falha ao publicar no canal: {e}")
+        return 1
+    anotar("notice", "Boas-vindas publicadas no canal")
     return 0
 
 
@@ -180,4 +218,6 @@ if __name__ == "__main__":
         sys.exit(mostrar_chat_id())
     if len(sys.argv) > 1 and sys.argv[1] == "previa":
         sys.exit(previa())
+    if len(sys.argv) > 1 and sys.argv[1] == "teste-canal":
+        sys.exit(teste_canal())
     sys.exit(rodar())

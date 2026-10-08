@@ -63,7 +63,7 @@ def enviar_foto(token: str, chat_id: str, caminho: str, legenda: str = "") -> No
 
 
 def descobrir_chats(token: str) -> list[tuple[str, str]]:
-    """Lista (chat_id, nome) de quem mandou mensagem recente ao bot."""
+    """Lista (chat_id, descrição) dos chats que o bot viu recentemente."""
     resp = requests.get(f"https://api.telegram.org/bot{token}/getUpdates", timeout=30)
     resp.raise_for_status()
     vistos = {}
@@ -71,6 +71,13 @@ def descobrir_chats(token: str) -> list[tuple[str, str]]:
         msg = upd.get("message") or upd.get("channel_post") or upd.get("my_chat_member") or {}
         chat = msg.get("chat") or {}
         if "id" in chat:
-            nome = chat.get("title") or chat.get("first_name") or chat.get("username") or "?"
-            vistos[str(chat["id"])] = nome
+            nome = chat.get("title") or chat.get("first_name") or "?"
+            tipo = {"channel": "CANAL", "supergroup": "grupo", "group": "grupo",
+                    "private": "conversa privada"}.get(chat.get("type"), chat.get("type", "?"))
+            arroba = f" @{chat['username']}" if chat.get("username") else ""
+            status = ""
+            if upd.get("my_chat_member"):
+                novo = upd["my_chat_member"].get("new_chat_member", {}).get("status")
+                status = f" [bot: {novo}]"
+            vistos[str(chat["id"])] = f"{nome} | {tipo}{arroba}{status}"
     return list(vistos.items())
