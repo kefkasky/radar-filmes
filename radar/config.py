@@ -54,3 +54,12 @@ ALERTAS_SAIDA_POR_DIA = 1     # posts individuais "saiu do catálogo"
 MIN_ITENS_RESUMO = 3          # resumo só sai se houver pelo menos tantos
 
 ARROBA = "@radardatela"
+
+# Canal público do Telegram onde os posts são publicados (Fase 3).
+# Pode ser sobrescrito pelo secret TELEGRAM_CANAL_ID. Vazio = não publica.
+TELEGRAM_CANAL = "@radardatela"
+
+BIO = (
+    "📡 O que entra e sai do streaming no Brasil, todo dia. "
+    "🍿 Novidades, despedidas e notas de filmes e séries. Dados: TMDB/JustWatch"
+)

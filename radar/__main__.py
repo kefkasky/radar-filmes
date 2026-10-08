@@ -109,7 +109,7 @@ def rodar() -> int:
         return 1
 
     # Fase 3: publicação automática no canal do Telegram
-    canal = os.environ.get("TELEGRAM_CANAL_ID", "").strip()
+    canal = os.environ.get("TELEGRAM_CANAL_ID", "").strip() or config.TELEGRAM_CANAL
     if canal and lista:
         try:
             for p in lista:
@@ -125,13 +125,15 @@ def rodar() -> int:
 def teste_canal() -> int:
     """Publica a mensagem de boas-vindas no canal."""
     tg_token = os.environ.get("TELEGRAM_TOKEN", "")
-    canal = os.environ.get("TELEGRAM_CANAL_ID", "").strip()
+    canal = os.environ.get("TELEGRAM_CANAL_ID", "").strip() or config.TELEGRAM_CANAL
     if not canal:
-        anotar("error", "Secret TELEGRAM_CANAL_ID não configurado.")
+        anotar("error", "Canal do Telegram não configurado.")
         return 1
     from . import arte
     os.makedirs(PASTA_POSTS, exist_ok=True)
     logo = arte.gerar_logo(os.path.join(PASTA_POSTS, "logo.png"))
+    for erro in telegram.configurar_canal(tg_token, canal, logo, config.BIO):
+        anotar("warning", f"Canal: {erro}")
     texto = (
         "📡 Bem-vindo ao Radar da Tela!\n\n"
         "Todo dia de manhã você recebe aqui o que entrou e o que saiu "

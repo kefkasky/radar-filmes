@@ -81,3 +81,18 @@ def descobrir_chats(token: str) -> list[tuple[str, str]]:
                 status = f" [bot: {novo}]"
             vistos[str(chat["id"])] = f"{nome} | {tipo}{arroba}{status}"
     return list(vistos.items())
+
+
+def configurar_canal(token: str, canal: str, foto: str, descricao: str) -> list[str]:
+    """Aplica foto e descrição no canal (o bot precisa poder alterar informações)."""
+    erros = []
+    with open(foto, "rb") as f:
+        r = requests.post(f"https://api.telegram.org/bot{token}/setChatPhoto",
+                          data={"chat_id": canal}, files={"photo": f}, timeout=60)
+    if not r.ok:
+        erros.append(f"foto: {r.json().get('description', r.status_code)}")
+    r = requests.post(f"https://api.telegram.org/bot{token}/setChatDescription",
+                      data={"chat_id": canal, "description": descricao[:255]}, timeout=30)
+    if not r.ok and "not modified" not in r.text:
+        erros.append(f"descrição: {r.json().get('description', r.status_code)}")
+    return erros
