@@ -1,0 +1,48 @@
+name: Radar diário
+
+on:
+  schedule:
+    # Todo dia às 06:47 de Brasília (09:47 UTC)
+    - cron: "47 9 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Coletar, comparar e enviar relatório
+        env:
+          TMDB_TOKEN: ${{ secrets.TMDB_TOKEN }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m radar
+
+      - name: Salvar retrato do catálogo
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "radar-bot@users.noreply.github.com"
+          git add data/catalogo.json
+          if git diff --cached --quiet; then
+            echo "Catálogo sem mudanças."
+          else
+            git commit -m "Retrato do catálogo $(date -u +%Y-%m-%d)"
+            git push
+          fi

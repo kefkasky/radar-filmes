@@ -1,0 +1,19 @@
+name: Descobrir chat ID do Telegram
+
+# Rode manualmente (aba Actions > este fluxo > Run workflow) depois de
+# mandar um "oi" para o seu bot. O ID aparece no log da execução.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  chat-id:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        run: python -m radar chat-id
