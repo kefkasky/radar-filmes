@@ -72,8 +72,8 @@ def rodar() -> int:
         cliente = ClienteTMDB(os.environ.get("TMDB_TOKEN", ""))
         atual, incompletas, avisos = coletar(cliente)
     except ErroTMDB as e:
+        anotar("error", str(e))
         telegram.enviar(tg_token, tg_chat, f"❌ Radar de Filmes: {e}")
-        print(e)
         return 1
 
     if not atual:
@@ -88,21 +88,40 @@ def rodar() -> int:
 
     novo = comparar.aplicar_retrato(anterior, atual, diferencas, incompletas)
     salvar_retrato(novo, agora.isoformat(timespec="minutes"))
-    telegram.enviar(tg_token, tg_chat, relatorio)
+    for aviso in avisos:
+        anotar("warning", aviso)
+    total = sum(len(v) for v in atual.values())
+    anotar("notice", f"{len(atual)} plataformas, {total} titulos, {cliente.chamadas} chamadas TMDB")
+    try:
+        telegram.enviar(tg_token, tg_chat, relatorio)
+    except Exception as e:
+        anotar("error", f"Falha ao enviar no Telegram: {e}")
+        return 1
     return 0
 
 
+def anotar(nivel: str, msg: str) -> None:
+    """Mensagem que aparece em destaque na página da execução no GitHub."""
+    print(f"::{nivel}::{msg}")
+
+
 def mostrar_chat_id() -> int:
-    token = os.environ.get("TELEGRAM_TOKEN", "")
+    token = os.environ.get("TELEGRAM_TOKEN", "").strip()
     if not token:
-        print("Configure o TELEGRAM_TOKEN primeiro.")
+        anotar("error", "Secret TELEGRAM_TOKEN vazio ou com nome diferente.")
         return 1
-    chats = telegram.descobrir_chats(token)
+    try:
+        chats = telegram.descobrir_chats(token)
+    except Exception as e:
+        codigo = getattr(getattr(e, "response", None), "status_code", "?")
+        anotar("error", f"Telegram recusou o token (HTTP {codigo}). Confira o TELEGRAM_TOKEN.")
+        return 1
     if not chats:
-        print("Nenhuma mensagem encontrada. Mande um 'oi' para o seu bot e rode de novo.")
+        anotar("error", "Nenhuma mensagem encontrada. Mande um 'oi' para o seu bot e rode de novo.")
         return 1
     for chat_id, nome in chats:
         print(f"TELEGRAM_CHAT_ID = {chat_id}   ({nome})")
+        anotar("notice", f"TELEGRAM_CHAT_ID = {chat_id} ({nome})")
     return 0
 
 
