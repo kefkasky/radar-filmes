@@ -96,3 +96,38 @@ def test_catalogo_divide_quando_passa_de_500_paginas(monkeypatch):
     assert not incompleto
     assert any("primary_release_date.gte" in c for c in chamadas)
     assert len(itens) > 1
+
+
+# ---------------------------------------------------------------- Fase 2
+import datetime as dt
+
+from radar import posts
+
+
+def test_posts_selecao_legendas_e_imagens(tmp_path):
+    def it(chave, t, p, v=500, n=7.5, g=("18",)):
+        return {"chave": chave, "t": t, "a": "2024", "p": p, "n": n, "v": v, "g": list(g)}
+
+    dif = {
+        "Netflix": {"entrou": [it("movie:1", "Filme Famoso", 80), it("movie:9", "Obscuro", 1, v=3)],
+                    "saiu": [it("tv:5", "Série Antiga", 30)], "suspeito": False},
+        "Prime Video": {"entrou": [it("movie:1", "Filme Famoso", 80), it("movie:2", "Outro", 40),
+                                   it("tv:3", "Série Nova " * 6, 20)], "saiu": [], "suspeito": False},
+        "Globoplay": {"base_inicial": True, "total": 10},
+    }
+    lista = posts.montar(dif, {"18": "Drama"}, dt.date(2026, 10, 9), str(tmp_path))
+    tipos = [p.tipo for p in lista]
+    assert tipos == ["resumo", "alerta", "alerta", "alerta", "saiu"]
+    assert all(len(p.texto) <= posts.LIMITE_X for p in lista)
+    assert "em Netflix e Prime Video" in lista[1].texto  # mesmo título em 2 plataformas
+    assert "Obscuro" not in lista[0].texto               # filtro de relevância
+    assert "Saiu da Netflix" in lista[-1].texto
+    assert "Drama" in lista[1].texto
+    for p in lista:
+        assert (tmp_path / p.imagem.split("/")[-1]).stat().st_size > 10_000
+
+
+def test_resumo_corta_para_caber_no_x():
+    itens = [{"t": "Um Título Bem Comprido Número %d" % i, "plataforma": "Paramount+"} for i in range(7)]
+    texto = posts.texto_resumo(itens)
+    assert len(texto) <= posts.LIMITE_X and texto.endswith("🍿")

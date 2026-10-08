@@ -1,0 +1,20 @@
+name: Prévia dos posts
+
+# Gera posts de exemplo com títulos reais do catálogo e manda no Telegram.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  previa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - env:
+          TMDB_TOKEN: ${{ secrets.TMDB_TOKEN }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m radar previa

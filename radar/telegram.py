@@ -46,6 +46,22 @@ def enviar(token: str, chat_id: str, texto: str) -> None:
             raise RuntimeError(f"Telegram recusou a mensagem: {resp.status_code} {resp.text}")
 
 
+def enviar_foto(token: str, chat_id: str, caminho: str, legenda: str = "") -> None:
+    """Envia uma imagem com legenda (texto puro, fácil de copiar)."""
+    if not token or not chat_id:
+        print(f"Telegram não configurado; imagem {caminho} não enviada.")
+        return
+    with open(caminho, "rb") as f:
+        resp = requests.post(
+            f"https://api.telegram.org/bot{token}/sendPhoto",
+            data={"chat_id": chat_id, "caption": legenda[:1024]},
+            files={"photo": f},
+            timeout=60,
+        )
+    if not resp.ok:
+        raise RuntimeError(f"Telegram recusou a imagem: {resp.status_code} {resp.text}")
+
+
 def descobrir_chats(token: str) -> list[tuple[str, str]]:
     """Lista (chat_id, nome) de quem mandou mensagem recente ao bot."""
     resp = requests.get(f"https://api.telegram.org/bot{token}/getUpdates", timeout=30)

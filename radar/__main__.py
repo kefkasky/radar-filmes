@@ -3,6 +3,7 @@
 Uso:
     python -m radar            # coleta, compara e envia o relatório
     python -m radar chat-id    # mostra o ID do seu chat com o bot
+    python -m radar previa     # manda posts de exemplo (com títulos reais)
 """
 
 import datetime as dt
@@ -12,7 +13,7 @@ import sys
 import traceback
 from zoneinfo import ZoneInfo
 
-from . import comparar, config, telegram
+from . import comparar, config, posts, telegram
 from .tmdb import ClienteTMDB, ErroTMDB
 
 
@@ -97,6 +98,55 @@ def rodar() -> int:
     except Exception as e:
         anotar("error", f"Falha ao enviar no Telegram: {e}")
         return 1
+
+    # Fase 2: posts prontos para aprovação
+    try:
+        lista = posts.montar(diferencas, cliente.generos(), agora.date(), PASTA_POSTS)
+        enviar_posts(tg_token, tg_chat, lista)
+    except Exception as e:
+        anotar("error", f"Falha ao gerar/enviar posts: {e}")
+        traceback.print_exc()
+        return 1
+    return 0
+
+
+PASTA_POSTS = os.path.join(os.path.dirname(config.ARQUIVO_RETRATO), "..", "saida")
+
+
+def enviar_posts(tg_token: str, tg_chat: str, lista: list) -> None:
+    if not lista:
+        anotar("notice", "Nenhum post relevante hoje.")
+        return
+    telegram.enviar(tg_token, tg_chat, f"🎨 <b>{len(lista)} posts prontos</b> (prévia, nada foi publicado)")
+    for p in lista:
+        telegram.enviar_foto(tg_token, tg_chat, p.imagem, p.texto)
+    anotar("notice", f"{len(lista)} posts enviados para aprovação")
+
+
+def previa() -> int:
+    """Gera posts de exemplo com títulos reais do catálogo salvo."""
+    tg_token = os.environ.get("TELEGRAM_TOKEN", "")
+    tg_chat = os.environ.get("TELEGRAM_CHAT_ID", "")
+    retrato = carregar_retrato()
+    if not retrato:
+        anotar("error", "Sem catálogo salvo ainda.")
+        return 1
+    # finge que os mais populares de cada plataforma "entraram" e alguns "saíram"
+    falso = {}
+    for plataforma, itens in retrato.items():
+        ordem = sorted(
+            ({"chave": k, **v} for k, v in itens.items()), key=lambda i: i["p"], reverse=True
+        )
+        falso[plataforma] = {"entrou": ordem[:2], "saiu": ordem[40:41], "suspeito": False}
+    generos = {}
+    try:
+        generos = ClienteTMDB(os.environ.get("TMDB_TOKEN", "")).generos()
+    except Exception:
+        pass
+    hoje = dt.datetime.now(ZoneInfo("America/Sao_Paulo")).date()
+    lista = posts.montar(falso, generos, hoje, PASTA_POSTS)
+    telegram.enviar(tg_token, tg_chat, "🧪 <b>PRÉVIA DE TESTE</b>: títulos reais, mas as entradas/saídas são simuladas.")
+    enviar_posts(tg_token, tg_chat, lista)
     return 0
 
 
@@ -128,4 +178,6 @@ def mostrar_chat_id() -> int:
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "chat-id":
         sys.exit(mostrar_chat_id())
+    if len(sys.argv) > 1 and sys.argv[1] == "previa":
+        sys.exit(previa())
     sys.exit(rodar())

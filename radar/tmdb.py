@@ -74,6 +74,15 @@ class ClienteTMDB:
                 encontradas[nome_exibido] = pid
         return encontradas, faltando
 
+    def generos(self) -> dict[str, str]:
+        """{id_do_genero: nome em português} para filmes e séries."""
+        nomes = {}
+        for tipo in config.TIPOS:
+            dados = self.get(f"/genre/{tipo}/list", {"language": config.IDIOMA})
+            for g in dados.get("genres", []):
+                nomes.setdefault(str(g["id"]), g["name"])
+        return nomes
+
     # ------------------------------------------------------------------
     # Catálogo
     # ------------------------------------------------------------------
@@ -141,4 +150,5 @@ def _resumo(tipo: str, item: dict) -> dict:
         "p": round(item.get("popularity") or 0, 1),
         "n": round(item.get("vote_average") or 0, 1),
         "v": item.get("vote_count") or 0,
+        "g": [str(g) for g in (item.get("genre_ids") or [])[:3]],
     }

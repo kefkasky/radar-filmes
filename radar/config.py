@@ -40,3 +40,17 @@ DESTAQUES_POR_PLATAFORMA = 8
 ARQUIVO_RETRATO = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "catalogo.json"
 )
+
+# ----------------------------------------------------------------------
+# Posts (Fase 2)
+# ----------------------------------------------------------------------
+# Um título só vira post se for minimamente conhecido:
+POP_MINIMA = 12          # popularidade TMDB
+VOTOS_MINIMOS = 40       # ou ter pelo menos tantos votos...
+NOTA_MINIMA = 6.0        # ...com nota mínima
+
+ALERTAS_ENTRADA_POR_DIA = 3   # posts individuais "chegou hoje"
+ALERTAS_SAIDA_POR_DIA = 1     # posts individuais "saiu do catálogo"
+MIN_ITENS_RESUMO = 3          # resumo só sai se houver pelo menos tantos
+
+ARROBA = "@radardatela"
