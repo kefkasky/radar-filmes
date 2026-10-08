@@ -122,8 +122,8 @@ def rodar() -> int:
     return 0
 
 
-def teste_canal() -> int:
-    """Publica a mensagem de boas-vindas no canal."""
+def teste_canal(so_visual: bool = False) -> int:
+    """Aplica foto/descrição no canal e (opcional) publica as boas-vindas."""
     tg_token = os.environ.get("TELEGRAM_TOKEN", "")
     canal = os.environ.get("TELEGRAM_CANAL_ID", "").strip() or config.TELEGRAM_CANAL
     if not canal:
@@ -132,8 +132,13 @@ def teste_canal() -> int:
     from . import arte
     os.makedirs(PASTA_POSTS, exist_ok=True)
     logo = arte.gerar_logo(os.path.join(PASTA_POSTS, "logo.png"))
-    for erro in telegram.configurar_canal(tg_token, canal, logo, config.BIO):
+    erros = telegram.configurar_canal(tg_token, canal, logo, config.BIO)
+    for erro in erros:
         anotar("warning", f"Canal: {erro}")
+    if so_visual:
+        if not erros:
+            anotar("notice", "Foto e descrição do canal aplicadas")
+        return 1 if erros else 0
     texto = (
         "📡 Bem-vindo ao Radar da Tela!\n\n"
         "Todo dia de manhã você recebe aqui o que entrou e o que saiu "
@@ -221,5 +226,5 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "previa":
         sys.exit(previa())
     if len(sys.argv) > 1 and sys.argv[1] == "teste-canal":
-        sys.exit(teste_canal())
+        sys.exit(teste_canal(so_visual="--so-visual" in sys.argv))
     sys.exit(rodar())

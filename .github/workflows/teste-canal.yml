@@ -1,8 +1,13 @@
 name: Boas-vindas no canal do Telegram
 
-# Publica a mensagem de boas-vindas (com o logo) no canal.
+# Aplica foto e descrição no canal e, se pedido, publica as boas-vindas.
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      so_visual:
+        description: "Só aplicar foto e descrição (sem publicar boas-vindas)"
+        type: boolean
+        default: true
 
 jobs:
   canal:
@@ -16,4 +21,4 @@ jobs:
       - env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CANAL_ID: ${{ secrets.TELEGRAM_CANAL_ID }}
-        run: python -m radar teste-canal
+        run: python -m radar teste-canal ${{ inputs.so_visual && '--so-visual' || '' }}
