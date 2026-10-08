@@ -1,12 +1,13 @@
 """Identidade visual do Radar da Tela: logo, capa e posts (Pillow).
 
-Estilo "limpo e moderno": fundo creme, tinta quase preta, um único
-destaque em coral. Fonte Inter (SIL Open Font License).
+Estilo "vivo": fundos de cor forte que variam a cada post, anéis de radar
+como elemento gráfico e a nota em forma de selo. Fonte Inter (SIL OFL).
 """
 
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import os
 
 from PIL import Image, ImageDraw, ImageFont
@@ -15,20 +16,44 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONTES = os.path.join(RAIZ, "assets", "fonts")
 
 # Paleta
-CREME = (245, 242, 235)
-TINTA = (17, 17, 17)
-CINZA = (107, 104, 98)
-LINHA = (217, 212, 200)
-CORAL = (229, 64, 42)
+CREME = (255, 247, 233)
+TINTA = (18, 18, 20)
+AMARELO = (255, 210, 63)
+CORAL = (255, 75, 51)
+AZUL = (45, 91, 255)
+LILAS = (190, 170, 255)
+VERDE = (0, 200, 140)
 BRANCO = (255, 255, 255)
+
+# Temas: fundo, texto, texto secundário, destaque (etiqueta/selo), texto do destaque
+TEMAS = {
+    "amarelo": dict(fundo=AMARELO, txt=TINTA, sec=(70, 58, 20), dest=TINTA, dest_txt=AMARELO, selo=CORAL, selo_txt=BRANCO),
+    "azul": dict(fundo=AZUL, txt=BRANCO, sec=(205, 215, 255), dest=AMARELO, dest_txt=TINTA, selo=AMARELO, selo_txt=TINTA),
+    "coral": dict(fundo=CORAL, txt=BRANCO, sec=(255, 222, 214), dest=TINTA, dest_txt=BRANCO, selo=AMARELO, selo_txt=TINTA),
+    "lilas": dict(fundo=LILAS, txt=TINTA, sec=(60, 45, 110), dest=AZUL, dest_txt=BRANCO, selo=CORAL, selo_txt=BRANCO),
+    "noite": dict(fundo=TINTA, txt=CREME, sec=(170, 166, 158), dest=CORAL, dest_txt=BRANCO, selo=CREME, selo_txt=TINTA),
+}
+ROTACAO = ["amarelo", "azul", "coral", "lilas"]
 
 # Formato dos posts: vertical 4:5 (Instagram e X)
 LARGURA, ALTURA = 1080, 1350
 MARGEM = 84
 
 MESES = ["JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"]
+FEMININAS = {"Netflix", "HBO Max"}
 
 ESCALA = 2  # desenha em 2x e reduz, para bordas suaves
+
+
+def preposicao(plataforma: str) -> str:
+    """'na Netflix', 'no Prime Video'."""
+    return "na" if plataforma in FEMININAS else "no"
+
+
+def tema_para(chave: str) -> dict:
+    """Cor estável por título (o mesmo filme sempre na mesma cor)."""
+    n = int(hashlib.md5(chave.encode()).hexdigest(), 16)
+    return TEMAS[ROTACAO[n % len(ROTACAO)]]
 
 
 def fonte(peso: str, tamanho: int) -> ImageFont.FreeTypeFont:
@@ -39,7 +64,11 @@ def fonte(peso: str, tamanho: int) -> ImageFont.FreeTypeFont:
         "medium": "Inter-Medium.otf",
         "regular": "Inter-Regular.otf",
     }
-    return ImageFont.truetype(os.path.join(FONTES, arquivos[peso]), tamanho * ESCALA)
+    return ImageFont.truetype(os.path.join(FONTES, arquivos[peso]), int(tamanho * ESCALA))
+
+
+def misturar(a, b, t: float):
+    return tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3))
 
 
 class Tela:
@@ -61,12 +90,22 @@ class Tela:
 
     def ret(self, caixa, cor, raio=0):
         if raio:
-            self.d.rounded_rectangle(self.s(*caixa), radius=raio * ESCALA, fill=cor)
+            self.d.rounded_rectangle(self.s(*caixa), radius=int(raio * ESCALA), fill=cor)
         else:
             self.d.rectangle(self.s(*caixa), fill=cor)
 
-    def linha(self, xy, cor=LINHA, esp=2):
-        self.d.line(self.s(*xy), fill=cor, width=esp * ESCALA)
+    def circulo(self, cx, cy, r, cor=None, contorno=None, esp=0):
+        caixa = self.s(cx - r, cy - r, cx + r, cy + r)
+        self.d.ellipse(caixa, fill=cor, outline=contorno, width=int(esp * ESCALA) if esp else 0)
+
+    def linha(self, xy, cor, esp=2):
+        self.d.line(self.s(*xy), fill=cor, width=int(esp * ESCALA))
+
+    def colar_girado(self, camada: Image.Image, cx: float, cy: float, graus: float):
+        girada = camada.rotate(graus, resample=Image.BICUBIC, expand=True)
+        x = int(cx * ESCALA - girada.width / 2)
+        y = int(cy * ESCALA - girada.height / 2)
+        self.img.paste(girada, (x, y), girada)
 
     def final(self) -> Image.Image:
         return self.img.resize((self.l, self.a), Image.LANCZOS)
@@ -75,52 +114,50 @@ class Tela:
 # ----------------------------------------------------------------------
 # Marca
 # ----------------------------------------------------------------------
-def simbolo(t: Tela, cx: float, cy: float, r: float, fundo=TINTA, frente=CREME):
-    """Símbolo: disco escuro com anéis de radar e um ponto coral."""
-    d, s = t.d, ESCALA
-    d.ellipse([(cx - r) * s, (cy - r) * s, (cx + r) * s, (cy + r) * s], fill=fundo)
+def simbolo(t: Tela, cx: float, cy: float, r: float, fundo=TINTA, frente=CREME, ponto=CORAL):
+    """Símbolo: disco com anéis de radar e um ponto detectado."""
+    t.circulo(cx, cy, r, fundo)
     esp = max(r * 0.075, 1.5)
     for k in (0.72, 0.46):
-        rr = r * k
-        d.ellipse(
-            [(cx - rr) * s, (cy - rr) * s, (cx + rr) * s, (cy + rr) * s],
-            outline=frente,
-            width=int(esp * s),
-        )
-    rc = r * 0.16
-    d.ellipse([(cx - rc) * s, (cy - rc) * s, (cx + rc) * s, (cy + rc) * s], fill=frente)
-    # ponto detectado
-    px, py, rp = cx + r * 0.42, cy - r * 0.42, r * 0.15
-    d.ellipse([(px - rp) * s, (py - rp) * s, (px + rp) * s, (py + rp) * s], fill=CORAL)
+        t.circulo(cx, cy, r * k, contorno=frente, esp=esp)
+    t.circulo(cx, cy, r * 0.16, frente)
+    t.circulo(cx + r * 0.42, cy - r * 0.42, r * 0.15, ponto)
 
 
-def assinatura(t: Tela, x: float, y: float, tamanho: int = 30, cor=TINTA):
+def aneis(t: Tela, cx: float, cy: float, cor, r0=140, passo=115, n=9, esp=10):
+    """Anéis de radar ao fundo (elemento gráfico da marca)."""
+    for i in range(n):
+        t.circulo(cx, cy, r0 + i * passo, contorno=cor, esp=esp)
+
+
+def assinatura(t: Tela, x: float, y: float, tema: dict, tamanho: int = 30):
     """Símbolo + 'radar da tela' (y = centro vertical)."""
     r = tamanho * 0.62
-    simbolo(t, x + r, y, r)
-    t.texto((x + 2 * r + tamanho * 0.42, y), "radar da tela", fonte("black", tamanho), cor, "lm")
+    escuro = sum(tema["fundo"]) < 380
+    simbolo(t, x + r, y, r,
+            fundo=tema["txt"], frente=tema["fundo"],
+            ponto=AMARELO if tema["fundo"] == CORAL else CORAL)
+    t.texto((x + 2 * r + tamanho * 0.42, y), "radar da tela", fonte("black", tamanho), tema["txt"], "lm")
+    return escuro
 
 
 def gerar_logo(caminho: str, tamanho: int = 800) -> str:
     """Foto de perfil (quadrada; as redes recortam em círculo)."""
-    t = Tela(tamanho, tamanho, CREME)
-    simbolo(t, tamanho / 2, tamanho / 2, tamanho * 0.36)
+    t = Tela(tamanho, tamanho, AMARELO)
+    simbolo(t, tamanho / 2, tamanho / 2, tamanho * 0.36, fundo=TINTA, frente=AMARELO, ponto=CORAL)
     t.final().save(caminho, quality=95)
     return caminho
 
 
 def gerar_capa(caminho: str) -> str:
     """Capa do X (1500x500)."""
-    t = Tela(1500, 500, CREME)
-    simbolo(t, 1500 - 250, 250, 170)
-    t.texto((110, 160), "radar da tela", fonte("black", 92))
-    t.texto(
-        (112, 290),
-        "o que entra e sai do streaming, todo dia",
-        fonte("medium", 34),
-        CINZA,
-    )
-    t.ret((112, 360, 112 + 64, 366), CORAL)
+    t = Tela(1500, 500, AZUL)
+    aneis(t, 1290, 250, misturar(AZUL, BRANCO, 0.14), r0=90, passo=95, n=10, esp=9)
+    simbolo(t, 1290, 250, 150, fundo=AMARELO, frente=AZUL, ponto=CORAL)
+    t.texto((110, 160), "radar da tela", fonte("black", 96), BRANCO)
+    t.texto((114, 292), "o que entra e sai do streaming, todo dia", fonte("medium", 36), (215, 224, 255))
+    for i, cor in enumerate((AMARELO, CORAL, LILAS)):
+        t.circulo(124 + i * 40, 372, 12, cor)
     t.final().save(caminho, quality=95)
     return caminho
 
@@ -128,37 +165,49 @@ def gerar_capa(caminho: str) -> str:
 # ----------------------------------------------------------------------
 # Elementos dos posts
 # ----------------------------------------------------------------------
-FEMININAS = {"Netflix", "HBO Max"}
-
-
-def preposicao(plataforma: str) -> str:
-    """'na Netflix', 'no Prime Video'."""
-    return "na" if plataforma in FEMININAS else "no"
-
-
 def _data_curta(data: dt.date) -> str:
     return f"{data.day:02d} {MESES[data.month - 1]} {data.year}"
 
 
-def _cabecalho(t: Tela, data: dt.date):
-    assinatura(t, MARGEM, 110, 30)
-    t.texto((LARGURA - MARGEM, 110), _data_curta(data), fonte("semibold", 24), CINZA, "rm")
-    t.linha((MARGEM, 168, LARGURA - MARGEM, 168))
+def _cabecalho(t: Tela, data: dt.date, tema: dict):
+    assinatura(t, MARGEM, 104, tema, 30)
+    t.texto((LARGURA - MARGEM, 104), _data_curta(data), fonte("bold", 24), tema["txt"], "rm")
 
 
-def _rodape(t: Tela):
-    y = ALTURA - 96
-    t.linha((MARGEM, y - 40, LARGURA - MARGEM, y - 40))
-    t.texto((MARGEM, y), "@radardatela", fonte("bold", 26), TINTA, "lm")
-    t.texto((LARGURA - MARGEM, y), "dados: TMDB / JustWatch", fonte("regular", 22), CINZA, "rm")
+def _rodape(t: Tela, tema: dict):
+    y = ALTURA - 84
+    t.texto((MARGEM, y), "@radardatela", fonte("black", 28), tema["txt"], "lm")
+    t.texto((LARGURA - MARGEM, y), "dados: TMDB / JustWatch", fonte("medium", 22), tema["sec"], "rm")
 
 
-def _etiqueta(t: Tela, x: float, y: float, txt: str, cor=CORAL, cor_txt=BRANCO) -> float:
-    f = fonte("bold", 24)
+def _etiqueta(t: Tela, x: float, y: float, txt: str, cor, cor_txt, tam=26) -> float:
+    f = fonte("black", tam)
     w = t.largura_txt(txt, f)
-    t.ret((x, y, x + w + 40, y + 50), cor, raio=25)
-    t.texto((x + 20, y + 25), txt, f, cor_txt, "lm")
-    return x + w + 40
+    alto = tam * 2.1
+    t.ret((x, y, x + w + tam * 1.6, y + alto), cor, raio=alto / 2)
+    t.texto((x + tam * 0.8, y + alto / 2), txt, f, cor_txt, "lm")
+    return x + w + tam * 1.6
+
+
+def _selo_nota(t: Tela, nota: str, cx: float, cy: float, cor, cor_txt, r=118, graus=10):
+    """Selo redondo, levemente girado, com a nota."""
+    lado = int(r * 2 * ESCALA) + 8
+    camada = Image.new("RGBA", (lado, lado), (0, 0, 0, 0))
+    d = ImageDraw.Draw(camada)
+    c = lado / 2
+    # borda serrilhada de selo
+    import math
+    pontos = []
+    dentes = 28
+    for i in range(dentes * 2):
+        ang = math.pi * i / dentes
+        rr = (r if i % 2 == 0 else r * 0.92) * ESCALA
+        pontos.append((c + rr * math.cos(ang), c + rr * math.sin(ang)))
+    d.polygon(pontos, fill=cor)
+    d.text((c, c - 0.20 * r * ESCALA), "★", font=fonte("bold", r * 0.30), fill=cor_txt, anchor="mm")
+    d.text((c, c + 0.16 * r * ESCALA), nota, font=fonte("black", r * 0.62), fill=cor_txt, anchor="mm")
+    d.text((c, c + 0.58 * r * ESCALA), "NOTA TMDB", font=fonte("bold", r * 0.13), fill=cor_txt, anchor="mm")
+    t.colar_girado(camada, cx, cy, graus)
 
 
 def _quebrar(t: Tela, txt: str, f, largura_max: float, max_linhas: int):
@@ -178,21 +227,20 @@ def _quebrar(t: Tela, txt: str, f, largura_max: float, max_linhas: int):
         while linhas[-1] and t.largura_txt(linhas[-1] + "…", f) > largura_max:
             linhas[-1] = linhas[-1][:-1].rstrip()
         linhas[-1] += "…"
-    # palavra isolada maior que a linha
     return linhas
 
 
 def _titulo_ajustado(t: Tela, txt: str, largura: float, altura_max: float):
     """Escolhe o maior corpo que cabe (até 4 linhas)."""
-    for tam in (128, 116, 104, 94, 84, 76, 68, 60):
+    for tam in (150, 136, 122, 110, 98, 88, 78, 70, 62):
         f = fonte("black", tam)
         linhas = _quebrar(t, txt, f, largura, 4)
-        alto = len(linhas) * tam * 1.04
+        alto = len(linhas) * tam * 0.98
         cabe = all(t.largura_txt(l, f) <= largura for l in linhas)
         if cabe and alto <= altura_max and not linhas[-1].endswith("…"):
             return f, tam, linhas
-    f = fonte("black", 60)
-    return f, 60, _quebrar(t, txt, f, largura, 4)
+    f = fonte("black", 62)
+    return f, 62, _quebrar(t, txt, f, largura, 4)
 
 
 def _nota_txt(item: dict) -> str | None:
@@ -211,80 +259,89 @@ def _tipo_txt(item: dict) -> str:
 def post_alerta(item: dict, plataforma: str, data: dt.date, caminho: str,
                 saiu: bool = False) -> str:
     """Um título em destaque: 'Chegou hoje' ou 'Saiu do catálogo'."""
-    t = Tela(LARGURA, ALTURA)
-    _cabecalho(t, data)
+    tema = TEMAS["noite"] if saiu else tema_para(item.get("chave", item["t"]))
+    t = Tela(LARGURA, ALTURA, tema["fundo"])
+    aneis(t, LARGURA + 40, ALTURA - 120, misturar(tema["fundo"], tema["txt"], 0.10))
+    _cabecalho(t, data, tema)
 
-    y = 250
-    if saiu:
-        _etiqueta(t, MARGEM, y, "SAIU DO CATÁLOGO", TINTA, CREME)
-    else:
-        _etiqueta(t, MARGEM, y, "CHEGOU HOJE")
+    y = 230
+    rotulo = "SAIU DO CATÁLOGO" if saiu else ("SÉRIE NOVA" if _tipo_txt(item) == "Série" else "CHEGOU HOJE")
+    _etiqueta(t, MARGEM, y, rotulo, tema["dest"], tema["dest_txt"])
     onde = f"{preposicao(plataforma)} {plataforma}"
     frase = f"não está mais {onde}" if saiu else f"agora {onde}"
-    t.texto((MARGEM, y + 112), frase, fonte("medium", 34), CINZA, "lm")
+    t.texto((MARGEM, y + 116), frase, fonte("bold", 40), tema["txt"], "lm")
 
     # título
     topo, base = y + 190, 1000
     f, tam, linhas = _titulo_ajustado(t, item["t"], LARGURA - 2 * MARGEM, base - topo)
-    alto = len(linhas) * tam * 1.04
-    inicio = topo + max(0, (base - topo - alto) * 0.45)
+    alto = len(linhas) * tam * 0.98
+    inicio = topo + max(0, (base - topo - alto) * 0.35)
     for i, l in enumerate(linhas):
-        t.texto((MARGEM - 4, inicio + i * tam * 1.04), l, f, TINTA, "la")
+        t.texto((MARGEM - 5, inicio + i * tam * 0.98), l, f, tema["txt"], "la")
 
-    # ficha
-    y2 = 1060
-    partes = [p for p in (item.get("a"), _tipo_txt(item), *(item.get("g") or [])[:2]) if p]
-    t.texto((MARGEM, y2 + 38), "  ·  ".join(partes), fonte("medium", 32), TINTA, "lm")
+    # ficha (chips)
+    x = MARGEM
+    for parte in [p for p in (item.get("a"), _tipo_txt(item), *(item.get("g") or [])[:2]) if p]:
+        fc = fonte("bold", 28)
+        w = t.largura_txt(parte, fc)
+        if x + w + 44 > LARGURA - MARGEM - 250:
+            break
+        t.ret((x, 1080, x + w + 44, 1140), misturar(tema["fundo"], tema["txt"], 0.14), raio=30)
+        t.texto((x + 22, 1110), parte, fc, tema["txt"], "lm")
+        x += w + 56
+
     nota = _nota_txt(item)
     if nota:
-        fx = fonte("black", 76)
-        t.texto((LARGURA - MARGEM, y2 + 34), nota, fx, CORAL if not saiu else TINTA, "rm")
-        w = t.largura_txt(nota, fx)
-        t.texto((LARGURA - MARGEM - w - 16, y2 + 38), "★", fonte("bold", 40),
-                CORAL if not saiu else TINTA, "rm")
-        t.texto((LARGURA - MARGEM, y2 + 98), "nota TMDB", fonte("regular", 22), CINZA, "rm")
+        _selo_nota(t, nota, LARGURA - MARGEM - 100, 1100, tema["selo"], tema["selo_txt"])
 
-    _rodape(t)
+    _rodape(t, tema)
     t.final().save(caminho, quality=92)
     return caminho
 
 
 def post_lista(itens: list[dict], data: dt.date, caminho: str, saiu: bool = False) -> str:
-    """Resumo: até 7 títulos. Cada item precisa da chave 'plataforma'."""
-    t = Tela(LARGURA, ALTURA)
-    _cabecalho(t, data)
+    """Resumo: até 7 títulos num cartão. Cada item precisa da chave 'plataforma'."""
+    tema = TEMAS["noite"] if saiu else TEMAS["azul"]
+    t = Tela(LARGURA, ALTURA, tema["fundo"])
+    aneis(t, LARGURA - 60, 120, misturar(tema["fundo"], tema["txt"], 0.10), r0=90, passo=95, n=7, esp=8)
+    _cabecalho(t, data, tema)
 
-    y = 230
+    y = 200
     if saiu:
-        _etiqueta(t, MARGEM, y, "SAÍRAM DO CATÁLOGO", TINTA, CREME)
+        _etiqueta(t, MARGEM, y, "DESPEDIDAS DO DIA", tema["dest"], tema["dest_txt"])
         titulo = ["Saiu do", "streaming"]
     else:
-        _etiqueta(t, MARGEM, y, "RESUMO DO DIA")
+        _etiqueta(t, MARGEM, y, "RESUMO DO DIA", tema["dest"], tema["dest_txt"])
         titulo = ["Chegou hoje", "no streaming"]
-    f = fonte("black", 84)
+    f = fonte("black", 92)
     for i, l in enumerate(titulo):
-        t.texto((MARGEM - 3, y + 80 + i * 86), l, f)
+        t.texto((MARGEM - 4, y + 82 + i * 92), l, f, tema["txt"])
 
+    # cartão
     itens = itens[:7]
-    topo, fim = 570, ALTURA - 160
-    passo = min(118, (fim - topo) / max(len(itens), 1))
-    larg_titulo = LARGURA - 2 * MARGEM - 70 - 130
+    c_topo, c_fim = 500, ALTURA - 140
+    t.ret((MARGEM - 20, c_topo, LARGURA - MARGEM + 20, c_fim), CREME, raio=36)
+    topo, fim = c_topo + 24, c_fim - 24
+    passo = min(112, (fim - topo) / max(len(itens), 1))
+    larg_titulo = LARGURA - 2 * MARGEM - 90 - 120
+    cores_num = [CORAL, AZUL, AMARELO, VERDE, LILAS, CORAL, AZUL]
     for i, it in enumerate(itens):
         yc = topo + i * passo + passo / 2
-        t.texto((MARGEM, yc), f"{i + 1:02d}", fonte("bold", 26), CORAL if not saiu else CINZA, "lm")
-        ft = fonte("bold", 38)
+        cor_num = TINTA if saiu else cores_num[i % len(cores_num)]
+        num_txt = BRANCO if cor_num in (CORAL, AZUL, TINTA, VERDE) else TINTA
+        t.circulo(MARGEM + 26, yc, 26, cor_num)
+        t.texto((MARGEM + 26, yc), str(i + 1), fonte("black", 26), num_txt, "mm")
+        ft = fonte("black", 36)
         nome = it["t"]
         while t.largura_txt(nome, ft) > larg_titulo and len(nome) > 3:
-            nome = nome[:-2].rstrip() + "…" if not nome.endswith("…") else nome[:-2].rstrip() + "…"
-        t.texto((MARGEM + 70, yc - 15), nome, ft, TINTA, "lm")
+            nome = nome.rstrip("…")[:-1].rstrip() + "…"
+        t.texto((MARGEM + 76, yc - 15), nome, ft, TINTA, "lm")
         sub = "  ·  ".join(p for p in (it.get("plataforma"), it.get("a"), _tipo_txt(it)) if p)
-        t.texto((MARGEM + 70, yc + 26), sub, fonte("regular", 25), CINZA, "lm")
+        t.texto((MARGEM + 76, yc + 25), sub, fonte("medium", 24), (110, 104, 96), "lm")
         nota = _nota_txt(it)
         if nota:
-            t.texto((LARGURA - MARGEM, yc), f"★ {nota}", fonte("bold", 32), TINTA, "rm")
-        if i < len(itens) - 1:
-            t.linha((MARGEM + 70, yc + passo / 2, LARGURA - MARGEM, yc + passo / 2), LINHA, 1)
+            t.texto((LARGURA - MARGEM, yc), f"★ {nota}", fonte("black", 30), TINTA, "rm")
 
-    _rodape(t)
+    _rodape(t, tema)
     t.final().save(caminho, quality=92)
     return caminho
