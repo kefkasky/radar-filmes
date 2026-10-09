@@ -3,7 +3,11 @@ name: Testar publicação nas redes
 # Publica UM post de teste (resumo com títulos reais) em Threads/Instagram/X,
 # apenas nas redes que já têm secrets configurados.
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      redes:
+        description: "Redes a testar (ex.: instagram ou threads,x). 'todas' = todas com secrets"
+        default: "todas"
 
 jobs:
   testar:
@@ -26,4 +30,5 @@ jobs:
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          SO_REDES: ${{ inputs.redes }}
         run: python -m radar testar-redes

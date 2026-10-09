@@ -34,11 +34,15 @@ def _env(nome: str) -> str:
 
 
 def redes_ativas() -> dict[str, bool]:
-    return {
+    so = {r.strip() for r in _env("SO_REDES").lower().split(",") if r.strip() and r.strip() != "todas"}
+    ativas = {
         "threads": bool(_env("THREADS_TOKEN")),
         "instagram": bool(_env("INSTAGRAM_TOKEN")),
         "x": all(_env(k) for k in ("X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_SECRET")),
     }
+    if so:
+        ativas = {r: ok and r in so for r, ok in ativas.items()}
+    return ativas
 
 
 # ----------------------------------------------------------------------
