@@ -153,8 +153,8 @@ def renovar() -> int:
 
     msgs = publicar.renovar_tokens()
     for rede, m in msgs.items():
-        anotar("warning" if "falha" in m or "troc" in m else "notice", f"{rede}: {m}")
-    alertas = [f"⚠️ {r}: {m}" for r, m in msgs.items() if "falha" in m or "troc" in m]
+        anotar("warning" if "falha" in m else "notice", f"{rede}: {m}")
+    alertas = [f"⚠️ {r}: {m}" for r, m in msgs.items() if "falha" in m]
     if alertas:
         telegram.enviar(os.environ.get("TELEGRAM_TOKEN", ""), os.environ.get("TELEGRAM_CHAT_ID", ""),
                         "🔑 <b>Tokens das redes</b>\n" + "\n".join(html.escape(a) for a in alertas))

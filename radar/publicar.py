@@ -265,8 +265,38 @@ def renovar_tokens() -> dict[str, str]:
         novo = r.json().get("access_token", "")
         dias = int(r.json().get("expires_in", 0)) // 86400
         if novo and novo != token:
-            msgs[rede] = (f"a Meta trocou o token. O atual ainda vale por um tempo, mas "
-                          f"gere um novo e atualize o secret {var} nos próximos dias.")
+            try:
+                salvar_secret(var, novo)
+                msgs[rede] = f"renovado e salvo, válido por mais {dias} dias"
+            except Exception as e:
+                msgs[rede] = (f"falha ao salvar o token renovado ({e}). O atual vale por "
+                              f"pouco tempo: gere um novo e atualize o secret {var}.")
         else:
             msgs[rede] = f"renovado, válido por mais {dias} dias"
     return msgs
+
+
+def salvar_secret(nome: str, valor: str) -> None:
+    """Atualiza um secret deste repositório pela API do GitHub.
+
+    Usa o SECRETS_TOKEN (ou o MIDIA_TOKEN, se ele tiver a permissão
+    'Secrets: read and write' no radar-filmes).
+    """
+    from nacl import encoding, public
+
+    token = _env("SECRETS_TOKEN") or _env("MIDIA_TOKEN")
+    repo = _env("GITHUB_REPOSITORY")
+    if not token or not repo:
+        raise ErroPublicacao("sem token com permissão de Secrets")
+    cab = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
+    r = requests.get(f"{GITHUB_API}/repos/{repo}/actions/secrets/public-key", headers=cab, timeout=30)
+    if not r.ok:
+        raise ErroPublicacao(f"GitHub recusou ler a chave dos secrets (HTTP {r.status_code}); "
+                             "o token precisa da permissão 'Secrets: read and write' no radar-filmes")
+    chave = r.json()
+    caixa = public.SealedBox(public.PublicKey(chave["key"].encode(), encoding.Base64Encoder()))
+    cifrado = base64.b64encode(caixa.encrypt(valor.encode())).decode()
+    r = requests.put(f"{GITHUB_API}/repos/{repo}/actions/secrets/{nome}", headers=cab,
+                     json={"encrypted_value": cifrado, "key_id": chave["key_id"]}, timeout=30)
+    if r.status_code not in (201, 204):
+        raise ErroPublicacao(f"GitHub recusou salvar o secret (HTTP {r.status_code})")
