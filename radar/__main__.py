@@ -202,7 +202,8 @@ def rodar_indicacao(dia_forcado: int | None = None, so_previa: bool = False) -> 
         telegram.enviar(tg_token, tg_chat, "❌ Indicação do fim de semana: nenhum filme encontrado.")
         return 1
     post = indicacao.montar(filme, hoje, PASTA_POSTS)
-    anotar("notice", f"Indicação: {filme['t']} ({filme['a']}) — {', '.join(filme['plataformas'])}")
+    anotar("notice", f"Indicação: {filme['t']} ({filme['a']}) — {', '.join(filme['plataformas'])}"
+           + (" — fatos reais confirmado" if filme.get('fatos_reais') else ""))
 
     if so_previa:
         telegram.enviar(tg_token, tg_chat, "🧪 <b>PRÉVIA da indicação</b> (nada foi publicado)")
