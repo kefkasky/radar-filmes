@@ -1,0 +1,68 @@
+name: Indicação de fim de semana
+
+# Sexta: guerra baseado em fatos reais | Sábado: romance | Domingo: comédia
+# Por volta das 18h de Brasília (o GitHub costuma atrasar alguns minutos).
+on:
+  schedule:
+    - cron: "52 20 * * 5,6,0"
+  workflow_dispatch:
+    inputs:
+      dia:
+        description: "Forçar o tema do dia (para teste)"
+        type: choice
+        options: [hoje, sexta, sabado, domingo]
+        default: hoje
+      previa:
+        description: "Só mandar a prévia no meu Telegram (não publica)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  indicacao:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Escolher e publicar a indicação
+        env:
+          TMDB_TOKEN: ${{ secrets.TMDB_TOKEN }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CANAL_ID: ${{ secrets.TELEGRAM_CANAL_ID }}
+          MIDIA_TOKEN: ${{ secrets.MIDIA_TOKEN }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dia }}" != "" ] && [ "${{ inputs.dia }}" != "hoje" ]; then ARGS="${{ inputs.dia }}"; fi
+          if [ "${{ inputs.previa }}" = "true" ]; then ARGS="$ARGS --previa"; fi
+          python -m radar indicacao $ARGS
+      - name: Salvar histórico de indicações
+        if: always()
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "radar-bot@users.noreply.github.com"
+          if [ -f data/indicacoes.json ]; then
+            git add data/indicacoes.json
+            if ! git diff --cached --quiet; then
+              git commit -m "Indicação $(date -u +%Y-%m-%d)"
+              git pull --rebase
+              git push
+            fi
+          fi

@@ -257,18 +257,19 @@ def _tipo_txt(item: dict) -> str:
 # Posts
 # ----------------------------------------------------------------------
 def post_alerta(item: dict, plataforma: str, data: dt.date, caminho: str,
-                saiu: bool = False) -> str:
-    """Um título em destaque: 'Chegou hoje' ou 'Saiu do catálogo'."""
-    tema = TEMAS["noite"] if saiu else tema_para(item.get("chave", item["t"]))
+                saiu: bool = False, rotulo: str | None = None, frase: str | None = None,
+                tema: dict | None = None) -> str:
+    """Um título em destaque: 'Chegou hoje', 'Saiu do catálogo' ou indicação."""
+    tema = tema or (TEMAS["noite"] if saiu else tema_para(item.get("chave", item["t"])))
     t = Tela(LARGURA, ALTURA, tema["fundo"])
     aneis(t, LARGURA + 40, ALTURA - 120, misturar(tema["fundo"], tema["txt"], 0.10))
     _cabecalho(t, data, tema)
 
     y = 230
-    rotulo = "SAIU DO CATÁLOGO" if saiu else ("SÉRIE NOVA" if _tipo_txt(item) == "Série" else "CHEGOU HOJE")
+    rotulo = rotulo or ("SAIU DO CATÁLOGO" if saiu else ("SÉRIE NOVA" if _tipo_txt(item) == "Série" else "CHEGOU HOJE"))
     _etiqueta(t, MARGEM, y, rotulo, tema["dest"], tema["dest_txt"])
     onde = f"{preposicao(plataforma)} {plataforma}"
-    frase = f"não está mais {onde}" if saiu else f"agora {onde}"
+    frase = frase or (f"não está mais {onde}" if saiu else f"agora {onde}")
     t.texto((MARGEM, y + 116), frase, fonte("bold", 40), tema["txt"], "lm")
 
     # título

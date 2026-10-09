@@ -4,6 +4,7 @@ Uso:
     python -m radar            # coleta, compara e envia o relatório
     python -m radar chat-id    # mostra o ID do seu chat com o bot
     python -m radar previa     # manda posts de exemplo (com títulos reais)
+    python -m radar indicacao [sexta|sabado|domingo] [--previa]  # indicação do fim de semana
 """
 
 import datetime as dt
@@ -183,6 +184,42 @@ def testar_redes() -> int:
     return publicar_redes(tg_token, tg_chat, lista, hoje)
 
 
+def rodar_indicacao(dia_forcado: int | None = None, so_previa: bool = False) -> int:
+    """Indicação de fim de semana (sexta/sábado/domingo)."""
+    from . import indicacao
+
+    tg_token = os.environ.get("TELEGRAM_TOKEN", "")
+    tg_chat = os.environ.get("TELEGRAM_CHAT_ID", "")
+    hoje = dt.datetime.now(ZoneInfo("America/Sao_Paulo")).date()
+    dia = hoje.weekday() if dia_forcado is None else dia_forcado
+    if dia not in indicacao.TEMAS:
+        anotar("notice", "Hoje não é dia de indicação.")
+        return 0
+    cliente = ClienteTMDB(os.environ.get("TMDB_TOKEN", ""))
+    filme = indicacao.escolher(cliente, dia, hoje)
+    if not filme:
+        anotar("error", "Nenhum filme encontrado para a indicação de hoje.")
+        telegram.enviar(tg_token, tg_chat, "❌ Indicação do fim de semana: nenhum filme encontrado.")
+        return 1
+    post = indicacao.montar(filme, hoje, PASTA_POSTS)
+    anotar("notice", f"Indicação: {filme['t']} ({filme['a']}) — {', '.join(filme['plataformas'])}")
+
+    if so_previa:
+        telegram.enviar(tg_token, tg_chat, "🧪 <b>PRÉVIA da indicação</b> (nada foi publicado)")
+        telegram.enviar_foto(tg_token, tg_chat, post.imagem, post.texto)
+        return 0
+
+    canal = os.environ.get("TELEGRAM_CANAL_ID", "").strip() or config.TELEGRAM_CANAL
+    if canal:
+        try:
+            telegram.enviar_foto(tg_token, canal, post.imagem, post.texto)
+        except Exception as e:
+            anotar("error", f"Falha ao publicar no canal: {e}")
+    codigo = publicar_redes(tg_token, tg_chat, [post], hoje)
+    indicacao.registrar(filme, hoje)
+    return codigo
+
+
 def teste_canal(so_visual: bool = False) -> int:
     """Aplica foto/descrição no canal e (opcional) publica as boas-vindas."""
     tg_token = os.environ.get("TELEGRAM_TOKEN", "")
@@ -286,6 +323,10 @@ if __name__ == "__main__":
         sys.exit(mostrar_chat_id())
     if len(sys.argv) > 1 and sys.argv[1] == "previa":
         sys.exit(previa())
+    if len(sys.argv) > 1 and sys.argv[1] == "indicacao":
+        dias = {"sexta": 4, "sabado": 5, "domingo": 6}
+        forcado = next((dias[a] for a in sys.argv[2:] if a in dias), None)
+        sys.exit(rodar_indicacao(forcado, so_previa="--previa" in sys.argv))
     if len(sys.argv) > 1 and sys.argv[1] == "renovar-tokens":
         sys.exit(renovar())
     if len(sys.argv) > 1 and sys.argv[1] == "testar-redes":

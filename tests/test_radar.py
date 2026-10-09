@@ -118,7 +118,7 @@ def test_posts_selecao_legendas_e_imagens(tmp_path):
     lista = posts.montar(dif, {"18": "Drama"}, dt.date(2026, 10, 9), str(tmp_path))
     tipos = [p.tipo for p in lista]
     assert tipos == ["resumo", "alerta", "alerta", "alerta", "saiu"]
-    assert all(len(p.texto) <= posts.LIMITE_X for p in lista)
+    assert all(posts.cabe_no_x(p.texto) for p in lista)
     assert "em Netflix e Prime Video" in lista[1].texto  # mesmo título em 2 plataformas
     assert "Obscuro" not in lista[0].texto               # filtro de relevância
     assert "Saiu da Netflix" in lista[-1].texto
@@ -130,7 +130,7 @@ def test_posts_selecao_legendas_e_imagens(tmp_path):
 def test_resumo_corta_para_caber_no_x():
     itens = [{"t": "Um Título Bem Comprido Número %d" % i, "plataforma": "Paramount+"} for i in range(7)]
     texto = posts.texto_resumo(itens)
-    assert len(texto) <= posts.LIMITE_X and texto.endswith("🍿")
+    assert posts.cabe_no_x(texto) and texto.endswith("🍿")
 
 
 # ---------------------------------------------------------------- Fase 3
@@ -160,3 +160,46 @@ def test_erro_numa_rede_nao_derruba_outra(monkeypatch):
     monkeypatch.setattr(publicar, "instagram", lambda u, t: "1")
     r = publicar.publicar_todos([posts.Post("alerta", "a.jpg", "oi")], dt.date(2026, 10, 9))
     assert r["instagram"]["ok"] == 1 and r["threads"]["erros"] == ["caiu"]
+
+
+# ---------------------------------------------------------------- Indicação
+from radar import indicacao
+
+
+class ClienteFalso:
+    def __init__(self):
+        self.chamadas = []
+
+    def resolver_plataformas(self):
+        return {"Netflix": 8, "Prime Video": 119}, []
+
+    def get(self, caminho, params=None):
+        self.chamadas.append((caminho, params))
+        if caminho == "/discover/movie":
+            return {"total_pages": 1, "results": [{"id": 1, "title": "Já Indicado"},
+                                                  {"id": 2, "title": "Novo"}]}
+        if caminho.endswith("/watch/providers"):
+            return {"results": {"BR": {"flatrate": [{"provider_id": 119}]}}}
+        return {"title": "Até o Último Homem", "release_date": "2016-11-04", "vote_average": 8.1,
+                "vote_count": 14000, "genres": [{"name": "Guerra"}, {"name": "Drama"}],
+                "runtime": 139, "overview": "A história real de um médico do exército " * 8}
+
+
+def test_indicacao_sexta_guerra_sem_repetir(monkeypatch, tmp_path):
+    monkeypatch.setattr(indicacao, "ARQUIVO_HISTORICO", str(tmp_path / "h.json"))
+    indicacao.salvar_historico([{"id": 1}])
+    c = ClienteFalso()
+    filme = indicacao.escolher(c, 4, dt.date(2026, 10, 9))
+    assert filme["id"] == 2 and filme["plataformas"] == ["Prime Video"]
+    busca = next(p for cam, p in c.chamadas if cam == "/discover/movie")
+    assert busca["with_genres"] == "10752" and busca["with_keywords"] == "9672"
+    post = indicacao.montar(filme, dt.date(2026, 10, 9), str(tmp_path))
+    assert post.texto.startswith("🎖️ Sexta de guerra: Até o Último Homem (2016)")
+    assert "baseado em fatos reais" in post.texto and "Prime Video" in post.texto
+    assert posts.cabe_no_x(post.texto) and post.texto.endswith("🍿")
+    indicacao.registrar(filme, dt.date(2026, 10, 9))
+    assert [h["id"] for h in indicacao.carregar_historico()] == [1, 2]
+
+
+def test_indicacao_so_no_fim_de_semana():
+    assert indicacao.escolher(ClienteFalso(), 2, dt.date(2026, 10, 7)) is None

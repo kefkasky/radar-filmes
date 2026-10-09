@@ -106,14 +106,27 @@ def texto_resumo(itens: list[dict], saiu: bool = False) -> str:
     # tira linhas do fim até caber no X
     while linhas:
         texto = "\n".join([cabeca, "", *linhas, "", fecho])
-        if len(texto) <= LIMITE_X:
+        if cabe_no_x(texto):
             return texto
         linhas.pop()
     return _cortar(f"{cabeca}\n\n{fecho}")
 
 
+def peso_x(texto: str) -> int:
+    """Tamanho do texto como o X conta: emojis e caracteres especiais valem 2."""
+    return sum(1 if ord(c) <= 0x10FF or 0x2000 <= ord(c) <= 0x200D else 2 for c in texto)
+
+
+def cabe_no_x(texto: str) -> bool:
+    return peso_x(texto) <= LIMITE_X
+
+
 def _cortar(texto: str) -> str:
-    return texto if len(texto) <= LIMITE_X else texto[: LIMITE_X - 1].rstrip() + "…"
+    if cabe_no_x(texto):
+        return texto
+    while texto and not cabe_no_x(texto + "…"):
+        texto = texto[:-1]
+    return texto.rstrip() + "…"
 
 
 # ----------------------------------------------------------------------
