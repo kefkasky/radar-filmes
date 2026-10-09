@@ -203,3 +203,18 @@ def test_indicacao_sexta_guerra_sem_repetir(monkeypatch, tmp_path):
 
 def test_indicacao_so_no_fim_de_semana():
     assert indicacao.escolher(ClienteFalso(), 2, dt.date(2026, 10, 7)) is None
+
+
+def test_indicacao_reserva_nao_afirma_fatos_reais(monkeypatch, tmp_path):
+    monkeypatch.setattr(indicacao, "ARQUIVO_HISTORICO", str(tmp_path / "h.json"))
+
+    class SoReserva(ClienteFalso):
+        def get(self, caminho, params=None):
+            if caminho == "/discover/movie" and params.get("with_keywords"):
+                return {"total_pages": 1, "results": []}
+            return super().get(caminho, params)
+
+    filme = indicacao.escolher(SoReserva(), 4, dt.date(2026, 10, 9))
+    assert filme["fatos_reais"] is False
+    texto = indicacao.texto(filme)
+    assert "fatos reais" not in texto and "mergulho na história" in texto

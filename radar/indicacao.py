@@ -31,9 +31,11 @@ TEMAS = {
         "emoji": "🎖️",
         "abertura": "Sexta de guerra",
         "fecho": "História real, do jeito que só o cinema conta. Vai encarar? 🍿",
+        "fecho_alt": "Um mergulho na história pra fechar a semana. Vai encarar? 🍿",
         "buscas": [
             {"with_genres": "10752", "with_keywords": "9672"},
-            {"with_genres": "10752,36"},  # reserva: guerra + história
+            # reserva: guerra + história (aí não afirma "fatos reais")
+            {"with_genres": "10752,36", "_frase": "inspirado na história", "_fatos_reais": False},
         ],
         "tema_visual": "noite",
     },
@@ -114,6 +116,8 @@ def escolher(cliente: ClienteTMDB, dia_semana: int, data: dt.date) -> dict | Non
     sorteio = random.Random(data.isoformat())  # mesmo dia = mesma escolha
 
     for busca in tema["buscas"]:
+        extras = {k: v for k, v in busca.items() if k.startswith("_")}
+        busca = {k: v for k, v in busca.items() if not k.startswith("_")}
         candidatos = [c for c in _candidatos(cliente, busca, plataformas) if c["id"] not in ja_indicados]
         sorteio.shuffle(candidatos)
         for c in candidatos[:10]:
@@ -134,6 +138,8 @@ def escolher(cliente: ClienteTMDB, dia_semana: int, data: dt.date) -> dict | Non
                 "plataformas": onde,
                 "plataforma": onde[0],
                 "tema": tema,
+                "frase": extras.get("_frase", tema["frase"]),
+                "fatos_reais": extras.get("_fatos_reais", tema["nome"] == "guerra"),
             }
     return None
 
@@ -152,10 +158,10 @@ def texto(filme: dict) -> str:
     ficha = " · ".join(p for p in (
         f"⭐ {filme['n']:.1f}".replace(".", ",") if filme.get("v", 0) >= 20 else "",
         _duracao(filme["duracao"]),
-        "baseado em fatos reais" if tema["nome"] == "guerra" else "",
+        "baseado em fatos reais" if filme.get("fatos_reais") else "",
     ) if p)
     topo = [f"{tema['emoji']} {tema['abertura']}: {filme['t']} ({filme['a']})", ficha, f"📺 {onde}"]
-    fecho = tema["fecho"]
+    fecho = tema["fecho"] if filme.get("fatos_reais", True) else tema.get("fecho_alt", tema["fecho"])
     base = "\n".join(l for l in topo if l)
     sinopse = filme.get("sinopse", "")
     # sinopse entra se couber no limite do X; senão é encurtada por palavra
@@ -178,7 +184,7 @@ def montar(filme: dict, data: dt.date, pasta: str) -> Post:
     caminho = os.path.join(pasta, f"indicacao_{data.isoformat()}.jpg")
     arte.post_alerta(
         filme, filme["plataforma"], data, caminho,
-        rotulo=tema["rotulo"], frase=f"{tema['frase']} · {onde}",
+        rotulo=tema["rotulo"], frase=f"{filme.get('frase', tema['frase'])} · {onde}",
         tema=arte.TEMAS[tema["tema_visual"]],
     )
     return Post("indicacao", caminho, texto(filme))
