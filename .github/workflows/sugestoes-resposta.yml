@@ -3,9 +3,11 @@ name: Sugestões de resposta
 # Todo dia por volta das 11h45: posts em alta no X sobre as novidades do
 # streaming, com resposta sugerida, no seu Telegram. O robô não responde
 # sozinho; você responde manualmente.
+# PAUSADO em 13/10/2026 para não gerar custo no X (~US$ 4,50/mês).
+# Para religar, volte as duas linhas abaixo (tire o "#"):
 on:
-  schedule:
-    - cron: "43 14 * * *"
+  # schedule:
+  #   - cron: "43 14 * * *"
   workflow_dispatch: {}
 
 jobs:
