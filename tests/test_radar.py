@@ -1,6 +1,6 @@
 """Testes com dados simulados (não acessam a internet)."""
 
-from radar import comparar, telegram, tmdb
+from radar import arte, comparar, telegram, tmdb
 
 
 def item(titulo, pop, nota=7.5, votos=100, ano="2024"):
@@ -144,19 +144,19 @@ def test_publicar_so_redes_com_secrets(monkeypatch, tmp_path):
     monkeypatch.setenv("THREADS_TOKEN", "t")
     chamadas = []
     monkeypatch.setattr(publicar, "hospedar", lambda c, d: "https://exemplo/img.jpg")
-    monkeypatch.setattr(publicar, "threads", lambda u, t: chamadas.append(("threads", u)) or "1")
+    monkeypatch.setattr(publicar, "threads", lambda u, t, topico=None: chamadas.append(("threads", u, topico)) or "1")
     monkeypatch.setattr(publicar, "x", lambda c, t: chamadas.append(("x", c)) or "1")
     lista = [posts.Post("alerta", "a.jpg", "oi"), posts.Post("alerta", "b.jpg", "oi")]
     r = publicar.publicar_todos(lista, dt.date(2026, 10, 9), {"threads": 1})
     assert r == {"threads": {"ok": 1, "erros": []}}
-    assert chamadas == [("threads", "https://exemplo/img.jpg")]
+    assert chamadas == [("threads", "https://exemplo/img.jpg", "Streaming")]
 
 
 def test_erro_numa_rede_nao_derruba_outra(monkeypatch):
     monkeypatch.setenv("THREADS_TOKEN", "t")
     monkeypatch.setenv("INSTAGRAM_TOKEN", "i")
     monkeypatch.setattr(publicar, "hospedar", lambda c, d: "https://exemplo/img.jpg")
-    monkeypatch.setattr(publicar, "threads", lambda u, t: (_ for _ in ()).throw(RuntimeError("caiu")))
+    monkeypatch.setattr(publicar, "threads", lambda u, t, topico=None: (_ for _ in ()).throw(RuntimeError("caiu")))
     monkeypatch.setattr(publicar, "instagram", lambda u, t: "1")
     r = publicar.publicar_todos([posts.Post("alerta", "a.jpg", "oi")], dt.date(2026, 10, 9))
     assert r["instagram"]["ok"] == 1 and r["threads"]["erros"] == ["caiu"]
@@ -218,3 +218,67 @@ def test_indicacao_reserva_nao_afirma_fatos_reais(monkeypatch, tmp_path):
     assert filme["fatos_reais"] is False
     texto = indicacao.texto(filme)
     assert "fatos reais" not in texto and "mergulho na história" in texto
+
+
+# ---------------------------------------------------------------- Reels e tópicos
+import shutil
+import subprocess
+
+import pytest
+
+from radar import reels
+
+
+@pytest.mark.skipif(not shutil.which("ffmpeg"), reason="ffmpeg ausente")
+def test_reel_vertical_com_audio(tmp_path):
+    imgs = []
+    for i in range(3):
+        c = tmp_path / f"p{i}.jpg"
+        arte.post_alerta({"chave": f"movie:{i}", "t": f"Filme {i}", "a": "2024", "n": 7.5, "v": 100},
+                         "Netflix", dt.date(2026, 10, 13), str(c))
+        imgs.append(str(c))
+    video = reels.gerar(imgs, dt.date(2026, 10, 13), str(tmp_path / "r.mp4"))
+    info = subprocess.run(["ffprobe", "-v", "error", "-show_entries",
+                           "stream=codec_name,width,height:format=duration", "-of", "csv=p=0", video],
+                          capture_output=True, text=True).stdout
+    assert "h264,1080,1920" in info and "aac" in info
+    dur = float(info.strip().splitlines()[-1])
+    assert 10 < dur < 16
+
+
+def test_topico_do_threads_por_tipo(tmp_path):
+    dif = {"Netflix": {"entrou": [{"chave": "movie:1", "t": "A", "a": "2024", "p": 50, "n": 7, "v": 99, "g": []},
+                                  {"chave": "movie:2", "t": "B", "a": "2024", "p": 40, "n": 7, "v": 99, "g": []},
+                                  {"chave": "movie:3", "t": "C", "a": "2024", "p": 30, "n": 7, "v": 99, "g": []}],
+                       "saiu": [], "suspeito": False}}
+    lista = posts.montar(dif, {}, dt.date(2026, 10, 13), str(tmp_path))
+    assert lista[0].topico == "Streaming" and lista[1].topico == "Netflix"
+
+
+# ---------------------------------------------------------------- Sugestões
+from radar import sugestoes
+
+
+def test_sugestoes_filtra_e_monta_resposta(monkeypatch, tmp_path):
+    for k in ("X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_SECRET"):
+        monkeypatch.setenv(k, "x")
+    arq = tmp_path / "n.json"
+    arq.write_text('{"2026-10-13": [{"t": "Duna: Parte Dois", "plataformas": ["HBO Max"], "p": 90}]}',
+                   encoding="utf-8")
+
+    class Resp:
+        ok = True
+        def json(self):
+            return {"data": [{"id": "1", "author_id": "a", "text": "Vale ver Duna?",
+                              "public_metrics": {"like_count": 300}},
+                             {"id": "2", "author_id": "b", "text": "duna", "public_metrics": {"like_count": 1}}],
+                    "includes": {"users": [{"id": "a", "username": "cinefilo",
+                                            "public_metrics": {"followers_count": 50000}},
+                                           {"id": "b", "username": "ninguem",
+                                            "public_metrics": {"followers_count": 10}}]}}
+
+    monkeypatch.setattr(sugestoes.requests, "get", lambda *a, **k: Resp())
+    lista = sugestoes.montar(str(arq), dt.date(2026, 10, 13))
+    assert len(lista) == 1 and lista[0]["autor"] == "cinefilo"
+    assert "na HBO Max" in lista[0]["resposta"]
+    assert "x.com/cinefilo/status/1" in sugestoes.mensagem(lista)

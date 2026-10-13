@@ -26,7 +26,9 @@ jobs:
           cache: pip
 
       - name: Instalar dependências
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
 
       - name: Coletar, comparar e enviar relatório
         env:
@@ -47,7 +49,7 @@ jobs:
         run: |
           git config user.name "radar-bot"
           git config user.email "radar-bot@users.noreply.github.com"
-          git add data/catalogo.json
+          git add data/catalogo.json data/novidades.json 2>/dev/null || git add data/catalogo.json
           if git diff --cached --quiet; then
             echo "Catálogo sem mudanças."
           else

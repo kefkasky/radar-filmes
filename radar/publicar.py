@@ -49,7 +49,7 @@ def redes_ativas() -> dict[str, bool]:
 # Hospedagem pública das imagens (repositório público no GitHub)
 # ----------------------------------------------------------------------
 def hospedar(caminho: str, data: dt.date) -> str:
-    """Envia a imagem ao repositório público e devolve o link direto."""
+    """Envia a imagem (ou vídeo) ao repositório público e devolve o link direto."""
     token, repo = _env("MIDIA_TOKEN"), _env("MIDIA_REPO") or config.MIDIA_REPO
     if not token:
         raise ErroPublicacao("MIDIA_TOKEN não configurado (necessário para Instagram/Threads).")
@@ -57,7 +57,8 @@ def hospedar(caminho: str, data: dt.date) -> str:
         dados = f.read()
     resumo = hashlib.sha1(dados).hexdigest()[:10]
     nome = os.path.splitext(os.path.basename(caminho))[0]
-    destino = f"posts/{data.isoformat()}/{nome}-{resumo}.jpg"
+    ext = os.path.splitext(caminho)[1].lower() or ".jpg"
+    destino = f"posts/{data.isoformat()}/{nome}-{resumo}{ext}"
     resp = requests.put(
         f"{GITHUB_API}/repos/{repo}/contents/{destino}",
         headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"},
@@ -67,7 +68,7 @@ def hospedar(caminho: str, data: dt.date) -> str:
     if resp.status_code not in (200, 201, 422):  # 422 = já existe (mesmo conteúdo)
         raise ErroPublicacao(f"GitHub recusou a imagem ({resp.status_code}): {resp.text[:200]}")
     url = f"https://raw.githubusercontent.com/{repo}/main/{destino}"
-    for _ in range(12):  # espera o link ficar disponível
+    for _ in range(24):  # espera o link ficar disponível
         if requests.head(url, timeout=20).status_code == 200:
             return url
         time.sleep(5)
@@ -77,14 +78,17 @@ def hospedar(caminho: str, data: dt.date) -> str:
 # ----------------------------------------------------------------------
 # Threads
 # ----------------------------------------------------------------------
-def threads(url_imagem: str, texto: str) -> str:
+def threads(url_imagem: str, texto: str, topico: str | None = None) -> str:
     token = _env("THREADS_TOKEN")
-    r = requests.post(
-        f"{THREADS_API}/me/threads",
-        data={"media_type": "IMAGE", "image_url": url_imagem, "text": texto[:500],
-              "access_token": token},
-        timeout=60,
-    )
+    dados = {"media_type": "IMAGE", "image_url": url_imagem, "text": texto[:500],
+             "access_token": token}
+    topico = (topico or "").replace(".", "").replace("&", "e").strip()[:50]
+    if topico:
+        dados["topic_tag"] = topico
+    r = requests.post(f"{THREADS_API}/me/threads", data=dados, timeout=60)
+    if not r.ok and topico:  # se o tópico for recusado, publica sem ele
+        dados.pop("topic_tag")
+        r = requests.post(f"{THREADS_API}/me/threads", data=dados, timeout=60)
     if not r.ok:
         raise ErroPublicacao(f"Threads (container): {_erro_meta(r)}")
     container = r.json()["id"]
@@ -134,6 +138,41 @@ def instagram(url_imagem: str, legenda: str) -> str:
     if not r.ok:
         raise ErroPublicacao(f"Instagram (publicar): {_erro_meta(r)}")
     return r.json()["id"]
+
+
+def instagram_reel(url_video: str, legenda: str) -> str:
+    """Publica um Reel (o Instagram busca o vídeo pelo link público)."""
+    token = _env("INSTAGRAM_TOKEN")
+    r = requests.post(
+        f"{INSTAGRAM_API}/me/media",
+        data={"media_type": "REELS", "video_url": url_video, "caption": legenda[:2200],
+              "share_to_feed": "true", "access_token": token},
+        timeout=60,
+    )
+    if not r.ok:
+        raise ErroPublicacao(f"Instagram Reel (container): {_erro_meta(r)}")
+    container = r.json()["id"]
+    for _ in range(30):  # vídeo demora mais para processar (até ~5 min)
+        time.sleep(10)
+        s = requests.get(f"{INSTAGRAM_API}/{container}",
+                         params={"fields": "status_code", "access_token": token}, timeout=30)
+        status = s.json().get("status_code") if s.ok else None
+        if status == "FINISHED":
+            break
+        if status in ("ERROR", "EXPIRED"):
+            raise ErroPublicacao(f"Instagram não processou o Reel ({status}).")
+    r = requests.post(f"{INSTAGRAM_API}/me/media_publish",
+                      data={"creation_id": container, "access_token": token}, timeout=60)
+    if not r.ok:
+        raise ErroPublicacao(f"Instagram Reel (publicar): {_erro_meta(r)}")
+    return r.json()["id"]
+
+
+def publicar_reel(caminho_video: str, legenda: str, data: dt.date) -> str:
+    if not redes_ativas().get("instagram"):
+        return "instagram inativo"
+    url = hospedar(caminho_video, data)
+    return instagram_reel(url, legenda + config.HASHTAGS_INSTAGRAM)
 
 
 def _erro_meta(r: requests.Response) -> str:
@@ -235,7 +274,7 @@ def publicar_todos(lista: list, data: dt.date, limite_por_rede: dict | None = No
                 elif url is None:
                     continue
                 elif rede == "threads":
-                    threads(url, post.texto)
+                    threads(url, post.texto, getattr(post, "topico", None))
                 elif rede == "instagram":
                     instagram(url, post.texto + config.HASHTAGS_INSTAGRAM)
                 resultado[rede]["ok"] += 1

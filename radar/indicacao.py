@@ -187,7 +187,7 @@ def montar(filme: dict, data: dt.date, pasta: str) -> Post:
         rotulo=tema["rotulo"], frase=f"{filme.get('frase', tema['frase'])} · {onde}",
         tema=arte.TEMAS[tema["tema_visual"]],
     )
-    return Post("indicacao", caminho, texto(filme))
+    return Post("indicacao", caminho, texto(filme), "Filmes")
 
 
 def registrar(filme: dict, data: dt.date) -> None:

@@ -122,7 +122,55 @@ def rodar() -> int:
             telegram.enviar(tg_token, tg_chat, f"❌ Falha ao publicar no canal: {e}")
 
     # Threads, Instagram e X
-    return publicar_redes(tg_token, tg_chat, lista, agora.date())
+    codigo = publicar_redes(tg_token, tg_chat, lista, agora.date())
+
+    # Reel do dia no Instagram (maior alcance para quem ainda não segue)
+    codigo = max(codigo, publicar_reel_do_dia(tg_token, tg_chat, lista, agora.date()))
+
+    # Guarda as novidades do dia para as sugestões de resposta
+    salvar_novidades(lista_novidades(diferencas), agora.date())
+    return codigo
+
+
+def publicar_reel_do_dia(tg_token: str, tg_chat: str, lista: list, data) -> int:
+    from . import publicar, reels
+
+    fotos = [p for p in lista if p.tipo in ("resumo", "alerta")]
+    if len(fotos) < 2 or not publicar.redes_ativas().get("instagram"):
+        return 0
+    legenda = next((p.texto for p in fotos if p.tipo == "resumo"), fotos[0].texto)
+    try:
+        video = reels.gerar([p.imagem for p in fotos], data, os.path.join(PASTA_POSTS, "reel.mp4"))
+        publicar.publicar_reel(video, legenda, data)
+        anotar("notice", "Instagram: Reel do dia publicado")
+        return 0
+    except Exception as e:
+        anotar("error", f"Reel: {e}")
+        telegram.enviar(tg_token, tg_chat, f"⚠️ Reel do dia falhou: {html.escape(str(e)[:300])}")
+        return 1
+
+
+ARQUIVO_NOVIDADES = os.path.join(os.path.dirname(config.ARQUIVO_RETRATO), "novidades.json")
+
+
+def lista_novidades(diferencas: dict) -> list[dict]:
+    itens = posts._juntar(diferencas, "entrou")[:15]
+    return [{"t": i["t"], "a": i.get("a"), "plataformas": i["plataformas"], "p": i["p"],
+             "tipo": i["chave"].split(":")[0]} for i in itens]
+
+
+def salvar_novidades(itens: list[dict], data) -> None:
+    """Mantém as novidades dos últimos 7 dias."""
+    try:
+        with open(ARQUIVO_NOVIDADES, encoding="utf-8") as f:
+            todas = json.load(f)
+    except (OSError, ValueError):
+        todas = {}
+    todas[data.isoformat()] = itens
+    for d in sorted(todas)[:-7]:
+        del todas[d]
+    with open(ARQUIVO_NOVIDADES, "w", encoding="utf-8") as f:
+        json.dump(todas, f, ensure_ascii=False, indent=1)
 
 
 def publicar_redes(tg_token: str, tg_chat: str, lista: list, data) -> int:
@@ -160,6 +208,24 @@ def renovar() -> int:
         telegram.enviar(os.environ.get("TELEGRAM_TOKEN", ""), os.environ.get("TELEGRAM_CHAT_ID", ""),
                         "🔑 <b>Tokens das redes</b>\n" + "\n".join(html.escape(a) for a in alertas))
     return 0
+
+
+def testar_reel() -> int:
+    """Gera e publica um Reel de teste com títulos reais do catálogo."""
+    retrato = carregar_retrato()
+    tg_token = os.environ.get("TELEGRAM_TOKEN", "")
+    tg_chat = os.environ.get("TELEGRAM_CHAT_ID", "")
+    falso = {pl: {"entrou": sorted(({"chave": k, **v} for k, v in it.items()),
+                                   key=lambda i: i["p"], reverse=True)[:1],
+                  "saiu": [], "suspeito": False} for pl, it in retrato.items()}
+    generos = {}
+    try:
+        generos = ClienteTMDB(os.environ.get("TMDB_TOKEN", "")).generos()
+    except Exception:
+        pass
+    hoje = dt.datetime.now(ZoneInfo("America/Sao_Paulo")).date()
+    lista = posts.montar(falso, generos, hoje, PASTA_POSTS)
+    return publicar_reel_do_dia(tg_token, tg_chat, lista, hoje)
 
 
 def testar_redes() -> int:
@@ -219,6 +285,24 @@ def rodar_indicacao(dia_forcado: int | None = None, so_previa: bool = False) -> 
     codigo = publicar_redes(tg_token, tg_chat, [post], hoje)
     indicacao.registrar(filme, hoje)
     return codigo
+
+
+def rodar_sugestoes() -> int:
+    from . import sugestoes
+
+    hoje = dt.datetime.now(ZoneInfo("America/Sao_Paulo")).date()
+    if not sugestoes.titulos_recentes(ARQUIVO_NOVIDADES):
+        # ainda sem histórico: usa os títulos mais populares do catálogo
+        retrato = carregar_retrato()
+        falso = {pl: {"entrou": sorted(({"chave": k, **v} for k, v in it.items()),
+                                       key=lambda i: i["p"], reverse=True)[:3],
+                      "saiu": [], "suspeito": False} for pl, it in retrato.items()}
+        salvar_novidades(lista_novidades(falso), hoje)
+    lista = sugestoes.montar(ARQUIVO_NOVIDADES, hoje)
+    telegram.enviar(os.environ.get("TELEGRAM_TOKEN", ""), os.environ.get("TELEGRAM_CHAT_ID", ""),
+                    sugestoes.mensagem(lista))
+    anotar("notice", f"{len(lista)} sugestões de resposta enviadas")
+    return 0
 
 
 def teste_canal(so_visual: bool = False) -> int:
@@ -328,6 +412,10 @@ if __name__ == "__main__":
         dias = {"sexta": 4, "sabado": 5, "domingo": 6}
         forcado = next((dias[a] for a in sys.argv[2:] if a in dias), None)
         sys.exit(rodar_indicacao(forcado, so_previa="--previa" in sys.argv))
+    if len(sys.argv) > 1 and sys.argv[1] == "testar-reel":
+        sys.exit(testar_reel())
+    if len(sys.argv) > 1 and sys.argv[1] == "sugestoes":
+        sys.exit(rodar_sugestoes())
     if len(sys.argv) > 1 and sys.argv[1] == "renovar-tokens":
         sys.exit(renovar())
     if len(sys.argv) > 1 and sys.argv[1] == "testar-redes":

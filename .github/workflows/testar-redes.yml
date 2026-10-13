@@ -8,6 +8,10 @@ on:
       redes:
         description: "Redes a testar (ex.: instagram ou threads,x). 'todas' = todas com secrets"
         default: "todas"
+      reel:
+        description: "Testar só o Reel do Instagram (publica de verdade)"
+        type: boolean
+        default: false
 
 jobs:
   testar:
@@ -18,7 +22,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
+      - run: |
+          pip install -r requirements.txt
+          which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
       - env:
           TMDB_TOKEN: ${{ secrets.TMDB_TOKEN }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
@@ -31,4 +37,5 @@ jobs:
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           SO_REDES: ${{ inputs.redes }}
-        run: python -m radar testar-redes
+        run: |
+          if [ "${{ inputs.reel }}" = "true" ]; then python -m radar testar-reel; else python -m radar testar-redes; fi

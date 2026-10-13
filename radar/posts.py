@@ -16,9 +16,10 @@ LIMITE_X = 280
 
 @dataclass
 class Post:
-    tipo: str        # "alerta", "saiu", "resumo", "resumo_saiu"
+    tipo: str        # "alerta", "saiu", "resumo", "resumo_saiu", "indicacao"
     imagem: str
     texto: str
+    topico: str = "Streaming"   # tópico do Threads (sem ponto e sem &)
 
 
 # ----------------------------------------------------------------------
@@ -147,12 +148,12 @@ def montar(diferencas: dict, generos: dict, data: dt.date, pasta: str) -> list[P
     for n, item in enumerate(entradas[: config.ALERTAS_ENTRADA_POR_DIA], 1):
         caminho = os.path.join(pasta, f"alerta_{n}.jpg")
         arte.post_alerta(item, item["plataforma"], data, caminho)
-        posts.append(Post("alerta", caminho, texto_alerta(item)))
+        posts.append(Post("alerta", caminho, texto_alerta(item), item["plataforma"]))
 
     for n, item in enumerate(saidas[: config.ALERTAS_SAIDA_POR_DIA], 1):
         caminho = os.path.join(pasta, f"saiu_{n}.jpg")
         arte.post_alerta(item, item["plataforma"], data, caminho, saiu=True)
-        posts.append(Post("saiu", caminho, texto_saiu(item)))
+        posts.append(Post("saiu", caminho, texto_saiu(item), item["plataforma"]))
 
     if len(saidas) >= config.MIN_ITENS_RESUMO + 1:
         caminho = os.path.join(pasta, "resumo_saiu.jpg")
