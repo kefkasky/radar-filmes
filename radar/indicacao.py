@@ -112,7 +112,8 @@ def escolher(cliente: ClienteTMDB, dia_semana: int, data: dt.date) -> dict | Non
     if not tema:
         return None
     plataformas, _ = cliente.resolver_plataformas()
-    ja_indicados = {h["id"] for h in carregar_historico()}
+    # o filme de hoje continua elegível (permite republicar numa rede que falhou)
+    ja_indicados = {h["id"] for h in carregar_historico() if h.get("data") != data.isoformat()}
     sorteio = random.Random(data.isoformat())  # mesmo dia = mesma escolha
 
     for busca in tema["buscas"]:
@@ -192,6 +193,8 @@ def montar(filme: dict, data: dt.date, pasta: str) -> Post:
 
 def registrar(filme: dict, data: dt.date) -> None:
     historico = carregar_historico()
+    if any(h.get("id") == filme["id"] and h.get("data") == data.isoformat() for h in historico):
+        return
     historico.append({"data": data.isoformat(), "id": filme["id"], "titulo": filme["t"],
                       "tema": filme["tema"]["nome"]})
     salvar_historico(historico)

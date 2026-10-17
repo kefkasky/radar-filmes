@@ -16,6 +16,9 @@ on:
         description: "Só mandar a prévia no meu Telegram (não publica)"
         type: boolean
         default: true
+      redes:
+        description: "Publicar só nestas redes (ex.: instagram,threads). 'todas' = todas"
+        default: "todas"
 
 permissions:
   contents: write
@@ -48,6 +51,7 @@ jobs:
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          SO_REDES: ${{ inputs.redes }}
         run: |
           ARGS=""
           if [ "${{ inputs.dia }}" != "" ] && [ "${{ inputs.dia }}" != "hoje" ]; then ARGS="${{ inputs.dia }}"; fi

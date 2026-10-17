@@ -97,9 +97,8 @@ def rodar() -> int:
     anotar("notice", f"{len(atual)} plataformas, {total} titulos, {cliente.chamadas} chamadas TMDB")
     try:
         telegram.enviar(tg_token, tg_chat, relatorio)
-    except Exception as e:
-        anotar("error", f"Falha ao enviar no Telegram: {e}")
-        return 1
+    except Exception as e:  # relatório é só aviso: não impede os posts
+        anotar("warning", f"Falha ao enviar o relatório no Telegram: {e}")
 
     # Fase 2: posts prontos para aprovação
     try:
@@ -276,8 +275,9 @@ def rodar_indicacao(dia_forcado: int | None = None, so_previa: bool = False) -> 
         telegram.enviar_foto(tg_token, tg_chat, post.imagem, post.texto)
         return 0
 
+    so_redes = os.environ.get("SO_REDES", "").strip().lower()
     canal = os.environ.get("TELEGRAM_CANAL_ID", "").strip() or config.TELEGRAM_CANAL
-    if canal:
+    if canal and so_redes in ("", "todas") or "telegram" in so_redes:
         try:
             telegram.enviar_foto(tg_token, canal, post.imagem, post.texto)
         except Exception as e:
@@ -302,6 +302,36 @@ def rodar_sugestoes() -> int:
     telegram.enviar(os.environ.get("TELEGRAM_TOKEN", ""), os.environ.get("TELEGRAM_CHAT_ID", ""),
                     sugestoes.mensagem(lista))
     anotar("notice", f"{len(lista)} sugestões de resposta enviadas")
+    return 0
+
+
+def diagnosticar() -> int:
+    """Testa os tokens da Meta e mostra o erro exato (sem exibir tokens)."""
+    import requests
+
+    testes = {
+        "Instagram": ("INSTAGRAM_TOKEN", "https://graph.instagram.com/v23.0/me",
+                      {"fields": "user_id,username,account_type"}),
+        "Threads": ("THREADS_TOKEN", "https://graph.threads.net/v1.0/me",
+                    {"fields": "id,username"}),
+    }
+    linhas = ["🩺 <b>Diagnóstico da Meta</b>"]
+    for nome, (var, url, params) in testes.items():
+        token = os.environ.get(var, "").strip()
+        if not token:
+            linhas.append(f"• {nome}: sem token")
+            continue
+        r = requests.get(url, params={**params, "access_token": token}, timeout=30)
+        if r.ok:
+            msg = f"OK, conectado como @{r.json().get('username', '?')}"
+        else:
+            e = r.json().get("error", {}) if r.headers.get("content-type", "").startswith("application/json") else {}
+            msg = (f"ERRO {e.get('code', r.status_code)}/{e.get('error_subcode', '-')} "
+                   f"({e.get('type', '?')}): {e.get('message', r.text[:200])}")
+        anotar("notice" if r.ok else "error", f"{nome}: {msg}")
+        linhas.append(f"• {nome}: {html.escape(msg)}")
+    telegram.enviar(os.environ.get("TELEGRAM_TOKEN", ""), os.environ.get("TELEGRAM_CHAT_ID", ""),
+                    "\n".join(linhas))
     return 0
 
 
@@ -412,6 +442,8 @@ if __name__ == "__main__":
         dias = {"sexta": 4, "sabado": 5, "domingo": 6}
         forcado = next((dias[a] for a in sys.argv[2:] if a in dias), None)
         sys.exit(rodar_indicacao(forcado, so_previa="--previa" in sys.argv))
+    if len(sys.argv) > 1 and sys.argv[1] == "diagnosticar":
+        sys.exit(diagnosticar())
     if len(sys.argv) > 1 and sys.argv[1] == "testar-reel":
         sys.exit(testar_reel())
     if len(sys.argv) > 1 and sys.argv[1] == "sugestoes":

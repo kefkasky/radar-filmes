@@ -59,12 +59,22 @@ def hospedar(caminho: str, data: dt.date) -> str:
     nome = os.path.splitext(os.path.basename(caminho))[0]
     ext = os.path.splitext(caminho)[1].lower() or ".jpg"
     destino = f"posts/{data.isoformat()}/{nome}-{resumo}{ext}"
-    resp = requests.put(
-        f"{GITHUB_API}/repos/{repo}/contents/{destino}",
-        headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"},
-        json={"message": f"post {destino}", "content": base64.b64encode(dados).decode()},
-        timeout=60,
-    )
+    for tentativa in range(4):  # o GitHub às vezes recusa por instabilidade (409/5xx)
+        try:
+            resp = requests.put(
+                f"{GITHUB_API}/repos/{repo}/contents/{destino}",
+                headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"},
+                json={"message": f"post {destino}", "content": base64.b64encode(dados).decode()},
+                timeout=60,
+            )
+        except requests.RequestException:
+            if tentativa == 3:
+                raise
+            time.sleep(10 * (tentativa + 1))
+            continue
+        if resp.status_code in (200, 201, 422) or resp.status_code not in (409, 500, 502, 503, 504):
+            break
+        time.sleep(10 * (tentativa + 1))
     if resp.status_code not in (200, 201, 422):  # 422 = já existe (mesmo conteúdo)
         raise ErroPublicacao(f"GitHub recusou a imagem ({resp.status_code}): {resp.text[:200]}")
     url = f"https://raw.githubusercontent.com/{repo}/main/{destino}"

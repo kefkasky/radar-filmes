@@ -5,6 +5,22 @@ import requests
 LIMITE = 4000  # o Telegram aceita até 4096 caracteres por mensagem
 
 
+def _post_com_retentativa(url: str, tentativas: int = 4, **kwargs):
+    """POST com novas tentativas em falhas de rede (o Telegram às vezes oscila)."""
+    import time
+
+    for i in range(tentativas):
+        try:
+            resp = requests.post(url, **kwargs)
+            if resp.status_code < 500 and resp.status_code != 429:
+                return resp
+        except requests.RequestException:
+            if i == tentativas - 1:
+                raise
+        time.sleep(5 * (i + 1))
+    return resp
+
+
 def dividir(texto: str, limite: int = LIMITE) -> list[str]:
     """Quebra o texto em mensagens, sempre em fim de linha."""
     partes, atual = [], ""
@@ -32,7 +48,7 @@ def enviar(token: str, chat_id: str, texto: str) -> None:
         return
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     for parte in dividir(texto):
-        resp = requests.post(
+        resp = _post_com_retentativa(
             url,
             json={
                 "chat_id": chat_id,
@@ -52,12 +68,13 @@ def enviar_foto(token: str, chat_id: str, caminho: str, legenda: str = "") -> No
         print(f"Telegram não configurado; imagem {caminho} não enviada.")
         return
     with open(caminho, "rb") as f:
-        resp = requests.post(
-            f"https://api.telegram.org/bot{token}/sendPhoto",
-            data={"chat_id": chat_id, "caption": legenda[:1024]},
-            files={"photo": f},
-            timeout=60,
-        )
+        dados = f.read()
+    resp = _post_com_retentativa(
+        f"https://api.telegram.org/bot{token}/sendPhoto",
+        data={"chat_id": chat_id, "caption": legenda[:1024]},
+        files={"photo": ("post.jpg", dados)},
+        timeout=60,
+    )
     if not resp.ok:
         raise RuntimeError(f"Telegram recusou a imagem: {resp.status_code} {resp.text}")
 
