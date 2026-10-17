@@ -4,7 +4,11 @@ on:
   schedule:
     # Todo dia às 06:47 de Brasília (09:47 UTC)
     - cron: "47 9 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      redes:
+        description: "Republicar só nestas redes (ex.: instagram,threads). 'todas' = execução normal"
+        default: "todas"
 
 permissions:
   contents: write
@@ -43,9 +47,11 @@ jobs:
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          SO_REDES: ${{ inputs.redes }}
         run: python -m radar
 
       - name: Salvar retrato do catálogo
+        if: always()  # salva mesmo se alguma rede falhar (evita repetir posts amanhã)
         run: |
           git config user.name "radar-bot"
           git config user.email "radar-bot@users.noreply.github.com"
@@ -54,5 +60,6 @@ jobs:
             echo "Catálogo sem mudanças."
           else
             git commit -m "Retrato do catálogo $(date -u +%Y-%m-%d)"
+            git pull --rebase
             git push
           fi

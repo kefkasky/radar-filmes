@@ -95,15 +95,19 @@ def rodar() -> int:
         anotar("warning", aviso)
     total = sum(len(v) for v in atual.values())
     anotar("notice", f"{len(atual)} plataformas, {total} titulos, {cliente.chamadas} chamadas TMDB")
-    try:
-        telegram.enviar(tg_token, tg_chat, relatorio)
-    except Exception as e:  # relatório é só aviso: não impede os posts
-        anotar("warning", f"Falha ao enviar o relatório no Telegram: {e}")
+    so_redes = os.environ.get("SO_REDES", "").strip().lower()
+    refazendo = so_redes not in ("", "todas")  # republicação parcial: sem relatório/prévia
+    if not refazendo:
+        try:
+            telegram.enviar(tg_token, tg_chat, relatorio)
+        except Exception as e:  # relatório é só aviso: não impede os posts
+            anotar("warning", f"Falha ao enviar o relatório no Telegram: {e}")
 
     # Fase 2: posts prontos para aprovação
     try:
         lista = posts.montar(diferencas, cliente.generos(), agora.date(), PASTA_POSTS)
-        enviar_posts(tg_token, tg_chat, lista)
+        if not refazendo:
+            enviar_posts(tg_token, tg_chat, lista)
     except Exception as e:
         anotar("error", f"Falha ao gerar/enviar posts: {e}")
         traceback.print_exc()
@@ -111,7 +115,7 @@ def rodar() -> int:
 
     # Fase 3: publicação automática no canal do Telegram
     canal = os.environ.get("TELEGRAM_CANAL_ID", "").strip() or config.TELEGRAM_CANAL
-    if canal and lista:
+    if canal and lista and (not refazendo or "telegram" in so_redes):
         try:
             for p in lista:
                 telegram.enviar_foto(tg_token, canal, p.imagem, p.texto)
