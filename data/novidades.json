@@ -410,5 +410,143 @@
    "p": 19.0,
    "tipo": "movie"
   }
+ ],
+ "2026-10-19": [
+  {
+   "t": "Dragon Ball Super: Beerus",
+   "a": "2026",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 154.4,
+   "tipo": "tv"
+  },
+  {
+   "t": "Jujutsu Kaisen",
+   "a": "2020",
+   "plataformas": [
+    "Prime Video",
+    "Disney+"
+   ],
+   "p": 145.6,
+   "tipo": "tv"
+  },
+  {
+   "t": "O Conto da Aia",
+   "a": "2017",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 96.6,
+   "tipo": "tv"
+  },
+  {
+   "t": "Parenthood - Minha Família",
+   "a": "2010",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 53.9,
+   "tipo": "tv"
+  },
+  {
+   "t": "Hotel Hazbin",
+   "a": "2024",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 52.3,
+   "tipo": "tv"
+  },
+  {
+   "t": "Marsupilami: Confusão a Bordo",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 43.9,
+   "tipo": "movie"
+  },
+  {
+   "t": "The Hunting Party",
+   "a": "2025",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 33.0,
+   "tipo": "tv"
+  },
+  {
+   "t": "Asim, O Vigarista",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 29.6,
+   "tipo": "tv"
+  },
+  {
+   "t": "Por Cima do seu Cadáver",
+   "a": "2026",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 24.5,
+   "tipo": "movie"
+  },
+  {
+   "t": "Amor Sem Fim",
+   "a": "2015",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 23.9,
+   "tipo": "tv"
+  },
+  {
+   "t": "Street Fighter: A Última Batalha",
+   "a": "1994",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 23.0,
+   "tipo": "movie"
+  },
+  {
+   "t": "O Contador",
+   "a": "2016",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 22.9,
+   "tipo": "movie"
+  },
+  {
+   "t": "VINLAND SAGA",
+   "a": "2019",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 22.7,
+   "tipo": "tv"
+  },
+  {
+   "t": "LEGO Friends: Heartlake the Musical",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 21.0,
+   "tipo": "movie"
+  },
+  {
+   "t": "Um Amor para Recordar",
+   "a": "2002",
+   "plataformas": [
+    "Paramount+"
+   ],
+   "p": 18.8,
+   "tipo": "movie"
+  }
  ]
 }
