@@ -1,0 +1,20 @@
+[
+ {
+  "quando": "2026-10-20T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "Dragon Ball Super: Beerus",
+   "option_b": "9-1-1",
+   "option_c": "Onde A Máscara Termina",
+   "option_d": "Batman: O Cavaleiro das…"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-10-20T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "🍿 Qual filme você indicaria pra alguém que não sabe o que assistir hoje? Deixa a dica aqui 👇",
+  "topico": "Filmes"
+ }
+]
