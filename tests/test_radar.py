@@ -336,8 +336,8 @@ def test_fila_publica_so_vencidos(monkeypatch, tmp_path):
     ], hoje, hospedar_fn=lambda c, d: "https://img/x.jpg")
     feitos = []
     agora = dt.datetime(2026, 10, 20, 12, 25, tzinfo=agenda.FUSO)
-    ok, erros = agenda.publicar_vencidos(agora, lambda t, **k: feitos.append((t, k)) or f"id{len(feitos)}")
-    assert ok == 1 and not erros and feitos[0][1]["url_imagem"] == "https://img/x.jpg"
+    ok, erros = agenda.publicar_vencidos(agora, lambda item: feitos.append(item) or f"id{len(feitos)}")
+    assert ok == {"threads": 1} and not erros and feitos[0]["imagem_url"] == "https://img/x.jpg"
     assert [f["tipo"] for f in agenda._ler(agenda.ARQUIVO_FILA, [])] == ["dica"]
     assert agenda._ler(agenda.ARQUIVO_LOG, [])[0]["tipo"] == "alerta"
 
@@ -363,3 +363,27 @@ def test_top10_e_relatorio(monkeypatch, tmp_path):
 
 def test_x_limitado_a_3():
     assert config.LIMITE_POSTS_POR_REDE["x"] == 3
+
+
+def test_fila_instagram_carrossel_e_reel(monkeypatch, tmp_path):
+    monkeypatch.setattr(agenda, "ARQUIVO_FILA", str(tmp_path / "fila.json"))
+    monkeypatch.setattr(agenda, "ARQUIVO_LOG", str(tmp_path / "log.json"))
+    hoje = dt.date(2026, 10, 21)
+    agenda.enfileirar([
+        {"quando": agenda._quando(hoje, "almoco"), "rede": "instagram", "tipo": "carrossel",
+         "imagens": ["a.jpg", "b.jpg"], "texto": "legenda"},
+        {"quando": agenda._quando(hoje, "noite"), "rede": "instagram", "tipo": "reel",
+         "video": "r.mp4", "texto": "legenda"},
+    ], hoje, hospedar_fn=lambda c, d: f"https://m/{c}")
+    fila = agenda._ler(agenda.ARQUIVO_FILA, [])
+    assert fila[0]["imagens_url"] == ["https://m/a.jpg", "https://m/b.jpg"]
+    assert fila[1]["video_url"] == "https://m/r.mp4"
+    meio_dia = dt.datetime(2026, 10, 21, 12, 30, tzinfo=agenda.FUSO)
+    ok, _ = agenda.publicar_vencidos(meio_dia, lambda item: "ig1")
+    assert ok == {"instagram": 1}
+    assert [f["tipo"] for f in agenda._ler(agenda.ARQUIVO_FILA, [])] == ["reel"]
+    assert agenda._ler(agenda.ARQUIVO_LOG, []) == []  # só o Threads entra no registro
+
+
+def test_chamada_reel_avisa_horario():
+    assert "19h" in agenda.CHAMADA_REEL

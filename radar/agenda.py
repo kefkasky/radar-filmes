@@ -43,7 +43,7 @@ PREVIAS = {
     6: "😂 Hoje às 18h tem indicação de domingo: uma comédia pra fechar o fim de semana rindo.",
 }
 FIM_PREVIA = "Sai aqui e no Insta @radardatela 👀"
-CHAMADA_REEL = "🎬 O resumo em vídeo tá no Reels do @radardatela"
+CHAMADA_REEL = "🎬 Hoje às 19h tem o resumo em vídeo no Reels do @radardatela"
 
 
 # ----------------------------------------------------------------------
@@ -197,12 +197,16 @@ def enfileirar(itens: list[dict], data: dt.date, hospedar_fn=None) -> list[str]:
     erros = []
     prontos = []
     for item in itens:
-        if item.get("imagem"):
-            try:
+        try:
+            if item.get("imagem"):
                 item["imagem_url"] = hospedar_fn(item.pop("imagem"), data)
-            except Exception as e:
-                erros.append(f"{item['tipo']}: {str(e)[:150]}")
-                continue
+            if item.get("imagens"):
+                item["imagens_url"] = [hospedar_fn(c, data) for c in item.pop("imagens")]
+            if item.get("video"):
+                item["video_url"] = hospedar_fn(item.pop("video"), data)
+        except Exception as e:
+            erros.append(f"{item.get('rede', 'threads')} {item['tipo']}: {str(e)[:150]}")
+            continue
         prontos.append(item)
     itens = prontos
     fila = [f for f in _ler(ARQUIVO_FILA, []) if not f["quando"].startswith(data.isoformat())]
@@ -210,11 +214,15 @@ def enfileirar(itens: list[dict], data: dt.date, hospedar_fn=None) -> list[str]:
     return erros
 
 
-def publicar_vencidos(agora: dt.datetime, publicar_fn) -> tuple[int, list[str]]:
-    """Publica o que já passou do horário (com 10 min de folga). Itens de dias
-    anteriores que não saíram são descartados para não postar coisa velha."""
+def publicar_vencidos(agora: dt.datetime, executar) -> tuple[dict, list[str]]:
+    """Publica o que já passou do horário (com 10 min de folga).
+
+    `executar(item)` publica um item e devolve o id. Itens de dias anteriores
+    que não saíram são descartados para não postar coisa velha.
+    Retorna ({rede: quantidade}, erros).
+    """
     fila = _ler(ARQUIVO_FILA, [])
-    restante, ok, erros = [], 0, []
+    restante, ok, erros = [], {}, []
     limite = (agora + dt.timedelta(minutes=10)).isoformat()
     hoje = agora.date().isoformat()
     for item in fila:
@@ -223,13 +231,16 @@ def publicar_vencidos(agora: dt.datetime, publicar_fn) -> tuple[int, list[str]]:
             continue
         if not item["quando"].startswith(hoje):
             continue  # vencido de outro dia: descarta
+        rede = item.get("rede", "threads")
         try:
-            media_id = publicar_fn(item["texto"], url_imagem=item.get("imagem_url"),
-                                   poll=item.get("poll"), topico=item.get("topico"))
-            registrar_publicacao(media_id, item["tipo"], agora)
-            ok += 1
+            media_id = executar(item)
+            if media_id is None:  # rede desligada: descarta sem erro
+                continue
+            if rede == "threads":
+                registrar_publicacao(media_id, item["tipo"], agora)
+            ok[rede] = ok.get(rede, 0) + 1
         except Exception as e:
-            erros.append(f"{item['tipo']}: {str(e)[:200]}")
+            erros.append(f"{rede} {item['tipo']}: {str(e)[:200]}")
             item["tentativas"] = item.get("tentativas", 0) + 1
             if item["tentativas"] < 3:
                 restante.append(item)

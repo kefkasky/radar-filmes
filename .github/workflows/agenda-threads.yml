@@ -1,7 +1,8 @@
-name: Agenda do Threads
+name: Agenda do dia (Threads e Instagram)
 
-# Publica no Threads os posts agendados pela rotina da manhã:
-# ~12h20 (destaques, prévia, gancho do top 10), ~19h (enquete) e ~21h (dica).
+# Publica os posts agendados pela rotina da manhã:
+# ~12h20 carrossel do Instagram + destaques/prévia/gancho no Threads,
+# ~19h Reel do Instagram + enquete no Threads, ~21h dica no Threads.
 on:
   schedule:
     - cron: "17 15 * * *"
@@ -37,6 +38,7 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
         run: |
           if [ "${{ inputs.semear }}" = "true" ]; then python -m radar semear-hoje; else python -m radar fila; fi
       - name: Salvar fila e registro
