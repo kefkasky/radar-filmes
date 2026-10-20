@@ -1,4 +1,4 @@
-name: Agenda do dia (Threads e Instagram)
+name: Agenda do dia (Threads, Instagram e X)
 
 # Publica os posts agendados pela rotina da manhã:
 # ~12h20 carrossel do Instagram + destaques/prévia/gancho no Threads,
@@ -39,6 +39,10 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
           INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
         run: |
           if [ "${{ inputs.semear }}" = "true" ]; then python -m radar semear-hoje; else python -m radar fila; fi
       - name: Salvar fila e registro

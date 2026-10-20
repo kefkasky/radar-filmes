@@ -387,3 +387,10 @@ def test_fila_instagram_carrossel_e_reel(monkeypatch, tmp_path):
 
 def test_chamada_reel_avisa_horario():
     assert "19h" in agenda.CHAMADA_REEL
+
+
+def test_gancho_top10_no_x_cabe_e_chama_insta():
+    top = [{"t": "Um Título Extremamente Comprido Que Não Acaba Mais Nunca " * 2, "plataformas": ["Paramount+"]}] * 3
+    texto = agenda.gancho_top10_x(top)
+    assert posts.cabe_no_x(texto) and "top 10 completo tá no nosso Insta (@radardatela)" in texto
+    assert texto.count("\n1. ") == 1 and "3. " in texto

@@ -301,6 +301,14 @@ def _oauth_x():
                   _env("X_ACCESS_TOKEN"), _env("X_ACCESS_SECRET"))
 
 
+def x_texto(texto: str) -> str:
+    """Post só de texto no X (sem link, para não pagar a taxa de link)."""
+    r = requests.post(f"{X_API}/tweets", auth=_oauth_x(), json={"text": texto}, timeout=60)
+    if not r.ok:
+        raise ErroPublicacao(f"X (post): HTTP {r.status_code} {r.text[:300]}")
+    return r.json()["data"]["id"]
+
+
 def x(caminho_imagem: str, texto: str) -> str:
     auth = _oauth_x()
     with open(caminho_imagem, "rb") as f:

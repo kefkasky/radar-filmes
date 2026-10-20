@@ -248,6 +248,22 @@ def publicar_vencidos(agora: dt.datetime, executar) -> tuple[dict, list[str]]:
     return ok, erros
 
 
+def gancho_top10_x(top: list[dict]) -> str:
+    """Top 3 da semana para o X, chamando para o Top 10 no Instagram (até 280)."""
+    from .posts import cabe_no_x
+
+    cauda = "\n\n…o top 10 completo tá no nosso Insta (@radardatela) 👀"
+    for limite in (60, 40, 28, 20):
+        linhas = []
+        for i, it in enumerate(top[:3], 1):
+            t = it["t"] if len(it["t"]) <= limite else it["t"][: limite - 1].rstrip() + "…"
+            linhas.append(f"{i}. {t} · {it['plataformas'][0]}")
+        texto = "🔟 O que mais bombou no streaming essa semana:\n\n" + "\n".join(linhas) + cauda
+        if cabe_no_x(texto):
+            return texto
+    return texto
+
+
 # ----------------------------------------------------------------------
 # Top 10 da semana (exclusivo do Instagram)
 # ----------------------------------------------------------------------

@@ -128,17 +128,27 @@ def rodar() -> int:
     salvar_novidades(lista_novidades(diferencas), agora.date())
 
     # X (o Instagram e o Threads seguem a agenda do dia, abaixo)
-    codigo = publicar_redes(tg_token, tg_chat, lista, agora.date(), excluir={"threads", "instagram"})
-
-    # Instagram: 1 carrossel no almoço (domingo: Top 10) + Reel às 19h
     from . import agenda
     top = agenda.top_da_semana(ARQUIVO_NOVIDADES, agora.date()) if agora.weekday() == 6 else None
+    domingo_com_top = bool(top and len(top) >= 3)
+    limites = dict(config.LIMITE_POSTS_POR_REDE)
+    if domingo_com_top:  # domingo: 1 dos 3 posts do X fica para o gancho do Top 10
+        limites["x"] = max(limites["x"] - 1, 0)
+    codigo = publicar_redes(tg_token, tg_chat, lista, agora.date(), excluir={"threads", "instagram"},
+                            limites=limites)
+
+    # Instagram: 1 carrossel no almoço (domingo: Top 10) + Reel às 19h
     itens_ig, erros_ig = agenda_instagram(lista, diferencas, cliente, agora.date(), top)
 
     # Threads: fio da manhã agora + agenda do dia
     codigo_th, itens_th = agenda_threads(tg_token, tg_chat, lista, diferencas, cliente, agora.date(),
                                          com_reel=any(i["tipo"] == "reel" for i in itens_ig), top=top)
-    erros = erros_ig + agenda.enfileirar(itens_ig + itens_th, agora.date(), hospedar_seguro())
+    itens_x = []
+    from . import publicar as _pub
+    if domingo_com_top and _pub.redes_ativas().get("x"):
+        itens_x.append({"quando": agenda._quando(agora.date(), "almoco"), "rede": "x",
+                        "tipo": "gancho_top10", "texto": agenda.gancho_top10_x(top)})
+    erros = erros_ig + agenda.enfileirar(itens_ig + itens_th + itens_x, agora.date(), hospedar_seguro())
     for e in erros:
         anotar("error", f"Agenda: {e}")
     if erros:
@@ -287,6 +297,8 @@ def rodar_fila() -> int:
         if rede == "threads":
             return publicar.threads_publicar(item["texto"], url_imagem=item.get("imagem_url"),
                                              poll=item.get("poll"), topico=item.get("topico"))
+        if rede == "x":
+            return publicar.x_texto(item["texto"])
         if item["tipo"] == "reel":
             return publicar.instagram_reel(item["video_url"], item["texto"])
         urls = item.get("imagens_url") or []
@@ -348,12 +360,13 @@ def salvar_novidades(itens: list[dict], data) -> None:
         json.dump(todas, f, ensure_ascii=False, indent=1)
 
 
-def publicar_redes(tg_token: str, tg_chat: str, lista: list, data, excluir: set | None = None) -> int:
+def publicar_redes(tg_token: str, tg_chat: str, lista: list, data, excluir: set | None = None,
+                   limites: dict | None = None) -> int:
     from . import publicar
 
     if not lista:
         return 0
-    resultado = publicar.publicar_todos(lista, data, excluir=excluir)
+    resultado = publicar.publicar_todos(lista, data, limite_por_rede=limites, excluir=excluir)
     if not resultado:
         return 0
     linhas, falhou = ["📤 <b>Publicação nas redes</b>"], False
