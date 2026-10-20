@@ -124,15 +124,118 @@ def rodar() -> int:
             anotar("error", f"Falha ao publicar no canal: {e}")
             telegram.enviar(tg_token, tg_chat, f"❌ Falha ao publicar no canal: {e}")
 
-    # Threads, Instagram e X
-    codigo = publicar_redes(tg_token, tg_chat, lista, agora.date())
+    # Guarda as novidades do dia (sugestões de resposta e top 10 da semana)
+    salvar_novidades(lista_novidades(diferencas), agora.date())
+
+    # Instagram e X (o Threads segue a agenda do dia, abaixo)
+    codigo = publicar_redes(tg_token, tg_chat, lista, agora.date(), excluir={"threads"})
 
     # Reel do dia no Instagram (maior alcance para quem ainda não segue)
-    codigo = max(codigo, publicar_reel_do_dia(tg_token, tg_chat, lista, agora.date()))
+    codigo_reel = publicar_reel_do_dia(tg_token, tg_chat, lista, agora.date())
+    codigo = max(codigo, codigo_reel)
 
-    # Guarda as novidades do dia para as sugestões de resposta
-    salvar_novidades(lista_novidades(diferencas), agora.date())
+    # Domingo: Top 10 da semana, exclusivo do Instagram
+    top = None
+    if agora.weekday() == 6:
+        codigo = max(codigo, publicar_top10(tg_token, tg_chat, agora.date()))
+        from . import agenda
+        top = agenda.top_da_semana(ARQUIVO_NOVIDADES, agora.date())
+
+    # Threads: fio da manhã agora + agenda do dia
+    codigo = max(codigo, agenda_threads(tg_token, tg_chat, lista, diferencas, cliente,
+                                        agora.date(), com_reel=codigo_reel == 0, top=top))
     return codigo
+
+
+def agenda_threads(tg_token, tg_chat, lista, diferencas, cliente, data, com_reel, top) -> int:
+    from . import agenda, publicar
+
+    if not publicar.redes_ativas().get("threads"):
+        return 0
+    try:
+        generos = cliente.generos()
+    except Exception:
+        generos = {}
+    entradas = [posts._com_generos(i, generos) for i in posts._juntar(diferencas, "entrou")]
+    fio, agendados = agenda.montar_dia(lista, entradas, cliente, data, com_reel, top)
+    erros = []
+    if fio:
+        try:
+            url = publicar.hospedar(fio["imagem"], data)
+            ids = publicar.threads_fio(fio["textos"], url_imagem=url, topico=fio["topico"])
+            agenda.registrar_publicacao(ids[0], "resumo_fio")
+            for mid in ids[1:]:
+                agenda.registrar_publicacao(mid, "fio_resposta")
+            anotar("notice", f"Threads: fio da manhã com {len(ids)} posts")
+        except Exception as e:
+            erros.append(f"fio: {e}")
+    erros += agenda.enfileirar(agendados, data, publicar.hospedar)
+    anotar("notice", f"Threads: {len(agendados)} posts agendados para o dia")
+    for e in erros:
+        anotar("error", f"Threads: {e}")
+    if erros:
+        telegram.enviar(tg_token, tg_chat, "⚠️ <b>Threads</b>\n" + "\n".join(html.escape(e[:200]) for e in erros))
+    return 1 if erros else 0
+
+
+def publicar_top10(tg_token, tg_chat, data) -> int:
+    from . import agenda, publicar
+
+    if not publicar.redes_ativas().get("instagram"):
+        return 0
+    top = agenda.top_da_semana(ARQUIVO_NOVIDADES, data)
+    if len(top) < 5:
+        anotar("notice", "Top 10: poucas novidades na semana, pulado")
+        return 0
+    try:
+        imagens = agenda.imagens_top10(top, data, os.path.join(PASTA_POSTS, "top10"))
+        urls = [publicar.hospedar(c, data) for c in imagens]
+        publicar.instagram_carrossel(urls, agenda.legenda_top10(top) + config.HASHTAGS_INSTAGRAM)
+        anotar("notice", f"Instagram: carrossel Top {len(top)} da semana publicado")
+        return 0
+    except Exception as e:
+        anotar("error", f"Top 10: {e}")
+        telegram.enviar(tg_token, tg_chat, f"⚠️ Top 10 da semana falhou: {html.escape(str(e)[:300])}")
+        return 1
+
+
+def semear_hoje() -> int:
+    """Agenda para hoje a enquete (19h) e a dica (21h), com as novidades da manhã."""
+    from . import agenda
+
+    hoje = dt.datetime.now(ZoneInfo("America/Sao_Paulo")).date()
+    try:
+        with open(ARQUIVO_NOVIDADES, encoding="utf-8") as f:
+            novidades = json.load(f).get(hoje.isoformat(), [])
+    except (OSError, ValueError):
+        novidades = []
+    itens = []
+    enquete = agenda.texto_enquete(novidades)
+    if enquete:
+        itens.append({"quando": agenda._quando(hoje, "noite"), "tipo": "enquete",
+                      "texto": enquete[0], "poll": enquete[1], "topico": "Streaming"})
+    itens.append({"quando": agenda._quando(hoje, "dica"), "tipo": "dica",
+                  "texto": agenda.dica_do_dia(hoje), "topico": "Filmes"})
+    agenda.enfileirar(itens, hoje)
+    anotar("notice", "Agendado para hoje: " + ", ".join(i["tipo"] for i in itens))
+    return 0
+
+
+def rodar_fila() -> int:
+    """Publica no Threads o que estiver agendado para este horário."""
+    from . import agenda, publicar
+
+    if not publicar.redes_ativas().get("threads"):
+        return 0
+    agora = dt.datetime.now(ZoneInfo("America/Sao_Paulo"))
+    ok, erros = agenda.publicar_vencidos(agora, publicar.threads_publicar)
+    anotar("notice", f"Threads: {ok} posts da agenda publicados")
+    for e in erros:
+        anotar("error", f"Threads: {e}")
+    if erros:
+        telegram.enviar(os.environ.get("TELEGRAM_TOKEN", ""), os.environ.get("TELEGRAM_CHAT_ID", ""),
+                        "⚠️ <b>Agenda do Threads</b>\n" + "\n".join(html.escape(e) for e in erros))
+    return 1 if erros else 0
 
 
 def publicar_reel_do_dia(tg_token: str, tg_chat: str, lista: list, data) -> int:
@@ -159,7 +262,8 @@ ARQUIVO_NOVIDADES = os.path.join(os.path.dirname(config.ARQUIVO_RETRATO), "novid
 def lista_novidades(diferencas: dict) -> list[dict]:
     itens = posts._juntar(diferencas, "entrou")[:15]
     return [{"t": i["t"], "a": i.get("a"), "plataformas": i["plataformas"], "p": i["p"],
-             "tipo": i["chave"].split(":")[0]} for i in itens]
+             "tipo": i["chave"].split(":")[0], "chave": i["chave"], "n": i.get("n"),
+             "v": i.get("v", 0)} for i in itens]
 
 
 def salvar_novidades(itens: list[dict], data) -> None:
@@ -176,12 +280,12 @@ def salvar_novidades(itens: list[dict], data) -> None:
         json.dump(todas, f, ensure_ascii=False, indent=1)
 
 
-def publicar_redes(tg_token: str, tg_chat: str, lista: list, data) -> int:
+def publicar_redes(tg_token: str, tg_chat: str, lista: list, data, excluir: set | None = None) -> int:
     from . import publicar
 
     if not lista:
         return 0
-    resultado = publicar.publicar_todos(lista, data)
+    resultado = publicar.publicar_todos(lista, data, excluir=excluir)
     if not resultado:
         return 0
     linhas, falhou = ["📤 <b>Publicação nas redes</b>"], False
@@ -446,6 +550,13 @@ if __name__ == "__main__":
         dias = {"sexta": 4, "sabado": 5, "domingo": 6}
         forcado = next((dias[a] for a in sys.argv[2:] if a in dias), None)
         sys.exit(rodar_indicacao(forcado, so_previa="--previa" in sys.argv))
+    if len(sys.argv) > 1 and sys.argv[1] == "semear-hoje":
+        sys.exit(semear_hoje())
+    if len(sys.argv) > 1 and sys.argv[1] == "fila":
+        sys.exit(rodar_fila())
+    if len(sys.argv) > 1 and sys.argv[1] == "relatorio-semanal":
+        from . import relatorio
+        sys.exit(relatorio.rodar())
     if len(sys.argv) > 1 and sys.argv[1] == "diagnosticar":
         sys.exit(diagnosticar())
     if len(sys.argv) > 1 and sys.argv[1] == "testar-reel":

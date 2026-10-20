@@ -68,6 +68,6 @@ BIO = (
 MIDIA_REPO = "kefkasky/radar-da-tela-midia"
 
 # Máximo de posts por dia em cada rede (o X é pago por post)
-LIMITE_POSTS_POR_REDE = {"threads": 6, "instagram": 4, "x": 4}
+LIMITE_POSTS_POR_REDE = {"threads": 6, "instagram": 4, "x": 3}
 
 HASHTAGS_INSTAGRAM = "\n\n#streaming #filmes #series #oqueassistir #lancamentos"

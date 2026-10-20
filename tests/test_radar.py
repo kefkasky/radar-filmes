@@ -1,6 +1,6 @@
 """Testes com dados simulados (não acessam a internet)."""
 
-from radar import arte, comparar, telegram, tmdb
+from radar import arte, comparar, config, telegram, tmdb
 
 
 def item(titulo, pop, nota=7.5, votos=100, ano="2024"):
@@ -282,3 +282,84 @@ def test_sugestoes_filtra_e_monta_resposta(monkeypatch, tmp_path):
     assert len(lista) == 1 and lista[0]["autor"] == "cinefilo"
     assert "na HBO Max" in lista[0]["resposta"]
     assert "x.com/cinefilo/status/1" in sugestoes.mensagem(lista)
+
+
+# ---------------------------------------------------------------- Agenda do Threads
+from radar import agenda, relatorio
+
+
+def _entradas():
+    base = [("Duna: Parte Dois", 90), ("Um Título Bem Comprido Demais Pra Enquete", 80),
+            ("Rota 66", 70), ("Maré Alta", 60), ("Verão", 50)]
+    return [{"chave": f"movie:{i}", "t": t, "a": "2024", "p": p, "n": 7.8, "v": 500, "g": [],
+             "plataformas": ["Netflix"], "plataforma": "Netflix"} for i, (t, p) in enumerate(base)]
+
+
+class TMDBSinopse:
+    def get(self, caminho, params=None):
+        return {"overview": "Uma história " * 60}
+
+
+def test_montar_dia_fio_enquete_dica_e_previa(tmp_path):
+    lista = [posts.Post("resumo", "r.jpg", "📡 resumo"), posts.Post("alerta", "a1.jpg", "a1", "Netflix"),
+             posts.Post("alerta", "a2.jpg", "a2", "Netflix"), posts.Post("alerta", "a3.jpg", "a3", "Netflix"),
+             posts.Post("saiu", "s.jpg", "s", "Netflix")]
+    sexta = dt.date(2026, 10, 23)
+    fio, itens = agenda.montar_dia(lista, _entradas(), TMDBSinopse(), sexta, com_reel=True)
+    assert fio["textos"][0] == "📡 resumo" and len(fio["textos"]) == 6
+    assert fio["textos"][1].startswith("1/5 🎬 Duna: Parte Dois (2024)")
+    assert agenda.CHAMADA_REEL in fio["textos"][-1]
+    assert all(len(t.encode()) <= 500 for t in fio["textos"])
+    tipos = [i["tipo"] for i in itens]
+    assert tipos.count("alerta") == 3 and "previa_indicacao" in tipos and "enquete" in tipos
+    assert tipos[-1] == "dica" and "dica" in itens[-1]["texto"].lower()
+    enquete = next(i for i in itens if i["tipo"] == "enquete")
+    assert all(len(v) <= 25 for v in enquete["poll"].values()) and len(enquete["poll"]) == 4
+    assert next(i for i in itens if i["tipo"] == "dica")["quando"].startswith("2026-10-23T21:00")
+
+
+def test_domingo_gancho_top10(tmp_path):
+    lista = [posts.Post("alerta", "a1.jpg", "a1", "Netflix")]
+    domingo = dt.date(2026, 10, 25)
+    _, itens = agenda.montar_dia(lista, _entradas(), TMDBSinopse(), domingo, False, top_semana=_entradas())
+    gancho = next(i for i in itens if i["tipo"] == "gancho_top10")
+    assert "top 10 completo tá no nosso Insta @radardatela" in gancho["texto"]
+
+
+def test_fila_publica_so_vencidos(monkeypatch, tmp_path):
+    monkeypatch.setattr(agenda, "ARQUIVO_FILA", str(tmp_path / "fila.json"))
+    monkeypatch.setattr(agenda, "ARQUIVO_LOG", str(tmp_path / "log.json"))
+    hoje = dt.date(2026, 10, 20)
+    agenda.enfileirar([
+        {"quando": agenda._quando(hoje, "almoco"), "tipo": "alerta", "texto": "a", "imagem": "x.jpg"},
+        {"quando": agenda._quando(hoje, "dica"), "tipo": "dica", "texto": "d"},
+    ], hoje, hospedar_fn=lambda c, d: "https://img/x.jpg")
+    feitos = []
+    agora = dt.datetime(2026, 10, 20, 12, 25, tzinfo=agenda.FUSO)
+    ok, erros = agenda.publicar_vencidos(agora, lambda t, **k: feitos.append((t, k)) or f"id{len(feitos)}")
+    assert ok == 1 and not erros and feitos[0][1]["url_imagem"] == "https://img/x.jpg"
+    assert [f["tipo"] for f in agenda._ler(agenda.ARQUIVO_FILA, [])] == ["dica"]
+    assert agenda._ler(agenda.ARQUIVO_LOG, [])[0]["tipo"] == "alerta"
+
+
+def test_top10_e_relatorio(monkeypatch, tmp_path):
+    arq = tmp_path / "n.json"
+    arq.write_text('{"2026-10-20": [{"t": "A", "plataformas": ["Netflix"], "p": 9, "tipo": "movie"},'
+                   '{"t": "B", "plataformas": ["HBO Max"], "p": 99, "tipo": "tv"}]}', encoding="utf-8")
+    top = agenda.top_da_semana(str(arq), dt.date(2026, 10, 25))
+    assert [t["t"] for t in top] == ["B", "A"]
+    imgs = agenda.imagens_top10(top, dt.date(2026, 10, 25), str(tmp_path / "top"))
+    assert len(imgs) == 2
+    dados = {"seguidores": {"instagram": 120, "threads": 340}, "anterior": {"instagram": 100, "threads": 300},
+             "sem_permissao": False,
+             "posts": [{"tipo": "enquete", "quando": "2026-10-20T19:00", "views": 900, "likes": 30, "replies": 12,
+                        "engaj": 54},
+                       {"tipo": "alerta", "quando": "2026-10-20T12:20", "views": 300, "likes": 5, "replies": 0,
+                        "engaj": 5}]}
+    texto = relatorio.mensagem(dados)
+    assert "Instagram: 120 (+20 na semana)" in texto and "Threads: 340 (+40 na semana)" in texto
+    assert "Melhor horário</b>: início da noite" in texto and "1. Enquete" in texto
+
+
+def test_x_limitado_a_3():
+    assert config.LIMITE_POSTS_POR_REDE["x"] == 3

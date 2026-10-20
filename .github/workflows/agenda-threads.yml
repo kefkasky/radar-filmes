@@ -1,0 +1,52 @@
+name: Agenda do Threads
+
+# Publica no Threads os posts agendados pela rotina da manhã:
+# ~12h20 (destaques, prévia, gancho do top 10), ~19h (enquete) e ~21h (dica).
+on:
+  schedule:
+    - cron: "17 15 * * *"
+    - cron: "57 21 * * *"
+    - cron: "57 23 * * *"
+  workflow_dispatch:
+    inputs:
+      semear:
+        description: "Só agendar a enquete e a dica de hoje (não publica agora)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  fila:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Publicar posts do horário
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+        run: |
+          if [ "${{ inputs.semear }}" = "true" ]; then python -m radar semear-hoje; else python -m radar fila; fi
+      - name: Salvar fila e registro
+        if: always()
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "radar-bot@users.noreply.github.com"
+          for f in data/fila_threads.json data/threads_log.json; do if [ -f "$f" ]; then git add "$f"; fi; done
+          if ! git diff --cached --quiet; then
+            git commit -m "Agenda do Threads $(date -u +%Y-%m-%dT%H:%M)"
+            git pull --rebase
+            git push
+          fi

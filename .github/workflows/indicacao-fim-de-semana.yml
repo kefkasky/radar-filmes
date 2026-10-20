@@ -64,6 +64,7 @@ jobs:
           git config user.email "radar-bot@users.noreply.github.com"
           if [ -f data/indicacoes.json ]; then
             git add data/indicacoes.json
+            [ -f data/threads_log.json ] && git add data/threads_log.json || true
             if ! git diff --cached --quiet; then
               git commit -m "Indicação $(date -u +%Y-%m-%d)"
               git pull --rebase

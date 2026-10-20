@@ -1,0 +1,43 @@
+name: Relatório semanal
+
+# Segunda por volta das 8h40: seguidores e desempenho dos posts no Telegram.
+on:
+  schedule:
+    - cron: "41 11 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  relatorio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+        run: python -m radar relatorio-semanal
+      - name: Salvar histórico de seguidores
+        if: always()
+        run: |
+          git config user.name "radar-bot"
+          git config user.email "radar-bot@users.noreply.github.com"
+          [ -f data/seguidores.json ] && git add data/seguidores.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Seguidores $(date -u +%Y-%m-%d)"
+            git pull --rebase
+            git push
+          fi

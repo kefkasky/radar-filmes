@@ -88,22 +88,42 @@ def hospedar(caminho: str, data: dt.date) -> str:
 # ----------------------------------------------------------------------
 # Threads
 # ----------------------------------------------------------------------
-def threads(url_imagem: str, texto: str, topico: str | None = None) -> str:
+def cortar_threads(texto: str, limite: int = 500) -> str:
+    """O Threads conta emojis pelo tamanho em bytes: corta pelo UTF-8."""
+    if len(texto.encode("utf-8")) <= limite:
+        return texto
+    while texto and len((texto + "…").encode("utf-8")) > limite:
+        texto = texto[:-1]
+    return texto.rstrip() + "…"
+
+
+def threads_publicar(texto: str, url_imagem: str | None = None, poll: dict | None = None,
+                     reply_to: str | None = None, topico: str | None = None) -> str:
+    """Publica no Threads: imagem, texto, enquete ou resposta (fio). Retorna o id."""
+    import json as _json
+
     token = _env("THREADS_TOKEN")
-    dados = {"media_type": "IMAGE", "image_url": url_imagem, "text": texto[:500],
-             "access_token": token}
+    dados = {"text": cortar_threads(texto), "access_token": token,
+             "media_type": "IMAGE" if url_imagem else "TEXT"}
+    if url_imagem:
+        dados["image_url"] = url_imagem
+    if poll:
+        dados["poll_attachment"] = _json.dumps(
+            {k: v[:25] for k, v in poll.items() if v}, ensure_ascii=False)
+    if reply_to:
+        dados["reply_to_id"] = reply_to
     topico = (topico or "").replace(".", "").replace("&", "e").strip()[:50]
-    if topico:
+    if topico and not reply_to:
         dados["topic_tag"] = topico
     r = requests.post(f"{THREADS_API}/me/threads", data=dados, timeout=60)
-    if not r.ok and topico:  # se o tópico for recusado, publica sem ele
+    if not r.ok and "topic_tag" in dados:  # se o tópico for recusado, publica sem ele
         dados.pop("topic_tag")
         r = requests.post(f"{THREADS_API}/me/threads", data=dados, timeout=60)
     if not r.ok:
         raise ErroPublicacao(f"Threads (container): {_erro_meta(r)}")
     container = r.json()["id"]
-    time.sleep(30)  # recomendado pela Meta antes de publicar
-    for tentativa in range(4):
+    time.sleep(30 if url_imagem else 12)  # a Meta recomenda esperar antes de publicar
+    for _ in range(4):
         r = requests.post(
             f"{THREADS_API}/me/threads_publish",
             data={"creation_id": container, "access_token": token},
@@ -113,6 +133,45 @@ def threads(url_imagem: str, texto: str, topico: str | None = None) -> str:
             return r.json()["id"]
         time.sleep(15)
     raise ErroPublicacao(f"Threads (publicar): {_erro_meta(r)}")
+
+
+def threads(url_imagem: str, texto: str, topico: str | None = None) -> str:
+    return threads_publicar(texto, url_imagem=url_imagem, topico=topico)
+
+
+def threads_fio(textos: list[str], url_imagem: str | None = None,
+                topico: str | None = None) -> list[str]:
+    """Primeiro post (com imagem) e as respostas encadeadas, uma embaixo da outra."""
+    ids = [threads_publicar(textos[0], url_imagem=url_imagem, topico=topico)]
+    for texto in textos[1:]:
+        try:
+            ids.append(threads_publicar(texto, reply_to=ids[-1]))
+        except ErroPublicacao as e:
+            print(f"resposta do fio falhou: {e}")
+            break
+    return ids
+
+
+def threads_insights(media_id: str) -> dict:
+    r = requests.get(f"{THREADS_API}/{media_id}/insights",
+                     params={"metric": "views,likes,replies,reposts,quotes",
+                             "access_token": _env("THREADS_TOKEN")}, timeout=30)
+    if not r.ok:
+        raise ErroPublicacao(f"Threads insights: {_erro_meta(r)}")
+    return {m["name"]: (m.get("values") or [{}])[0].get("value", m.get("total_value", {}).get("value", 0))
+            for m in r.json().get("data", [])}
+
+
+def threads_seguidores() -> int | None:
+    r = requests.get(f"{THREADS_API}/me/threads_insights",
+                     params={"metric": "followers_count", "access_token": _env("THREADS_TOKEN")},
+                     timeout=30)
+    if not r.ok:
+        return None
+    for m in r.json().get("data", []):
+        if m.get("name") == "followers_count":
+            return m.get("total_value", {}).get("value")
+    return None
 
 
 # ----------------------------------------------------------------------
@@ -148,6 +207,45 @@ def instagram(url_imagem: str, legenda: str) -> str:
     if not r.ok:
         raise ErroPublicacao(f"Instagram (publicar): {_erro_meta(r)}")
     return r.json()["id"]
+
+
+def instagram_carrossel(urls: list[str], legenda: str) -> str:
+    """Carrossel de até 10 imagens."""
+    token = _env("INSTAGRAM_TOKEN")
+    filhos = []
+    for url in urls[:10]:
+        r = requests.post(f"{INSTAGRAM_API}/me/media",
+                          data={"image_url": url, "is_carousel_item": "true", "access_token": token},
+                          timeout=60)
+        if not r.ok:
+            raise ErroPublicacao(f"Instagram carrossel (item): {_erro_meta(r)}")
+        filhos.append(r.json()["id"])
+    r = requests.post(f"{INSTAGRAM_API}/me/media",
+                      data={"media_type": "CAROUSEL", "children": ",".join(filhos),
+                            "caption": legenda[:2200], "access_token": token}, timeout=60)
+    if not r.ok:
+        raise ErroPublicacao(f"Instagram carrossel: {_erro_meta(r)}")
+    container = r.json()["id"]
+    for _ in range(24):
+        time.sleep(5)
+        st = requests.get(f"{INSTAGRAM_API}/{container}",
+                          params={"fields": "status_code", "access_token": token}, timeout=30)
+        status = st.json().get("status_code") if st.ok else None
+        if status == "FINISHED":
+            break
+        if status in ("ERROR", "EXPIRED"):
+            raise ErroPublicacao(f"Instagram não processou o carrossel ({status}).")
+    r = requests.post(f"{INSTAGRAM_API}/me/media_publish",
+                      data={"creation_id": container, "access_token": token}, timeout=60)
+    if not r.ok:
+        raise ErroPublicacao(f"Instagram carrossel (publicar): {_erro_meta(r)}")
+    return r.json()["id"]
+
+
+def instagram_seguidores() -> int | None:
+    r = requests.get(f"{INSTAGRAM_API}/me", params={"fields": "followers_count",
+                                                    "access_token": _env("INSTAGRAM_TOKEN")}, timeout=30)
+    return r.json().get("followers_count") if r.ok else None
 
 
 def instagram_reel(url_video: str, legenda: str) -> str:
@@ -254,12 +352,13 @@ def _x_upload_em_partes(auth, dados: bytes) -> str:
 # ----------------------------------------------------------------------
 # Orquestração
 # ----------------------------------------------------------------------
-def publicar_todos(lista: list, data: dt.date, limite_por_rede: dict | None = None) -> dict:
+def publicar_todos(lista: list, data: dt.date, limite_por_rede: dict | None = None,
+                   excluir: set | None = None) -> dict:
     """Publica a lista de posts nas redes ativas.
 
     Retorna {rede: {"ok": n, "erros": [mensagens]}}.
     """
-    ativas = {r for r, ok in redes_ativas().items() if ok}
+    ativas = {r for r, ok in redes_ativas().items() if ok} - (excluir or set())
     limite_por_rede = limite_por_rede or config.LIMITE_POSTS_POR_REDE
     resultado = {r: {"ok": 0, "erros": []} for r in ativas}
     if not ativas:
@@ -284,7 +383,9 @@ def publicar_todos(lista: list, data: dt.date, limite_por_rede: dict | None = No
                 elif url is None:
                     continue
                 elif rede == "threads":
-                    threads(url, post.texto, getattr(post, "topico", None))
+                    mid = threads(url, post.texto, getattr(post, "topico", None))
+                    from . import agenda
+                    agenda.registrar_publicacao(mid, post.tipo)
                 elif rede == "instagram":
                     instagram(url, post.texto + config.HASHTAGS_INSTAGRAM)
                 resultado[rede]["ok"] += 1
