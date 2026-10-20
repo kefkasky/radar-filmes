@@ -83,6 +83,20 @@ class ClienteTMDB:
                 nomes.setdefault(str(g["id"]), g["name"])
         return nomes
 
+    def disponivel(self, chave: str, provider_id: int) -> bool | None:
+        """Confere, título a título, se ainda está na plataforma (assinatura, Brasil).
+
+        Retorna True/False, ou None se não deu para conferir.
+        """
+        tipo, ident = chave.split(":")
+        try:
+            dados = self.get(f"/{tipo}/{ident}/watch/providers")
+        except Exception:
+            return None
+        br = dados.get("results", {}).get(config.REGIAO, {})
+        ids = {p.get("provider_id") for p in br.get("flatrate", []) + br.get("ads", [])}
+        return provider_id in ids
+
     # ------------------------------------------------------------------
     # Catálogo
     # ------------------------------------------------------------------

@@ -199,14 +199,20 @@ def instagram(url_imagem: str, legenda: str) -> str:
         if status == "ERROR":
             raise ErroPublicacao("Instagram não conseguiu processar a imagem.")
         time.sleep(5)
-    r = requests.post(
-        f"{INSTAGRAM_API}/me/media_publish",
-        data={"creation_id": container, "access_token": token},
-        timeout=60,
-    )
-    if not r.ok:
-        raise ErroPublicacao(f"Instagram (publicar): {_erro_meta(r)}")
-    return r.json()["id"]
+    return _instagram_publicar(container, token, "Instagram (publicar)")
+
+
+def _instagram_publicar(container: str, token: str, rotulo: str) -> str:
+    """media_publish com novas tentativas: às vezes a mídia ainda não está pronta (código 9007)."""
+    for tentativa in range(6):
+        r = requests.post(f"{INSTAGRAM_API}/me/media_publish",
+                          data={"creation_id": container, "access_token": token}, timeout=60)
+        if r.ok:
+            return r.json()["id"]
+        if "9007" not in _erro_meta(r) and tentativa >= 1:
+            break
+        time.sleep(15 * (tentativa + 1))
+    raise ErroPublicacao(f"{rotulo}: {_erro_meta(r)}")
 
 
 def instagram_carrossel(urls: list[str], legenda: str) -> str:
@@ -235,11 +241,7 @@ def instagram_carrossel(urls: list[str], legenda: str) -> str:
             break
         if status in ("ERROR", "EXPIRED"):
             raise ErroPublicacao(f"Instagram não processou o carrossel ({status}).")
-    r = requests.post(f"{INSTAGRAM_API}/me/media_publish",
-                      data={"creation_id": container, "access_token": token}, timeout=60)
-    if not r.ok:
-        raise ErroPublicacao(f"Instagram carrossel (publicar): {_erro_meta(r)}")
-    return r.json()["id"]
+    return _instagram_publicar(container, token, "Instagram carrossel (publicar)")
 
 
 def instagram_seguidores() -> int | None:
@@ -269,11 +271,7 @@ def instagram_reel(url_video: str, legenda: str) -> str:
             break
         if status in ("ERROR", "EXPIRED"):
             raise ErroPublicacao(f"Instagram não processou o Reel ({status}).")
-    r = requests.post(f"{INSTAGRAM_API}/me/media_publish",
-                      data={"creation_id": container, "access_token": token}, timeout=60)
-    if not r.ok:
-        raise ErroPublicacao(f"Instagram Reel (publicar): {_erro_meta(r)}")
-    return r.json()["id"]
+    return _instagram_publicar(container, token, "Instagram Reel (publicar)")
 
 
 def publicar_reel(caminho_video: str, legenda: str, data: dt.date) -> str:

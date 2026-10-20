@@ -394,3 +394,35 @@ def test_gancho_top10_no_x_cabe_e_chama_insta():
     texto = agenda.gancho_top10_x(top)
     assert posts.cabe_no_x(texto) and "top 10 completo tá no nosso Insta (@radardatela)" in texto
     assert texto.count("\n1. ") == 1 and "3. " in texto
+
+
+# ---------------------------------------------------------------- Saídas falsas
+import radar.__main__ as principal
+
+
+def test_saida_falsa_nao_e_anunciada():
+    mk2 = {"t": "Mortal Kombat 2", "a": "2026", "p": 51.4, "n": 6.5, "v": 900, "g": []}
+    velho = {"t": "Saiu Mesmo", "a": "2010", "p": 30, "n": 7, "v": 900, "g": []}
+    anterior = {"HBO Max": {"movie:1": mk2, "movie:2": velho, "movie:3": {**velho, "t": "Fica"}}}
+    atual = {"HBO Max": {"movie:3": {**velho, "t": "Fica"}}}
+
+    class Cli:
+        def disponivel(self, chave, pid):
+            return chave == "movie:1"  # MK2 ainda está na HBO Max
+
+    avisos = principal.confirmar_saidas(Cli(), anterior, atual, {"HBO Max": 1899})
+    dif = comparar.comparar(anterior, atual)
+    assert [i["t"] for i in dif["HBO Max"]["saiu"]] == ["Saiu Mesmo"]
+    assert "movie:1" in atual["HBO Max"] and "Mortal Kombat 2" in avisos[0]
+
+
+def test_retorno_recente_nao_vira_novidade(monkeypatch, tmp_path):
+    monkeypatch.setattr(principal, "ARQUIVO_SAIDAS", str(tmp_path / "s.json"))
+    (tmp_path / "s.json").write_text('{"HBO Max": {"movie:1": "2026-10-20"}}', encoding="utf-8")
+    dif = {"HBO Max": {"entrou": [{"chave": "movie:1", "t": "Mortal Kombat 2", "p": 51},
+                                  {"chave": "movie:9", "t": "Novo", "p": 20}],
+                       "saiu": [{"chave": "movie:5", "t": "Foi", "p": 3}], "suspeito": False}}
+    avisos = principal.filtrar_retornos(dif, dt.date(2026, 10, 21))
+    assert [i["t"] for i in dif["HBO Max"]["entrou"]] == ["Novo"] and "Mortal Kombat 2" in avisos[0]
+    import json as _j
+    assert "movie:5" in _j.loads((tmp_path / "s.json").read_text())["HBO Max"]

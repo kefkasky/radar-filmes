@@ -38,9 +38,71 @@ def salvar_retrato(plataformas: dict, quando: str) -> None:
         )
 
 
+VERIFICAR_SAIDAS_MAX = 40  # por plataforma, as mais populares
+
+
+ARQUIVO_SAIDAS = os.path.join(os.path.dirname(config.ARQUIVO_RETRATO), "saidas_recentes.json")
+
+
+def filtrar_retornos(diferencas: dict, hoje) -> list[str]:
+    """Título que saiu nos últimos 7 dias e "voltou" não é anunciado como novidade
+    (quase sempre é oscilação da base). Também registra as saídas de hoje."""
+    try:
+        with open(ARQUIVO_SAIDAS, encoding="utf-8") as f:
+            recentes = json.load(f)
+    except (OSError, ValueError):
+        recentes = {}
+    limite = (hoje - dt.timedelta(days=7)).isoformat()
+    avisos = []
+    for plat, d in diferencas.items():
+        if d.get("base_inicial") or d.get("suspeito"):
+            continue
+        mem = {k: v for k, v in recentes.get(plat, {}).items() if v >= limite}
+        voltaram = [i for i in d.get("entrou", []) if i["chave"] in mem]
+        if voltaram:
+            d["entrou"] = [i for i in d["entrou"] if i["chave"] not in mem]
+            avisos.append(f"{plat}: {len(voltaram)} retorno(s) não anunciado(s) (ex.: "
+                          f"{', '.join(i['t'] for i in voltaram[:3])})")
+        for i in d.get("saiu", []):
+            mem[i["chave"]] = hoje.isoformat()
+        recentes[plat] = mem
+    with open(ARQUIVO_SAIDAS, "w", encoding="utf-8") as f:
+        json.dump(recentes, f, ensure_ascii=False, indent=1)
+    return avisos
+
+
+def confirmar_saidas(cliente, anterior: dict, atual: dict, plataformas: dict) -> list[str]:
+    """Antes de anunciar "saiu do catálogo", confere título a título.
+
+    A lista do TMDB às vezes "esquece" um título por um dia. Se o título ainda
+    estiver na plataforma, ele volta para o retrato de hoje e não é anunciado.
+    """
+    from . import posts
+
+    avisos = []
+    for nome, itens_hoje in atual.items():
+        antes = anterior.get(nome)
+        pid = plataformas.get(nome)
+        if not antes or not pid:
+            continue
+        sumiram = [k for k in antes if k not in itens_hoje]
+        relevantes = sorted((k for k in sumiram if posts.relevante(antes[k])),
+                            key=lambda k: antes[k].get("p", 0), reverse=True)[:VERIFICAR_SAIDAS_MAX]
+        voltaram = []
+        for k in relevantes:
+            if cliente.disponivel(k, pid) is not False:  # ainda lá (ou não deu pra conferir): não anuncia
+                itens_hoje[k] = antes[k]
+                voltaram.append(antes[k]["t"])
+        if voltaram:
+            avisos.append(f"{nome}: {len(voltaram)} saída(s) falsa(s) ignorada(s) "
+                          f"(ex.: {', '.join(voltaram[:3])})")
+    return avisos
+
+
 def coletar(cliente: ClienteTMDB) -> tuple[dict, set, list[str]]:
     avisos: list[str] = []
     plataformas, faltando = cliente.resolver_plataformas()
+    cliente.ids_plataformas = plataformas
     if faltando:
         avisos.append("Não encontradas no TMDB: " + ", ".join(faltando))
 
@@ -84,7 +146,9 @@ def rodar() -> int:
         return 1
 
     anterior = carregar_retrato()
+    avisos += confirmar_saidas(cliente, anterior, atual, getattr(cliente, "ids_plataformas", {}))
     diferencas = comparar.comparar(anterior, atual, incompletas)
+    avisos += filtrar_retornos(diferencas, agora.date())
     relatorio = comparar.montar_relatorio(diferencas, avisos, agora.strftime("%d/%m/%Y"))
     print(relatorio)
     print(f"\nChamadas à API do TMDB: {cliente.chamadas}")
