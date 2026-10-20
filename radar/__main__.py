@@ -438,6 +438,19 @@ def diagnosticar() -> int:
                    f"({e.get('type', '?')}): {e.get('message', r.text[:200])}")
         anotar("notice" if r.ok else "error", f"{nome}: {msg}")
         linhas.append(f"• {nome}: {html.escape(msg)}")
+    if os.environ.get("THREADS_TOKEN", "").strip():
+        r = requests.get("https://graph.threads.net/v1.0/me/threads_insights",
+                         params={"metric": "followers_count,views",
+                                 "access_token": os.environ["THREADS_TOKEN"].strip()}, timeout=30)
+        if r.ok:
+            valores = {m["name"]: m.get("total_value", {}).get("value",
+                       sum(v.get("value", 0) for v in m.get("values", []))) for m in r.json().get("data", [])}
+            msg = (f"OK: {valores.get('followers_count', '?')} seguidores, "
+                   f"{valores.get('views', '?')} visualizações (ontem-hoje)")
+        else:
+            msg = f"SEM ACESSO: {r.json().get('error', {}).get('message', r.text[:150])}"
+        anotar("notice" if r.ok else "error", f"Threads insights: {msg}")
+        linhas.append(f"• Threads insights: {html.escape(msg)}")
     telegram.enviar(os.environ.get("TELEGRAM_TOKEN", ""), os.environ.get("TELEGRAM_CHAT_ID", ""),
                     "\n".join(linhas))
     return 0
