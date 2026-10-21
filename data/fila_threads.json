@@ -11,5 +11,72 @@
   },
   "topico": "Streaming",
   "tentativas": 2
+ },
+ {
+  "quando": "2026-10-21T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Amor Disfarçado · Prime Video\n2. (Des)encontro Perfeito · Netflix\n3. O Segredo do Ourives · Prime Video\n4. Pedido de Amizade · Prime Video\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/resumo-b693b0c537.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/alerta_1-ecf2289b7a.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/alerta_2-c1ac360d05.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/alerta_3-660282abf0.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/extra_1-3031eadf62.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/saiu_1-37009c70ac.jpg"
+  ]
+ },
+ {
+  "quando": "2026-10-21T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova no Prime Video: Amor Disfarçado (2026)\nComédia, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/alerta_1-ecf2289b7a.jpg"
+ },
+ {
+  "quando": "2026-10-21T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: (Des)encontro Perfeito (2015)\n⭐ 6,6 · Romance, Comédia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/alerta_2-c1ac360d05.jpg"
+ },
+ {
+  "quando": "2026-10-21T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Amor Disfarçado · Prime Video\n2. (Des)encontro Perfeito · Netflix\n3. O Segredo do Ourives · Prime Video\n4. Pedido de Amizade · Prime Video\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/reel-af96afc498.mp4"
+ },
+ {
+  "quando": "2026-10-21T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "Amor Disfarçado",
+   "option_b": "(Des)encontro Perfeito",
+   "option_c": "O Segredo do Ourives",
+   "option_d": "Pedido de Amizade"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-10-21T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Prime Video: O Segredo do Ourives (2025)\n⭐ 7,3 · Drama, Romance\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/alerta_3-660282abf0.jpg"
+ },
+ {
+  "quando": "2026-10-21T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu do Globoplay: Meu Malvado Favorito (2010)\n⭐ 7,3 · Animação, Comédia\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "Globoplay",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-21/saiu_1-37009c70ac.jpg"
+ },
+ {
+  "quando": "2026-10-21T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "📺 Vale série também: qual você acha que todo mundo deveria ver? Comenta aí que a gente monta a lista 👇",
+  "topico": "Filmes"
  }
 ]
