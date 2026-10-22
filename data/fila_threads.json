@@ -1,1 +1,73 @@
-[]
+[
+ {
+  "quando": "2026-10-22T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. John Wick 3: Parabellum · Globoplay\n2. Halloween · Netflix\n3. Vila Madalena · Globoplay\n4. Halloween Kills: O Terror Continua · Netflix\n5. The Royals · Prime Video\n6. Apreensão · Prime Video\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/resumo-878a4c1323.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/alerta_1-dbedd8aeef.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/alerta_2-958710fbc0.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/alerta_3-72f1bf2a00.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/extra_1-3aa6fac891.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/extra_2-0d4a45ba85.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/extra_3-d5fd18278d.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/extra_4-354823e8d0.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/extra_5-9086b3e963.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/saiu_1-48d1247141.jpg"
+  ]
+ },
+ {
+  "quando": "2026-10-22T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Globoplay: John Wick 3: Parabellum (2019)\n⭐ 7,4 · Ação, Thriller\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Globoplay",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/alerta_1-dbedd8aeef.jpg"
+ },
+ {
+  "quando": "2026-10-22T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: Halloween (2018)\n⭐ 6,6 · Terror, Thriller\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/alerta_2-958710fbc0.jpg"
+ },
+ {
+  "quando": "2026-10-22T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. John Wick 3: Parabellum · Globoplay\n2. Halloween · Netflix\n3. Vila Madalena · Globoplay\n4. Halloween Kills: O Terror Continua · Netflix\n5. The Royals · Prime Video\n6. Apreensão · Prime Video\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/reel-8cfe1981fc.mp4"
+ },
+ {
+  "quando": "2026-10-22T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "John Wick 3: Parabellum",
+   "option_b": "Halloween",
+   "option_c": "Vila Madalena",
+   "option_d": "Halloween Kills: O Terro…"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-10-22T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova no Globoplay: Vila Madalena (1999)\nSoap, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Globoplay",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/alerta_3-72f1bf2a00.jpg"
+ },
+ {
+  "quando": "2026-10-22T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu da Netflix: O Gângster (2007)\n⭐ 7,6 · Drama, Crime\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-22/saiu_1-48d1247141.jpg"
+ },
+ {
+  "quando": "2026-10-22T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "💡 Dica de ouro: um filme que pouca gente conhece mas que vale muito a pena. Qual é o seu? 👇",
+  "topico": "Filmes"
+ }
+]
