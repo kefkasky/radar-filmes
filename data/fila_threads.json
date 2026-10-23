@@ -1,13 +1,6 @@
 [
  {
   "quando": "2026-10-23T19:00:00-03:00",
-  "rede": "instagram",
-  "tipo": "reel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. VisionQuest · Disney+\n2. Dragon Ball Super: Beerus · Disney+\n3. Moana · Disney+\n4. Demon Slayer: Kimetsu no Yaiba Castelo Infinito · Disney+\n5. Todo Mundo Odeia o Chris · Disney+\n6. The Drop: Uma Saga Snowfall · Disney+\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-23/reel-9587e89c9f.mp4"
- },
- {
-  "quando": "2026-10-23T19:00:00-03:00",
   "tipo": "enquete",
   "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
   "poll": {
@@ -16,21 +9,8 @@
    "option_c": "Moana",
    "option_d": "Demon Slayer: Kimetsu no…"
   },
-  "topico": "Streaming"
- },
- {
-  "quando": "2026-10-23T19:00:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje no Disney+: Moana (2026)\n⭐ 7,5 · Família, Fantasia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Disney+",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-23/alerta_3-1669e6ed61.jpg"
- },
- {
-  "quando": "2026-10-23T19:00:00-03:00",
-  "tipo": "saiu",
-  "texto": "👋 Saiu da HBO Max: Estranha Forma de Vida (2023)\n⭐ 6,3 · Drama, Faroeste\n\nQuem viu, viu. Vai fazer falta? 💔",
-  "topico": "HBO Max",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-23/saiu_1-aff5c6973e.jpg"
+  "topico": "Streaming",
+  "tentativas": 1
  },
  {
   "quando": "2026-10-23T21:00:00-03:00",
