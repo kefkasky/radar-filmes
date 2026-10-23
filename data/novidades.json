@@ -1,141 +1,4 @@
 {
- "2026-10-16": [
-  {
-   "t": "A Diplomata",
-   "a": "2023",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 99.9,
-   "tipo": "tv"
-  },
-  {
-   "t": "ER: Plantão Médico",
-   "a": "1994",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 99.4,
-   "tipo": "tv"
-  },
-  {
-   "t": "O Amor de Sua Vida",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 90.0,
-   "tipo": "movie"
-  },
-  {
-   "t": "Invocação do Mal",
-   "a": "2013",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 65.1,
-   "tipo": "movie"
-  },
-  {
-   "t": "Beekeeper: Rede de Vingança",
-   "a": "2024",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 64.5,
-   "tipo": "movie"
-  },
-  {
-   "t": "A Era do Gelo 3",
-   "a": "2009",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 64.3,
-   "tipo": "movie"
-  },
-  {
-   "t": "Extermínio: A Evolução",
-   "a": "2025",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 48.4,
-   "tipo": "movie"
-  },
-  {
-   "t": "O Grinch",
-   "a": "2018",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 47.3,
-   "tipo": "movie"
-  },
-  {
-   "t": "Tratamento de Choque",
-   "a": "2012",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 42.7,
-   "tipo": "tv"
-  },
-  {
-   "t": "Clube da Luta",
-   "a": "1999",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 40.3,
-   "tipo": "movie"
-  },
-  {
-   "t": "Ratatouille",
-   "a": "2007",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 39.6,
-   "tipo": "movie"
-  },
-  {
-   "t": "O Temporal",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 39.5,
-   "tipo": "movie"
-  },
-  {
-   "t": "Tróia",
-   "a": "2004",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 32.5,
-   "tipo": "movie"
-  },
-  {
-   "t": "O Regresso",
-   "a": "2015",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 30.2,
-   "tipo": "movie"
-  },
-  {
-   "t": "The Fragrant Flower Blooms With Dignity",
-   "a": "2025",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 29.6,
-   "tipo": "tv"
-  }
- ],
  "2026-10-17": [],
  "2026-10-18": [
   {
@@ -731,6 +594,188 @@
    "chave": "movie:491625",
    "n": 7.3,
    "v": 229
+  }
+ ],
+ "2026-10-23": [
+  {
+   "t": "VisionQuest",
+   "a": "2026",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 369.2,
+   "tipo": "tv",
+   "chave": "tv:213375",
+   "n": 8.8,
+   "v": 160
+  },
+  {
+   "t": "Dragon Ball Super: Beerus",
+   "a": "2026",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 170.4,
+   "tipo": "tv",
+   "chave": "tv:312359",
+   "n": 9.7,
+   "v": 277
+  },
+  {
+   "t": "Moana",
+   "a": "2026",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 107.4,
+   "tipo": "movie",
+   "chave": "movie:1108427",
+   "n": 7.5,
+   "v": 953
+  },
+  {
+   "t": "Demon Slayer: Kimetsu no Yaiba Castelo Infinito",
+   "a": "2025",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 48.8,
+   "tipo": "movie",
+   "chave": "movie:1311031",
+   "n": 8.8,
+   "v": 2324
+  },
+  {
+   "t": "Todo Mundo Odeia o Chris",
+   "a": "2005",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 36.2,
+   "tipo": "tv",
+   "chave": "tv:252",
+   "n": 8.1,
+   "v": 1160
+  },
+  {
+   "t": "The Drop: Uma Saga Snowfall",
+   "a": "2026",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 33.0,
+   "tipo": "tv",
+   "chave": "tv:304842",
+   "n": 8.1,
+   "v": 36
+  },
+  {
+   "t": "Fingida",
+   "a": "2026",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 31.6,
+   "tipo": "tv",
+   "chave": "tv:275139",
+   "n": 7.2,
+   "v": 11
+  },
+  {
+   "t": "Gremlins",
+   "a": "1984",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 29.1,
+   "tipo": "movie",
+   "chave": "movie:927",
+   "n": 7.1,
+   "v": 7225
+  },
+  {
+   "t": "Corra!",
+   "a": "2017",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 24.5,
+   "tipo": "movie",
+   "chave": "movie:419430",
+   "n": 7.6,
+   "v": 19524
+  },
+  {
+   "t": "Oasis: Don't Look Back In Anger",
+   "a": "2026",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 23.8,
+   "tipo": "movie",
+   "chave": "movie:1447853",
+   "n": 7.3,
+   "v": 38
+  },
+  {
+   "t": "Soulm8te",
+   "a": "2026",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 22.3,
+   "tipo": "movie",
+   "chave": "movie:1307118",
+   "n": 7.5,
+   "v": 528
+  },
+  {
+   "t": "Missão: Impossível - Nação Secreta",
+   "a": "2015",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 21.6,
+   "tipo": "movie",
+   "chave": "movie:177677",
+   "n": 7.2,
+   "v": 10044
+  },
+  {
+   "t": "Sexta-Feira 13",
+   "a": "2009",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 21.6,
+   "tipo": "movie",
+   "chave": "movie:13207",
+   "n": 5.8,
+   "v": 2976
+  },
+  {
+   "t": "Fire Force",
+   "a": "2019",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 19.2,
+   "tipo": "tv",
+   "chave": "tv:88046",
+   "n": 8.3,
+   "v": 670
+  },
+  {
+   "t": "Missão: Impossível - Efeito Fallout",
+   "a": "2018",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 18.4,
+   "tipo": "movie",
+   "chave": "movie:353081",
+   "n": 7.5,
+   "v": 9489
   }
  ]
 }
