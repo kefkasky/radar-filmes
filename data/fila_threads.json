@@ -1,38 +1,5 @@
 [
  {
-  "quando": "2026-10-24T19:00:00-03:00",
-  "rede": "instagram",
-  "tipo": "reel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Todo Mundo em Pânico · Paramount+\n2. Chucky · Prime Video\n3. Avenida Brasil · Globoplay\n4. Coven Academy · Disney+\n5. Amor Doce Amor · Disney+\n6. Entre os Nossos Passos · Disney+\n7. ది ప్యారడైజ్ · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-24/reel-a8b944cb1b.mp4"
- },
- {
-  "quando": "2026-10-24T19:00:00-03:00",
-  "tipo": "enquete",
-  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
-  "poll": {
-   "option_a": "Todo Mundo em Pânico",
-   "option_b": "Chucky",
-   "option_c": "Avenida Brasil",
-   "option_d": "Coven Academy"
-  },
-  "topico": "Streaming"
- },
- {
-  "quando": "2026-10-24T19:00:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova no Globoplay: Avenida Brasil (2012)\n⭐ 8,1 · Soap, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Globoplay",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-24/alerta_3-52e04d604c.jpg"
- },
- {
-  "quando": "2026-10-24T19:00:00-03:00",
-  "tipo": "saiu",
-  "texto": "👋 Saiu do Prime Video: Um Lobo Entre Nós (2021)\n⭐ 6,0 · Terror, Comédia\n\nQuem viu, viu. Vai fazer falta? 💔",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-24/saiu_1-25aca9d54d.jpg"
- },
- {
   "quando": "2026-10-24T21:00:00-03:00",
   "tipo": "dica",
   "texto": "🛋️ Plano pra hoje à noite: deixa a sua indicação de filme que vale o play 👇",
