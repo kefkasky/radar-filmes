@@ -1,38 +1,5 @@
 [
  {
-  "quando": "2026-10-25T19:00:00-03:00",
-  "rede": "instagram",
-  "tipo": "reel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Contra o Furacão · Netflix\n2. Noite Brutal · Netflix\n3. Papi Ricky: La Película · Prime Video\n4. Exit 8 · Paramount+\n5. Star Trek · Netflix\n6. Efeito Borboleta · Netflix\n7. Navio Fantasma · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/reel-cc7ee37e6e.mp4"
- },
- {
-  "quando": "2026-10-25T19:00:00-03:00",
-  "tipo": "enquete",
-  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
-  "poll": {
-   "option_a": "Contra o Furacão",
-   "option_b": "Noite Brutal",
-   "option_c": "Papi Ricky: La Película",
-   "option_d": "Exit 8"
-  },
-  "topico": "Streaming"
- },
- {
-  "quando": "2026-10-25T19:00:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje no Prime Video: Papi Ricky: La Película (2026)\nComédia, Romance\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/alerta_3-767e7fbad9.jpg"
- },
- {
-  "quando": "2026-10-25T19:00:00-03:00",
-  "tipo": "saiu",
-  "texto": "👋 Saiu da HBO Max: Until Dawn: Noite de Terror (2025)\n⭐ 6,2 · Terror, Mistério\n\nQuem viu, viu. Vai fazer falta? 💔",
-  "topico": "HBO Max",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/saiu_1-b08ba92307.jpg"
- },
- {
   "quando": "2026-10-25T21:00:00-03:00",
   "tipo": "dica",
   "texto": "💬 Deixa aqui uma dica pra galera: qual filme você assistiu e acha que vale a pena todo mundo ver? 🍿",
