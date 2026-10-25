@@ -1,1 +1,91 @@
-[]
+[
+ {
+  "quando": "2026-10-25T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "top10",
+  "texto": "🔟 Top 10 que chegaram no streaming essa semana\n\n1. VisionQuest · Disney+\n2. Dragon Ball Super: Beerus · HBO Max\n3. 9-1-1 · Disney+\n4. Jujutsu Kaisen · Prime Video\n5. Moana · Disney+\n6. O Conto da Aia · Prime Video\n7. Contra o Furacão · Netflix\n8. Noite Brutal · Netflix\n9. Onde A Máscara Termina · Netflix\n10. Amor Disfarçado · Prime Video\n\nSalva pra não esquecer e marca quem precisa ver 👀\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/top10_01-bb590dde79.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/top10_02-f74f4b1191.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/top10_03-4201d10094.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/top10_04-c34f6bd0cb.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/top10_05-ea075e883f.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/top10_06-b3beec852d.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/top10_07-589edfed4c.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/top10_08-0872710a82.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/top10_09-220d9f92f3.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/top10_10-e6a7fae1ca.jpg"
+  ]
+ },
+ {
+  "quando": "2026-10-25T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: Contra o Furacão (2026)\nDrama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/alerta_1-c960bfd5c2.jpg"
+ },
+ {
+  "quando": "2026-10-25T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: Noite Brutal (2026)\nThriller, Crime\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/alerta_2-0d94ce97d4.jpg"
+ },
+ {
+  "quando": "2026-10-25T12:20:00-03:00",
+  "tipo": "previa_indicacao",
+  "texto": "😂 Hoje às 18h tem indicação de domingo: uma comédia pra fechar o fim de semana rindo.\n\nSai aqui e no Insta @radardatela 👀",
+  "topico": "Filmes"
+ },
+ {
+  "quando": "2026-10-25T12:20:00-03:00",
+  "tipo": "gancho_top10",
+  "texto": "🔟 O que mais bombou no streaming essa semana:\n\n1. VisionQuest · Disney+\n2. Dragon Ball Super: Beerus · HBO Max\n3. 9-1-1 · Disney+\n\n…o top 10 completo tá no nosso Insta @radardatela 👀",
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-10-25T12:20:00-03:00",
+  "rede": "x",
+  "tipo": "gancho_top10",
+  "texto": "🔟 O que mais bombou no streaming essa semana:\n\n1. VisionQuest · Disney+\n2. Dragon Ball Super: Beerus · HBO Max\n3. 9-1-1 · Disney+\n\n…o top 10 completo tá no nosso Insta (@radardatela) 👀"
+ },
+ {
+  "quando": "2026-10-25T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Contra o Furacão · Netflix\n2. Noite Brutal · Netflix\n3. Papi Ricky: La Película · Prime Video\n4. Exit 8 · Paramount+\n5. Star Trek · Netflix\n6. Efeito Borboleta · Netflix\n7. Navio Fantasma · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/reel-cc7ee37e6e.mp4"
+ },
+ {
+  "quando": "2026-10-25T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "Contra o Furacão",
+   "option_b": "Noite Brutal",
+   "option_c": "Papi Ricky: La Película",
+   "option_d": "Exit 8"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-10-25T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Prime Video: Papi Ricky: La Película (2026)\nComédia, Romance\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/alerta_3-767e7fbad9.jpg"
+ },
+ {
+  "quando": "2026-10-25T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu da HBO Max: Until Dawn: Noite de Terror (2025)\n⭐ 6,2 · Terror, Mistério\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "HBO Max",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-25/saiu_1-b08ba92307.jpg"
+ },
+ {
+  "quando": "2026-10-25T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "💬 Deixa aqui uma dica pra galera: qual filme você assistiu e acha que vale a pena todo mundo ver? 🍿",
+  "topico": "Filmes"
+ }
+]
