@@ -1,1 +1,73 @@
-[]
+[
+ {
+  "quando": "2026-10-26T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Michael · Prime Video\n2. A Mesa Final · Prime Video\n3. Anora · Netflix\n4. O Aristocrata Decadente · Netflix\n5. Os Dez Bravos de Sanada - Shadows of the Ten Ninja · Netflix\n6. Além da Escuridão - Star Trek · Netflix\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/resumo-536a5d9ed0.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/alerta_1-95014d6a27.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/alerta_2-2f6532ea05.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/alerta_3-bd86866f6d.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/extra_1-5df4cec281.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/extra_2-a3b6003d5c.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/extra_3-511b9c6259.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/extra_4-fdc6076731.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/extra_5-aeea28169e.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/saiu_1-18b7235149.jpg"
+  ]
+ },
+ {
+  "quando": "2026-10-26T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Prime Video: Michael (2026)\n⭐ 8,6 · Música, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/alerta_1-95014d6a27.jpg"
+ },
+ {
+  "quando": "2026-10-26T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova no Prime Video: A Mesa Final (2026)\nDrama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/alerta_2-2f6532ea05.jpg"
+ },
+ {
+  "quando": "2026-10-26T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Michael · Prime Video\n2. A Mesa Final · Prime Video\n3. Anora · Netflix\n4. O Aristocrata Decadente · Netflix\n5. Os Dez Bravos de Sanada - Shadows of the Ten Ninja · Netflix\n6. Além da Escuridão - Star Trek · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/reel-977b0beed9.mp4"
+ },
+ {
+  "quando": "2026-10-26T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "Michael",
+   "option_b": "A Mesa Final",
+   "option_c": "Anora",
+   "option_d": "O Aristocrata Decadente"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-10-26T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: Anora (2024)\n⭐ 7,1 · Drama, Comédia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/alerta_3-bd86866f6d.jpg"
+ },
+ {
+  "quando": "2026-10-26T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu do Prime Video: Anora (2024)\n⭐ 7,1 · Drama, Comédia\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/saiu_1-18b7235149.jpg"
+ },
+ {
+  "quando": "2026-10-26T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "🎬 Bora montar a lista da semana juntos: comenta um filme que você recomenda de olhos fechados 👇",
+  "topico": "Filmes"
+ }
+]
