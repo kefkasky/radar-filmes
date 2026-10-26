@@ -1,38 +1,5 @@
 [
  {
-  "quando": "2026-10-26T19:00:00-03:00",
-  "rede": "instagram",
-  "tipo": "reel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Michael · Prime Video\n2. A Mesa Final · Prime Video\n3. Anora · Netflix\n4. O Aristocrata Decadente · Netflix\n5. Os Dez Bravos de Sanada - Shadows of the Ten Ninja · Netflix\n6. Além da Escuridão - Star Trek · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/reel-977b0beed9.mp4"
- },
- {
-  "quando": "2026-10-26T19:00:00-03:00",
-  "tipo": "enquete",
-  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
-  "poll": {
-   "option_a": "Michael",
-   "option_b": "A Mesa Final",
-   "option_c": "Anora",
-   "option_d": "O Aristocrata Decadente"
-  },
-  "topico": "Streaming"
- },
- {
-  "quando": "2026-10-26T19:00:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje na Netflix: Anora (2024)\n⭐ 7,1 · Drama, Comédia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Netflix",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/alerta_3-bd86866f6d.jpg"
- },
- {
-  "quando": "2026-10-26T19:00:00-03:00",
-  "tipo": "saiu",
-  "texto": "👋 Saiu do Prime Video: Anora (2024)\n⭐ 7,1 · Drama, Comédia\n\nQuem viu, viu. Vai fazer falta? 💔",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-26/saiu_1-18b7235149.jpg"
- },
- {
   "quando": "2026-10-26T21:00:00-03:00",
   "tipo": "dica",
   "texto": "🎬 Bora montar a lista da semana juntos: comenta um filme que você recomenda de olhos fechados 👇",
