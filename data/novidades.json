@@ -1,141 +1,4 @@
 {
- "2026-10-20": [
-  {
-   "t": "Dragon Ball Super: Beerus",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 178.0,
-   "tipo": "tv"
-  },
-  {
-   "t": "9-1-1",
-   "a": "2018",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 149.7,
-   "tipo": "tv"
-  },
-  {
-   "t": "Onde A Máscara Termina",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 62.8,
-   "tipo": "tv"
-  },
-  {
-   "t": "Batman: O Cavaleiro das Trevas",
-   "a": "2008",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 52.6,
-   "tipo": "movie"
-  },
-  {
-   "t": "A Ilha do Tesouro",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 49.2,
-   "tipo": "tv"
-  },
-  {
-   "t": "Shang-Chi e a Lenda dos Dez Anéis",
-   "a": "2021",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 38.8,
-   "tipo": "movie"
-  },
-  {
-   "t": "Murder in a Small Town",
-   "a": "2024",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 31.9,
-   "tipo": "tv"
-  },
-  {
-   "t": "Lei & Ordem Toronto: Intenção Criminal",
-   "a": "2024",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 30.9,
-   "tipo": "tv"
-  },
-  {
-   "t": "Uma Noite de Crime:  A Fronteira",
-   "a": "2021",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 24.2,
-   "tipo": "movie"
-  },
-  {
-   "t": "O Gângster",
-   "a": "2007",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 24.2,
-   "tipo": "movie"
-  },
-  {
-   "t": "Disque Amiga para Matar",
-   "a": "2019",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 23.9,
-   "tipo": "tv"
-  },
-  {
-   "t": "IT: Capítulo Dois",
-   "a": "2019",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 21.8,
-   "tipo": "movie"
-  },
-  {
-   "t": "Sniper Americano",
-   "a": "2014",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 20.5,
-   "tipo": "movie"
-  },
-  {
-   "t": "Refeição em 30 minutos",
-   "a": "2001",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 16.0,
-   "tipo": "tv"
-  },
-  {
-   "t": "007 Contra o Satânico Dr. No",
-   "a": "1962",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 14.6,
-   "tipo": "movie"
-  }
- ],
  "2026-10-21": [
   {
    "t": "Amor Disfarçado",
@@ -938,6 +801,20 @@
    "chave": "movie:733156",
    "n": 6.7,
    "v": 432
+  }
+ ],
+ "2026-10-27": [
+  {
+   "t": "O Grande Mauricinho",
+   "a": "2022",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 7.6,
+   "tipo": "movie",
+   "chave": "movie:676710",
+   "n": 6.7,
+   "v": 203
   }
  ]
 }
