@@ -1,1 +1,71 @@
-[]
+[
+ {
+  "quando": "2026-10-28T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. O Senhor dos Anéis: A Sociedade do Anel · Prime Video\n2. O Senhor dos Anéis: O Retorno do Rei · Prime Video\n3. O Senhor dos Anéis: As Duas Torres · Prime Video\n4. Last Meals · Netflix\n5. Salário Mínimo · Netflix\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/resumo-af443ce376.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/alerta_1-263627721f.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/alerta_2-18a0fa4057.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/alerta_3-43ce6d0e03.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/extra_1-e0b2698a77.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/extra_2-21b536fa0c.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/extra_3-0fc99dd349.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/saiu_1-51b81c9ee9.jpg"
+  ]
+ },
+ {
+  "quando": "2026-10-28T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Prime Video: O Senhor dos Anéis: A Sociedade do Anel (2001)\n⭐ 8,4 · Aventura, Fantasia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/alerta_1-263627721f.jpg"
+ },
+ {
+  "quando": "2026-10-28T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Prime Video: O Senhor dos Anéis: O Retorno do Rei (2003)\n⭐ 8,5 · Aventura, Fantasia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/alerta_2-18a0fa4057.jpg"
+ },
+ {
+  "quando": "2026-10-28T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. O Senhor dos Anéis: A Sociedade do Anel · Prime Video\n2. O Senhor dos Anéis: O Retorno do Rei · Prime Video\n3. O Senhor dos Anéis: As Duas Torres · Prime Video\n4. Last Meals · Netflix\n5. Salário Mínimo · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/reel-e70ff45ee8.mp4"
+ },
+ {
+  "quando": "2026-10-28T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "O Senhor dos Anéis: A So…",
+   "option_b": "O Senhor dos Anéis: O Re…",
+   "option_c": "O Senhor dos Anéis: As D…",
+   "option_d": "Last Meals"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-10-28T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Prime Video: O Senhor dos Anéis: As Duas Torres (2002)\n⭐ 8,4 · Aventura, Fantasia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/alerta_3-43ce6d0e03.jpg"
+ },
+ {
+  "quando": "2026-10-28T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu da HBO Max: Four Hours at the Capitol (2021)\n⭐ 7,3 · Documentário\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "HBO Max",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-28/saiu_1-51b81c9ee9.jpg"
+ },
+ {
+  "quando": "2026-10-28T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "📺 Vale série também: qual você acha que todo mundo deveria ver? Comenta aí que a gente monta a lista 👇",
+  "topico": "Filmes"
+ }
+]

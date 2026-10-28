@@ -1,54 +1,4 @@
 {
- "2026-10-21": [
-  {
-   "t": "Amor Disfarçado",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 58.7,
-   "tipo": "tv",
-   "chave": "tv:303745",
-   "n": 5.6,
-   "v": 5
-  },
-  {
-   "t": "(Des)encontro Perfeito",
-   "a": "2015",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 4.9,
-   "tipo": "movie",
-   "chave": "movie:332340",
-   "n": 6.6,
-   "v": 1101
-  },
-  {
-   "t": "O Segredo do Ourives",
-   "a": "2025",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 3.8,
-   "tipo": "movie",
-   "chave": "movie:1310861",
-   "n": 7.3,
-   "v": 50
-  },
-  {
-   "t": "Pedido de Amizade",
-   "a": "2013",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 2.4,
-   "tipo": "movie",
-   "chave": "movie:256277",
-   "n": 6.2,
-   "v": 67
-  }
- ],
  "2026-10-22": [
   {
    "t": "John Wick 3: Parabellum",
@@ -815,6 +765,80 @@
    "chave": "movie:676710",
    "n": 6.7,
    "v": 203
+  }
+ ],
+ "2026-10-28": [
+  {
+   "t": "O Senhor dos Anéis: A Sociedade do Anel",
+   "a": "2001",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 59.4,
+   "tipo": "movie",
+   "chave": "movie:120",
+   "n": 8.4,
+   "v": 28700
+  },
+  {
+   "t": "O Senhor dos Anéis: O Retorno do Rei",
+   "a": "2003",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 47.8,
+   "tipo": "movie",
+   "chave": "movie:122",
+   "n": 8.5,
+   "v": 27685
+  },
+  {
+   "t": "O Senhor dos Anéis: As Duas Torres",
+   "a": "2002",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 43.5,
+   "tipo": "movie",
+   "chave": "movie:121",
+   "n": 8.4,
+   "v": 24845
+  },
+  {
+   "t": "Last Meals",
+   "a": "2021",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 28.3,
+   "tipo": "tv",
+   "chave": "tv:322640",
+   "n": 6.3,
+   "v": 3
+  },
+  {
+   "t": "Salário Mínimo",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 24.3,
+   "tipo": "tv",
+   "chave": "tv:321221",
+   "n": 9.3,
+   "v": 3
+  },
+  {
+   "t": "Tony",
+   "a": "2026",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 18.9,
+   "tipo": "movie",
+   "chave": "movie:1329016",
+   "n": 7.5,
+   "v": 149
   }
  ]
 }
