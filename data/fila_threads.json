@@ -1,47 +1,5 @@
 [
  {
-  "quando": "2026-10-28T19:00:00-03:00",
-  "tipo": "enquete",
-  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
-  "poll": {
-   "option_a": "O Senhor dos Anéis: A So…",
-   "option_b": "O Senhor dos Anéis: O Re…",
-   "option_c": "O Senhor dos Anéis: As D…",
-   "option_d": "Last Meals"
-  },
-  "topico": "Streaming",
-  "tentativas": 2
- },
- {
-  "quando": "2026-10-29T12:20:00-03:00",
-  "rede": "instagram",
-  "tipo": "carrossel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Velocidade e Paixão · Prime Video\n2. Matéria Escura · Prime Video\n3. Aquele Sobre Matthew Perry · Netflix\n4. Taboo · Globoplay\n5. O Vampiro Lestat · Netflix\n6. Espermagedom · Netflix\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "imagens_url": [
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-29/resumo-00a544d773.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-29/alerta_1-b45d98d4af.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-29/alerta_2-ed4fa8734a.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-29/alerta_3-1d920dd174.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-29/extra_1-16896e677c.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-29/extra_2-bf0a4dddde.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-29/extra_3-a5b696256d.jpg"
-  ]
- },
- {
-  "quando": "2026-10-29T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje no Prime Video: Velocidade e Paixão (2026)\nRomance, Thriller\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-29/alerta_1-b45d98d4af.jpg"
- },
- {
-  "quando": "2026-10-29T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova no Prime Video: Matéria Escura (2024)\n⭐ 7,8 · Sci-Fi & Fantasy, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-10-29/alerta_2-ed4fa8734a.jpg"
- },
- {
   "quando": "2026-10-29T19:00:00-03:00",
   "rede": "instagram",
   "tipo": "reel",
