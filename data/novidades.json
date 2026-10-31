@@ -1,186 +1,4 @@
 {
- "2026-10-24": [
-  {
-   "t": "Todo Mundo em Pânico",
-   "a": "2026",
-   "plataformas": [
-    "Paramount+"
-   ],
-   "p": 50.8,
-   "tipo": "movie",
-   "chave": "movie:1273221",
-   "n": 6.3,
-   "v": 2067
-  },
-  {
-   "t": "Chucky",
-   "a": "2021",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 42.7,
-   "tipo": "tv",
-   "chave": "tv:90462",
-   "n": 7.8,
-   "v": 4230
-  },
-  {
-   "t": "Avenida Brasil",
-   "a": "2012",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 36.1,
-   "tipo": "tv",
-   "chave": "tv:45815",
-   "n": 8.1,
-   "v": 1331
-  },
-  {
-   "t": "Coven Academy",
-   "a": "2026",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 32.9,
-   "tipo": "tv",
-   "chave": "tv:298505",
-   "n": 7.5,
-   "v": 42
-  },
-  {
-   "t": "Amor Doce Amor",
-   "a": "2026",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 32.6,
-   "tipo": "tv",
-   "chave": "tv:305551",
-   "n": 9.7,
-   "v": 7
-  },
-  {
-   "t": "Entre os Nossos Passos",
-   "a": "2026",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 29.4,
-   "tipo": "tv",
-   "chave": "tv:307106",
-   "n": 8.9,
-   "v": 8
-  },
-  {
-   "t": "ది ప్యారడైజ్",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 24.6,
-   "tipo": "movie",
-   "chave": "movie:1376856",
-   "n": 4.2,
-   "v": 9
-  },
-  {
-   "t": "Alguém Falou de Mim?",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 16.4,
-   "tipo": "tv",
-   "chave": "tv:300527",
-   "n": 8.5,
-   "v": 4
-  },
-  {
-   "t": "おかえりモネ",
-   "a": "2021",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 15.2,
-   "tipo": "tv",
-   "chave": "tv:123488",
-   "n": 7.8,
-   "v": 10
-  },
-  {
-   "t": "Demolidor: O Homem Sem Medo",
-   "a": "2003",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 12.4,
-   "tipo": "movie",
-   "chave": "movie:9480",
-   "n": 5.3,
-   "v": 5654
-  },
-  {
-   "t": "As Viúvas",
-   "a": "2018",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 8.7,
-   "tipo": "movie",
-   "chave": "movie:401469",
-   "n": 6.5,
-   "v": 2556
-  },
-  {
-   "t": "Perseguição: A Estrada da Morte",
-   "a": "2001",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 7.4,
-   "tipo": "movie",
-   "chave": "movie:10866",
-   "n": 6.6,
-   "v": 1446
-  },
-  {
-   "t": "Gutiérrez Contra o Crime",
-   "a": "2026",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 6.1,
-   "tipo": "tv",
-   "chave": "tv:275224",
-   "n": 9.4,
-   "v": 45
-  },
-  {
-   "t": "Sede de Vingança",
-   "a": "2015",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 5.7,
-   "tipo": "movie",
-   "chave": "movie:333381",
-   "n": 6.1,
-   "v": 1304
-  },
-  {
-   "t": "A Estação da Alegria",
-   "a": "2021",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 2.6,
-   "tipo": "movie",
-   "chave": "movie:888500",
-   "n": 6.1,
-   "v": 54
-  }
- ],
  "2026-10-25": [
   {
    "t": "Contra o Furacão",
@@ -756,6 +574,188 @@
    "chave": "movie:35791",
    "n": 6.1,
    "v": 4421
+  }
+ ],
+ "2026-10-31": [
+  {
+   "t": "Harry Potter e a Pedra Filosofal",
+   "a": "2001",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 47.4,
+   "tipo": "movie",
+   "chave": "movie:671",
+   "n": 7.9,
+   "v": 30534
+  },
+  {
+   "t": "Harry Potter e as Relíquias da Morte - Parte 2",
+   "a": "2011",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 41.6,
+   "tipo": "movie",
+   "chave": "movie:12445",
+   "n": 8.1,
+   "v": 22666
+  },
+  {
+   "t": "Eu, Você, Nós",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 40.6,
+   "tipo": "movie",
+   "chave": "movie:1541477",
+   "n": 5.6,
+   "v": 16
+  },
+  {
+   "t": "Nashville: No Ritmo da Fama",
+   "a": "2012",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 40.0,
+   "tipo": "tv",
+   "chave": "tv:44549",
+   "n": 6.6,
+   "v": 255
+  },
+  {
+   "t": "பத்தா",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 39.5,
+   "tipo": "movie",
+   "chave": "movie:1515692",
+   "n": 8.5,
+   "v": 6
+  },
+  {
+   "t": "Harry Potter e a Câmara Secreta",
+   "a": "2002",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 38.3,
+   "tipo": "movie",
+   "chave": "movie:672",
+   "n": 7.7,
+   "v": 24328
+  },
+  {
+   "t": "Harry Potter e o Prisioneiro de Azkaban",
+   "a": "2004",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 35.8,
+   "tipo": "movie",
+   "chave": "movie:673",
+   "n": 8.0,
+   "v": 23901
+  },
+  {
+   "t": "Crepúsculo",
+   "a": "2008",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 35.5,
+   "tipo": "movie",
+   "chave": "movie:8966",
+   "n": 6.3,
+   "v": 14818
+  },
+  {
+   "t": "Harry Potter e as Relíquias da Morte - Parte 1",
+   "a": "2010",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 34.4,
+   "tipo": "movie",
+   "chave": "movie:12444",
+   "n": 7.7,
+   "v": 20987
+  },
+  {
+   "t": "Harry Potter e o Cálice de Fogo",
+   "a": "2005",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 34.1,
+   "tipo": "movie",
+   "chave": "movie:674",
+   "n": 7.8,
+   "v": 22862
+  },
+  {
+   "t": "Harry Potter e a Ordem da Fênix",
+   "a": "2007",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 31.3,
+   "tipo": "movie",
+   "chave": "movie:675",
+   "n": 7.7,
+   "v": 21427
+  },
+  {
+   "t": "Harry Potter e o Enigma do Príncipe",
+   "a": "2009",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 29.5,
+   "tipo": "movie",
+   "chave": "movie:767",
+   "n": 7.7,
+   "v": 21379
+  },
+  {
+   "t": "Balaraw: A Ilha de Sangue",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 29.1,
+   "tipo": "tv",
+   "chave": "tv:313699",
+   "n": 7.2,
+   "v": 4
+  },
+  {
+   "t": "A Saga Crepúsculo: Lua Nova",
+   "a": "2009",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 17.6,
+   "tipo": "movie",
+   "chave": "movie:18239",
+   "n": 6.0,
+   "v": 9990
+  },
+  {
+   "t": "Invasão Zumbi 2: Península",
+   "a": "2020",
+   "plataformas": [
+    "Paramount+"
+   ],
+   "p": 17.4,
+   "tipo": "movie",
+   "chave": "movie:581392",
+   "n": 6.7,
+   "v": 2704
   }
  ]
 }
