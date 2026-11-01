@@ -11,5 +11,94 @@
   },
   "topico": "Streaming",
   "tentativas": 2
+ },
+ {
+  "quando": "2026-11-01T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "top10",
+  "texto": "🔟 Top 10 que chegaram no streaming essa semana\n\n1. Apocalipse Z: Novo Mundo · Prime Video\n2. Velocidade e Paixão · Prime Video\n3. Colisão Implacável · Netflix\n4. Ali G: Ken é Eu? · Prime Video\n5. Noturno · Apple TV+\n6. Matéria Escura · Prime Video\n7. O Senhor dos Anéis: A Sociedade do Anel · Prime Video\n8. The Real Housewives of Beverly Hills · Disney+\n9. Michael · Prime Video\n10. O Senhor dos Anéis: O Retorno do Rei · Prime Video\n\nSalva pra não esquecer e marca quem precisa ver 👀\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/top10_01-5a53a58831.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/top10_02-ef0f30af78.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/top10_03-632c0076ae.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/top10_04-e9a16440ea.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/top10_05-0f27813443.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/top10_06-11e46c3b17.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/top10_07-afd0314bf0.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/top10_08-00f0955f9e.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/top10_09-ea60e0bdf1.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/top10_10-0c0f6e0105.jpg"
+  ]
+ },
+ {
+  "quando": "2026-11-01T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Prime Video: Apocalipse Z: Novo Mundo (2026)\n⭐ 6,1 · Ação, Thriller\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/alerta_1-ecb34ad01d.jpg"
+ },
+ {
+  "quando": "2026-11-01T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: Colisão Implacável (2026)\nDrama, Ação\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/alerta_2-ed94010872.jpg"
+ },
+ {
+  "quando": "2026-11-01T12:20:00-03:00",
+  "tipo": "previa_indicacao",
+  "texto": "😂 Hoje às 18h tem indicação de domingo: uma comédia pra fechar o fim de semana rindo.\n\nSai aqui e no Insta @radardatela 👀",
+  "topico": "Filmes"
+ },
+ {
+  "quando": "2026-11-01T12:20:00-03:00",
+  "tipo": "gancho_top10",
+  "texto": "🔟 O que mais bombou no streaming essa semana:\n\n1. Apocalipse Z: Novo Mundo · Prime Video\n2. Velocidade e Paixão · Prime Video\n3. Colisão Implacável · Netflix\n\n…o top 10 completo tá no nosso Insta @radardatela 👀",
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-11-01T12:20:00-03:00",
+  "rede": "x",
+  "tipo": "gancho_top10",
+  "texto": "🔟 O que mais bombou no streaming essa semana:\n\n1. Apocalipse Z: Novo Mundo · Prime Video\n2. Velocidade e Paixão · Prime Video\n3. Colisão Implacável · Netflix\n\n…o top 10 completo tá no nosso Insta (@radardatela) 👀"
+ },
+ {
+  "quando": "2026-11-01T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Apocalipse Z: Novo Mundo · Prime Video\n2. Colisão Implacável · Netflix\n3. Noturno · Apple TV+\n4. The Real Housewives of Beverly Hills · Disney+\n5. O Presente de Aniversário · Netflix\n6. Devorador · HBO Max\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/reel-b26d1baad0.mp4"
+ },
+ {
+  "quando": "2026-11-01T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "Apocalipse Z: Novo Mundo",
+   "option_b": "Colisão Implacável",
+   "option_c": "Noturno",
+   "option_d": "The Real Housewives of B…"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-11-01T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova no Apple TV+: Noturno (2026)\n⭐ 7,2 · Crime, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Apple TV+",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/alerta_3-ca53352ccd.jpg"
+ },
+ {
+  "quando": "2026-11-01T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu do Prime Video: Hannibal (2013)\n⭐ 8,3 · Drama, Crime\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/saiu_1-e48700ea7a.jpg"
+ },
+ {
+  "quando": "2026-11-01T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "💬 Deixa aqui uma dica pra galera: qual filme você assistiu e acha que vale a pena todo mundo ver? 🍿",
+  "topico": "Filmes"
  }
 ]
