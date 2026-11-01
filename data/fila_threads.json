@@ -1,13 +1,6 @@
 [
  {
   "quando": "2026-11-01T19:00:00-03:00",
-  "rede": "instagram",
-  "tipo": "reel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Apocalipse Z: Novo Mundo · Prime Video\n2. Colisão Implacável · Netflix\n3. Noturno · Apple TV+\n4. The Real Housewives of Beverly Hills · Disney+\n5. O Presente de Aniversário · Netflix\n6. Devorador · HBO Max\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/reel-b26d1baad0.mp4"
- },
- {
-  "quando": "2026-11-01T19:00:00-03:00",
   "tipo": "enquete",
   "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
   "poll": {
@@ -16,21 +9,8 @@
    "option_c": "Noturno",
    "option_d": "The Real Housewives of B…"
   },
-  "topico": "Streaming"
- },
- {
-  "quando": "2026-11-01T19:00:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova no Apple TV+: Noturno (2026)\n⭐ 7,2 · Crime, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Apple TV+",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/alerta_3-ca53352ccd.jpg"
- },
- {
-  "quando": "2026-11-01T19:00:00-03:00",
-  "tipo": "saiu",
-  "texto": "👋 Saiu do Prime Video: Hannibal (2013)\n⭐ 8,3 · Drama, Crime\n\nQuem viu, viu. Vai fazer falta? 💔",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-01/saiu_1-e48700ea7a.jpg"
+  "topico": "Streaming",
+  "tentativas": 1
  },
  {
   "quando": "2026-11-01T21:00:00-03:00",
