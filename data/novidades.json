@@ -1,162 +1,4 @@
 {
- "2026-10-26": [
-  {
-   "t": "Michael",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 47.9,
-   "tipo": "movie",
-   "chave": "movie:936075",
-   "n": 8.6,
-   "v": 4629
-  },
-  {
-   "t": "A Mesa Final",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 30.3,
-   "tipo": "tv",
-   "chave": "tv:316702",
-   "n": 8.7,
-   "v": 3
-  },
-  {
-   "t": "Anora",
-   "a": "2024",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 19.3,
-   "tipo": "movie",
-   "chave": "movie:1064213",
-   "n": 7.1,
-   "v": 3597
-  },
-  {
-   "t": "O Aristocrata Decadente",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 16.7,
-   "tipo": "tv",
-   "chave": "tv:335535",
-   "n": 0,
-   "v": 0
-  },
-  {
-   "t": "Os Dez Bravos de Sanada - Shadows of the Ten Ninja",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 14.1,
-   "tipo": "tv",
-   "chave": "tv:332649",
-   "n": 4.0,
-   "v": 1
-  },
-  {
-   "t": "Além da Escuridão - Star Trek",
-   "a": "2013",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 13.1,
-   "tipo": "movie",
-   "chave": "movie:54138",
-   "n": 7.3,
-   "v": 9958
-  },
-  {
-   "t": "டோரதி",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 12.6,
-   "tipo": "movie",
-   "chave": "movie:1578079",
-   "n": 8.5,
-   "v": 8
-  },
-  {
-   "t": "A Herança de Hope Hill",
-   "a": "2026",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 12.6,
-   "tipo": "tv",
-   "chave": "tv:279089",
-   "n": 5.9,
-   "v": 10
-  },
-  {
-   "t": "Mother Mary",
-   "a": "2026",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 12.5,
-   "tipo": "movie",
-   "chave": "movie:1102883",
-   "n": 5.6,
-   "v": 220
-  },
-  {
-   "t": "Star Trek: Sem Fronteiras",
-   "a": "2016",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 12.4,
-   "tipo": "movie",
-   "chave": "movie:188927",
-   "n": 6.8,
-   "v": 7332
-  },
-  {
-   "t": "Verônica com K",
-   "a": "2026",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 12.3,
-   "tipo": "tv",
-   "chave": "tv:210224",
-   "n": 10.0,
-   "v": 1
-  },
-  {
-   "t": "‎Operação Panda: Missão Resgate",
-   "a": "2024",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 6.9,
-   "tipo": "movie",
-   "chave": "movie:1160956",
-   "n": 6.9,
-   "v": 319
-  },
-  {
-   "t": "Às Cegas",
-   "a": "2020",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 2.5,
-   "tipo": "movie",
-   "chave": "movie:733156",
-   "n": 6.7,
-   "v": 432
-  }
- ],
  "2026-10-27": [
   {
    "t": "O Grande Mauricinho",
@@ -841,6 +683,188 @@
    "chave": "movie:215",
    "n": 6.6,
    "v": 6128
+  }
+ ],
+ "2026-11-02": [
+  {
+   "t": "Uma História de Derry",
+   "a": "2026",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 154.4,
+   "tipo": "movie",
+   "chave": "movie:1813355",
+   "n": 6.8,
+   "v": 33
+  },
+  {
+   "t": "Um Trabalho do Inferno",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 130.7,
+   "tipo": "tv",
+   "chave": "tv:289517",
+   "n": 7.6,
+   "v": 24
+  },
+  {
+   "t": "Akka",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 74.5,
+   "tipo": "tv",
+   "chave": "tv:243555",
+   "n": 6.5,
+   "v": 2
+  },
+  {
+   "t": "Dragon Ball Super",
+   "a": "2015",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 28.7,
+   "tipo": "tv",
+   "chave": "tv:62715",
+   "n": 8.2,
+   "v": 5404
+  },
+  {
+   "t": "A Mentira Perfeita",
+   "a": "2026",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 27.8,
+   "tipo": "tv",
+   "chave": "tv:307478",
+   "n": 8.5,
+   "v": 2
+  },
+  {
+   "t": "मीठे में क्या है",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 13.3,
+   "tipo": "movie",
+   "chave": "movie:1802464",
+   "n": 0,
+   "v": 0
+  },
+  {
+   "t": "Until Dawn: Noite de Terror",
+   "a": "2025",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 10.8,
+   "tipo": "movie",
+   "chave": "movie:1232546",
+   "n": 6.2,
+   "v": 1654
+  },
+  {
+   "t": "Jogos Mortais: Jigsaw",
+   "a": "2017",
+   "plataformas": [
+    "Globoplay"
+   ],
+   "p": 8.3,
+   "tipo": "movie",
+   "chave": "movie:298250",
+   "n": 6.2,
+   "v": 4100
+  },
+  {
+   "t": "Jogos Mortais IV",
+   "a": "2007",
+   "plataformas": [
+    "Globoplay"
+   ],
+   "p": 7.9,
+   "tipo": "movie",
+   "chave": "movie:663",
+   "n": 6.2,
+   "v": 4284
+  },
+  {
+   "t": "Jogos Mortais: O Final",
+   "a": "2010",
+   "plataformas": [
+    "Globoplay"
+   ],
+   "p": 7.8,
+   "tipo": "movie",
+   "chave": "movie:41439",
+   "n": 6.0,
+   "v": 3434
+  },
+  {
+   "t": "Jogos Mortais V",
+   "a": "2008",
+   "plataformas": [
+    "Globoplay"
+   ],
+   "p": 7.5,
+   "tipo": "movie",
+   "chave": "movie:11917",
+   "n": 6.2,
+   "v": 3963
+  },
+  {
+   "t": "Jogos Mortais VI",
+   "a": "2009",
+   "plataformas": [
+    "Globoplay"
+   ],
+   "p": 7.4,
+   "tipo": "movie",
+   "chave": "movie:22804",
+   "n": 6.3,
+   "v": 3652
+  },
+  {
+   "t": "A Bruxa dos Mortos - Baghead",
+   "a": "2023",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 6.3,
+   "tipo": "movie",
+   "chave": "movie:845783",
+   "n": 6.5,
+   "v": 594
+  },
+  {
+   "t": "Heart Eyes - Terror à Primeira Vista",
+   "a": "2025",
+   "plataformas": [
+    "Paramount+"
+   ],
+   "p": 5.6,
+   "tipo": "movie",
+   "chave": "movie:1302916",
+   "n": 6.2,
+   "v": 633
+  },
+  {
+   "t": "A Semente do Mal",
+   "a": "2024",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 3.7,
+   "tipo": "movie",
+   "chave": "movie:1082063",
+   "n": 6.0,
+   "v": 166
   }
  ]
 }
