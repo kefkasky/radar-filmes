@@ -1,50 +1,5 @@
 [
  {
-  "quando": "2026-11-01T19:00:00-03:00",
-  "tipo": "enquete",
-  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
-  "poll": {
-   "option_a": "Apocalipse Z: Novo Mundo",
-   "option_b": "Colisão Implacável",
-   "option_c": "Noturno",
-   "option_d": "The Real Housewives of B…"
-  },
-  "topico": "Streaming",
-  "tentativas": 2
- },
- {
-  "quando": "2026-11-02T12:20:00-03:00",
-  "rede": "instagram",
-  "tipo": "carrossel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Uma História de Derry · HBO Max\n2. Um Trabalho do Inferno · Netflix\n3. Akka · Netflix\n4. Dragon Ball Super · Disney+\n5. A Mentira Perfeita · Disney+\n6. मीठे में क्या है · Netflix\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "imagens_url": [
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/resumo-8411b47336.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/alerta_1-19323a31ff.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/alerta_2-c44171e819.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/alerta_3-4eec945134.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/extra_1-43e4cf7bf3.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/extra_2-c2a1ae98f5.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/extra_3-c828a4be12.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/extra_4-becb4883aa.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/extra_5-ecc6de0cce.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/saiu_1-8e819f09a1.jpg"
-  ]
- },
- {
-  "quando": "2026-11-02T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje na HBO Max: Uma História de Derry (2026)\n⭐ 6,8 · Drama, Terror\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "HBO Max",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/alerta_1-19323a31ff.jpg"
- },
- {
-  "quando": "2026-11-02T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova na Netflix: Um Trabalho do Inferno (2026)\n⭐ 7,6 · Mistério\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Netflix",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-02/alerta_2-c44171e819.jpg"
- },
- {
   "quando": "2026-11-02T19:00:00-03:00",
   "rede": "instagram",
   "tipo": "reel",
