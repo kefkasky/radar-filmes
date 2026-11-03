@@ -1,1 +1,73 @@
-[]
+[
+ {
+  "quando": "2026-11-03T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Avatar: Os Sete Refúgios · Prime Video\n2. Donas de Casa Desesperadas · Prime Video\n3. Marshals: Uma História de Yellowstone · Prime Video\n4. Premonição 6: Laços de Sangue · Netflix\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/resumo-b65d9c80b3.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/alerta_1-d280bb6743.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/alerta_2-eb5bc6f266.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/alerta_3-f697092107.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/extra_1-daea823c31.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/extra_2-0144faa986.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/extra_3-6eea28486b.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/extra_4-01754d05d4.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/extra_5-beb214c31f.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/saiu_1-910ab86fa1.jpg"
+  ]
+ },
+ {
+  "quando": "2026-11-03T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova no Prime Video: Avatar: Os Sete Refúgios (2026)\n⭐ 9,0 · Animação, Action & Adventure\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/alerta_1-d280bb6743.jpg"
+ },
+ {
+  "quando": "2026-11-03T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova no Prime Video: Donas de Casa Desesperadas (2004)\n⭐ 7,9 · Mistério, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/alerta_2-eb5bc6f266.jpg"
+ },
+ {
+  "quando": "2026-11-03T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Avatar: Os Sete Refúgios · Prime Video\n2. Donas de Casa Desesperadas · Prime Video\n3. Marshals: Uma História de Yellowstone · Prime Video\n4. Premonição 6: Laços de Sangue · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/reel-7c8db49c10.mp4"
+ },
+ {
+  "quando": "2026-11-03T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "Avatar: Os Sete Refúgios",
+   "option_b": "Donas de Casa Desesperad…",
+   "option_c": "Marshals: Uma História d…",
+   "option_d": "Premonição 6: Laços de S…"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-11-03T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova no Prime Video: Marshals: Uma História de Yellowstone (2026)\n⭐ 8,0 · Drama, Crime\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/alerta_3-f697092107.jpg"
+ },
+ {
+  "quando": "2026-11-03T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu do Prime Video: A Família Addams (2019)\n⭐ 6,6 · Família, Animação\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-03/saiu_1-910ab86fa1.jpg"
+ },
+ {
+  "quando": "2026-11-03T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "🍿 Qual filme você indicaria pra alguém que não sabe o que assistir hoje? Deixa a dica aqui 👇",
+  "topico": "Filmes"
+ }
+]
