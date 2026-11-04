@@ -11,5 +11,76 @@
   },
   "topico": "Streaming",
   "tentativas": 2
+ },
+ {
+  "quando": "2026-11-04T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Minha Melhor Amiga · Netflix\n2. Meu AmigãoZão · Globoplay\n3. A Árvore Familiar dos Croods · Globoplay\n4. Mãe · HBO Max\n5. Barbie em O Quebra-Nozes · Netflix\n6. Feriado Sangrento · Netflix\n7. Vis a Vis: Oásis · Netflix\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/resumo-4db13973db.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/alerta_1-507e00db4d.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/alerta_2-b244bef43e.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/alerta_3-15c890fe22.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/extra_1-72a60271c3.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/extra_2-0168cb9084.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/extra_3-4a86ca2a0a.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/extra_4-332f7a1355.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/extra_5-69b18a727c.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/saiu_1-54e1ab9d93.jpg"
+  ]
+ },
+ {
+  "quando": "2026-11-04T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: Minha Melhor Amiga (2026)\n⭐ 8,4 · Comédia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/alerta_1-507e00db4d.jpg"
+ },
+ {
+  "quando": "2026-11-04T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova no Globoplay: Meu AmigãoZão (2010)\nAnimação, Kids\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Globoplay",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/alerta_2-b244bef43e.jpg"
+ },
+ {
+  "quando": "2026-11-04T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Minha Melhor Amiga · Netflix\n2. Meu AmigãoZão · Globoplay\n3. A Árvore Familiar dos Croods · Globoplay\n4. Mãe · HBO Max\n5. Barbie em O Quebra-Nozes · Netflix\n6. Feriado Sangrento · Netflix\n7. Vis a Vis: Oásis · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/reel-402c52e15a.mp4"
+ },
+ {
+  "quando": "2026-11-04T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "Minha Melhor Amiga",
+   "option_b": "Meu AmigãoZão",
+   "option_c": "A Árvore Familiar dos Cr…",
+   "option_d": "Mãe"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-11-04T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova no Globoplay: A Árvore Familiar dos Croods (2021)\n⭐ 7,2 · Animação, Família\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Globoplay",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/alerta_3-15c890fe22.jpg"
+ },
+ {
+  "quando": "2026-11-04T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu do Prime Video: Avatar: Os Sete Refúgios (2026)\n⭐ 9,0 · Animação, Action & Adventure\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-04/saiu_1-54e1ab9d93.jpg"
+ },
+ {
+  "quando": "2026-11-04T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "📺 Vale série também: qual você acha que todo mundo deveria ver? Comenta aí que a gente monta a lista 👇",
+  "topico": "Filmes"
  }
 ]
