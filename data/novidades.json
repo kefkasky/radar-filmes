@@ -1,186 +1,4 @@
 {
- "2026-10-31": [
-  {
-   "t": "Harry Potter e a Pedra Filosofal",
-   "a": "2001",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 47.4,
-   "tipo": "movie",
-   "chave": "movie:671",
-   "n": 7.9,
-   "v": 30534
-  },
-  {
-   "t": "Harry Potter e as Relíquias da Morte - Parte 2",
-   "a": "2011",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 41.6,
-   "tipo": "movie",
-   "chave": "movie:12445",
-   "n": 8.1,
-   "v": 22666
-  },
-  {
-   "t": "Eu, Você, Nós",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 40.6,
-   "tipo": "movie",
-   "chave": "movie:1541477",
-   "n": 5.6,
-   "v": 16
-  },
-  {
-   "t": "Nashville: No Ritmo da Fama",
-   "a": "2012",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 40.0,
-   "tipo": "tv",
-   "chave": "tv:44549",
-   "n": 6.6,
-   "v": 255
-  },
-  {
-   "t": "பத்தா",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 39.5,
-   "tipo": "movie",
-   "chave": "movie:1515692",
-   "n": 8.5,
-   "v": 6
-  },
-  {
-   "t": "Harry Potter e a Câmara Secreta",
-   "a": "2002",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 38.3,
-   "tipo": "movie",
-   "chave": "movie:672",
-   "n": 7.7,
-   "v": 24328
-  },
-  {
-   "t": "Harry Potter e o Prisioneiro de Azkaban",
-   "a": "2004",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 35.8,
-   "tipo": "movie",
-   "chave": "movie:673",
-   "n": 8.0,
-   "v": 23901
-  },
-  {
-   "t": "Crepúsculo",
-   "a": "2008",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 35.5,
-   "tipo": "movie",
-   "chave": "movie:8966",
-   "n": 6.3,
-   "v": 14818
-  },
-  {
-   "t": "Harry Potter e as Relíquias da Morte - Parte 1",
-   "a": "2010",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 34.4,
-   "tipo": "movie",
-   "chave": "movie:12444",
-   "n": 7.7,
-   "v": 20987
-  },
-  {
-   "t": "Harry Potter e o Cálice de Fogo",
-   "a": "2005",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 34.1,
-   "tipo": "movie",
-   "chave": "movie:674",
-   "n": 7.8,
-   "v": 22862
-  },
-  {
-   "t": "Harry Potter e a Ordem da Fênix",
-   "a": "2007",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 31.3,
-   "tipo": "movie",
-   "chave": "movie:675",
-   "n": 7.7,
-   "v": 21427
-  },
-  {
-   "t": "Harry Potter e o Enigma do Príncipe",
-   "a": "2009",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 29.5,
-   "tipo": "movie",
-   "chave": "movie:767",
-   "n": 7.7,
-   "v": 21379
-  },
-  {
-   "t": "Balaraw: A Ilha de Sangue",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 29.1,
-   "tipo": "tv",
-   "chave": "tv:313699",
-   "n": 7.2,
-   "v": 4
-  },
-  {
-   "t": "A Saga Crepúsculo: Lua Nova",
-   "a": "2009",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 17.6,
-   "tipo": "movie",
-   "chave": "movie:18239",
-   "n": 6.0,
-   "v": 9990
-  },
-  {
-   "t": "Invasão Zumbi 2: Península",
-   "a": "2020",
-   "plataformas": [
-    "Paramount+"
-   ],
-   "p": 17.4,
-   "tipo": "movie",
-   "chave": "movie:581392",
-   "n": 6.7,
-   "v": 2704
-  }
- ],
  "2026-11-01": [
   {
    "t": "Apocalipse Z: Novo Mundo",
@@ -1188,6 +1006,188 @@
    "chave": "movie:79464",
    "n": 7.3,
    "v": 244
+  }
+ ],
+ "2026-11-07": [
+  {
+   "t": "A Imperatriz Se Casou Novamente",
+   "a": "2026",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 174.8,
+   "tipo": "tv",
+   "chave": "tv:279246",
+   "n": 8.2,
+   "v": 16
+  },
+  {
+   "t": "Campus Drivers",
+   "a": "2026",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 93.5,
+   "tipo": "tv",
+   "chave": "tv:303044",
+   "n": 7.8,
+   "v": 7
+  },
+  {
+   "t": "The Chosen: Os Escolhidos",
+   "a": "2019",
+   "plataformas": [
+    "Globoplay"
+   ],
+   "p": 69.7,
+   "tipo": "tv",
+   "chave": "tv:85077",
+   "n": 8.8,
+   "v": 1049
+  },
+  {
+   "t": "Um Ano de Vida, Compre Um Homem",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 46.6,
+   "tipo": "movie",
+   "chave": "movie:1654940",
+   "n": 7.5,
+   "v": 16
+  },
+  {
+   "t": "Amor Possível",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 45.1,
+   "tipo": "movie",
+   "chave": "movie:1483525",
+   "n": 7.5,
+   "v": 20
+  },
+  {
+   "t": "Crime em Cena",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 34.7,
+   "tipo": "movie",
+   "chave": "movie:1630420",
+   "n": 6.0,
+   "v": 1
+  },
+  {
+   "t": "Transformers: A Era da Extinção",
+   "a": "2014",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 13.8,
+   "tipo": "movie",
+   "chave": "movie:91314",
+   "n": 6.0,
+   "v": 9055
+  },
+  {
+   "t": "Pessoas Normais",
+   "a": "2020",
+   "plataformas": [
+    "Paramount+"
+   ],
+   "p": 11.8,
+   "tipo": "tv",
+   "chave": "tv:89905",
+   "n": 8.1,
+   "v": 1425
+  },
+  {
+   "t": "Amor e Outras Drogas",
+   "a": "2010",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 10.2,
+   "tipo": "movie",
+   "chave": "movie:43347",
+   "n": 7.0,
+   "v": 5779
+  },
+  {
+   "t": "Transformers: O Último Cavaleiro",
+   "a": "2017",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 9.8,
+   "tipo": "movie",
+   "chave": "movie:335988",
+   "n": 6.1,
+   "v": 6972
+  },
+  {
+   "t": "Resistência",
+   "a": "2023",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 9.4,
+   "tipo": "movie",
+   "chave": "movie:670292",
+   "n": 7.0,
+   "v": 4278
+  },
+  {
+   "t": "Show de Vizinha",
+   "a": "2004",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 9.1,
+   "tipo": "movie",
+   "chave": "movie:10591",
+   "n": 6.8,
+   "v": 4247
+  },
+  {
+   "t": "Tempo",
+   "a": "2021",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 8.4,
+   "tipo": "movie",
+   "chave": "movie:631843",
+   "n": 6.3,
+   "v": 5121
+  },
+  {
+   "t": "Transformers",
+   "a": "2007",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 4.4,
+   "tipo": "movie",
+   "chave": "movie:1858",
+   "n": 6.9,
+   "v": 12718
+  },
+  {
+   "t": "Transformers: A Vingança dos Derrotados",
+   "a": "2009",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 4.2,
+   "tipo": "movie",
+   "chave": "movie:8373",
+   "n": 6.2,
+   "v": 9522
   }
  ]
 }
