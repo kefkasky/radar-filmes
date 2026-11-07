@@ -1,56 +1,5 @@
 [
  {
-  "quando": "2026-11-06T19:00:00-03:00",
-  "tipo": "enquete",
-  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
-  "poll": {
-   "option_a": "Fuga Mortal",
-   "option_b": "O Natal Perfeito de um C…",
-   "option_c": "Muhammad Ali: O Maior",
-   "option_d": "Stick"
-  },
-  "topico": "Streaming",
-  "tentativas": 2
- },
- {
-  "quando": "2026-11-07T12:20:00-03:00",
-  "rede": "instagram",
-  "tipo": "carrossel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. A Imperatriz Se Casou Novamente · Disney+\n2. Campus Drivers · Prime Video\n3. The Chosen: Os Escolhidos · Globoplay\n4. Um Ano de Vida, Compre Um Homem · Netflix\n5. Amor Possível · Netflix\n6. Crime em Cena · Netflix\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "imagens_url": [
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/resumo-ba9e50ff06.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/alerta_1-70d1827f5b.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/alerta_2-6806c1cfd9.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/alerta_3-9aeae0a6d6.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/extra_1-d399963f9d.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/extra_2-f4813eaa09.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/extra_3-cd7e5118ae.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/extra_4-642e272336.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/extra_5-6cf13d5810.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/saiu_1-c205ef0177.jpg"
-  ]
- },
- {
-  "quando": "2026-11-07T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova no Disney+: A Imperatriz Se Casou Novamente (2026)\nDrama, Sci-Fi & Fantasy\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Disney+",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/alerta_1-70d1827f5b.jpg"
- },
- {
-  "quando": "2026-11-07T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova no Prime Video: Campus Drivers (2026)\nDrama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/alerta_2-6806c1cfd9.jpg"
- },
- {
-  "quando": "2026-11-07T12:20:00-03:00",
-  "tipo": "previa_indicacao",
-  "texto": "💘 Hoje às 18h tem indicação de sábado: um romance pra ver a dois.\n\nSai aqui e no Insta @radardatela 👀",
-  "topico": "Filmes"
- },
- {
   "quando": "2026-11-07T19:00:00-03:00",
   "rede": "instagram",
   "tipo": "reel",
