@@ -1,13 +1,6 @@
 [
  {
   "quando": "2026-11-07T19:00:00-03:00",
-  "rede": "instagram",
-  "tipo": "reel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. A Imperatriz Se Casou Novamente · Disney+\n2. Campus Drivers · Prime Video\n3. The Chosen: Os Escolhidos · Globoplay\n4. Um Ano de Vida, Compre Um Homem · Netflix\n5. Amor Possível · Netflix\n6. Crime em Cena · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/reel-59259f7499.mp4"
- },
- {
-  "quando": "2026-11-07T19:00:00-03:00",
   "tipo": "enquete",
   "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
   "poll": {
@@ -16,21 +9,8 @@
    "option_c": "The Chosen: Os Escolhidos",
    "option_d": "Um Ano de Vida, Compre U…"
   },
-  "topico": "Streaming"
- },
- {
-  "quando": "2026-11-07T19:00:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova no Globoplay: The Chosen: Os Escolhidos (2019)\n⭐ 8,8 · Action & Adventure, Família\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Globoplay",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/alerta_3-9aeae0a6d6.jpg"
- },
- {
-  "quando": "2026-11-07T19:00:00-03:00",
-  "tipo": "saiu",
-  "texto": "👋 Saiu da Netflix: O Lado Bom de Ser Traída (2023)\n⭐ 6,2 · Drama, Mistério\n\nQuem viu, viu. Vai fazer falta? 💔",
-  "topico": "Netflix",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-07/saiu_1-c205ef0177.jpg"
+  "topico": "Streaming",
+  "tentativas": 1
  },
  {
   "quando": "2026-11-07T21:00:00-03:00",
