@@ -1,186 +1,4 @@
 {
- "2026-11-02": [
-  {
-   "t": "Uma História de Derry",
-   "a": "2026",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 154.4,
-   "tipo": "movie",
-   "chave": "movie:1813355",
-   "n": 6.8,
-   "v": 33
-  },
-  {
-   "t": "Um Trabalho do Inferno",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 130.7,
-   "tipo": "tv",
-   "chave": "tv:289517",
-   "n": 7.6,
-   "v": 24
-  },
-  {
-   "t": "Akka",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 74.5,
-   "tipo": "tv",
-   "chave": "tv:243555",
-   "n": 6.5,
-   "v": 2
-  },
-  {
-   "t": "Dragon Ball Super",
-   "a": "2015",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 28.7,
-   "tipo": "tv",
-   "chave": "tv:62715",
-   "n": 8.2,
-   "v": 5404
-  },
-  {
-   "t": "A Mentira Perfeita",
-   "a": "2026",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 27.8,
-   "tipo": "tv",
-   "chave": "tv:307478",
-   "n": 8.5,
-   "v": 2
-  },
-  {
-   "t": "मीठे में क्या है",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 13.3,
-   "tipo": "movie",
-   "chave": "movie:1802464",
-   "n": 0,
-   "v": 0
-  },
-  {
-   "t": "Until Dawn: Noite de Terror",
-   "a": "2025",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 10.8,
-   "tipo": "movie",
-   "chave": "movie:1232546",
-   "n": 6.2,
-   "v": 1654
-  },
-  {
-   "t": "Jogos Mortais: Jigsaw",
-   "a": "2017",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 8.3,
-   "tipo": "movie",
-   "chave": "movie:298250",
-   "n": 6.2,
-   "v": 4100
-  },
-  {
-   "t": "Jogos Mortais IV",
-   "a": "2007",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 7.9,
-   "tipo": "movie",
-   "chave": "movie:663",
-   "n": 6.2,
-   "v": 4284
-  },
-  {
-   "t": "Jogos Mortais: O Final",
-   "a": "2010",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 7.8,
-   "tipo": "movie",
-   "chave": "movie:41439",
-   "n": 6.0,
-   "v": 3434
-  },
-  {
-   "t": "Jogos Mortais V",
-   "a": "2008",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 7.5,
-   "tipo": "movie",
-   "chave": "movie:11917",
-   "n": 6.2,
-   "v": 3963
-  },
-  {
-   "t": "Jogos Mortais VI",
-   "a": "2009",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 7.4,
-   "tipo": "movie",
-   "chave": "movie:22804",
-   "n": 6.3,
-   "v": 3652
-  },
-  {
-   "t": "A Bruxa dos Mortos - Baghead",
-   "a": "2023",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 6.3,
-   "tipo": "movie",
-   "chave": "movie:845783",
-   "n": 6.5,
-   "v": 594
-  },
-  {
-   "t": "Heart Eyes - Terror à Primeira Vista",
-   "a": "2025",
-   "plataformas": [
-    "Paramount+"
-   ],
-   "p": 5.6,
-   "tipo": "movie",
-   "chave": "movie:1302916",
-   "n": 6.2,
-   "v": 633
-  },
-  {
-   "t": "A Semente do Mal",
-   "a": "2024",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 3.7,
-   "tipo": "movie",
-   "chave": "movie:1082063",
-   "n": 6.0,
-   "v": 166
-  }
- ],
  "2026-11-03": [
   {
    "t": "Avatar: Os Sete Refúgios",
@@ -1187,6 +1005,68 @@
    "chave": "movie:215248",
    "n": 6.0,
    "v": 80
+  }
+ ],
+ "2026-11-09": [
+  {
+   "t": "Homem-Aranha: Sem Volta Para Casa",
+   "a": "2021",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 36.5,
+   "tipo": "movie",
+   "chave": "movie:634649",
+   "n": 7.9,
+   "v": 23536
+  },
+  {
+   "t": "Desprotegida: O Crime de Pazos",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 14.5,
+   "tipo": "movie",
+   "chave": "movie:1794569",
+   "n": 6.4,
+   "v": 5
+  },
+  {
+   "t": "Insaciável",
+   "a": "2026",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 5.5,
+   "tipo": "movie",
+   "chave": "movie:1363387",
+   "n": 7.2,
+   "v": 321
+  },
+  {
+   "t": "Noryang: O Mar da Morte",
+   "a": "2023",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 2.1,
+   "tipo": "movie",
+   "chave": "movie:660360",
+   "n": 6.4,
+   "v": 168
+  },
+  {
+   "t": "Sem Instruções",
+   "a": "2024",
+   "plataformas": [
+    "Paramount+"
+   ],
+   "p": 0.7,
+   "tipo": "movie",
+   "chave": "movie:1238200",
+   "n": 6.9,
+   "v": 65
   }
  ]
 }
