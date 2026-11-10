@@ -1,33 +1,5 @@
 [
  {
-  "quando": "2026-11-10T12:20:00-03:00",
-  "rede": "instagram",
-  "tipo": "carrossel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Tulsa King · Prime Video\n2. とと姉ちゃん · Netflix\n3. Final Feliz · Globoplay\n4. Todo Tempo Que Temos · Prime Video\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "imagens_url": [
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-10/resumo-bb368ef575.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-10/alerta_1-411b41fb07.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-10/alerta_2-25b3126851.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-10/alerta_3-29b761686c.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-10/extra_1-1cef1c3928.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-10/saiu_1-56f3ad463f.jpg"
-  ]
- },
- {
-  "quando": "2026-11-10T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova no Prime Video: Tulsa King (2022)\n⭐ 8,3 · Crime, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-10/alerta_1-411b41fb07.jpg"
- },
- {
-  "quando": "2026-11-10T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova na Netflix: とと姉ちゃん (2016)\nDrama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Netflix",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-10/alerta_2-25b3126851.jpg"
- },
- {
   "quando": "2026-11-10T19:00:00-03:00",
   "rede": "instagram",
   "tipo": "reel",
