@@ -1,186 +1,4 @@
 {
- "2026-11-03": [
-  {
-   "t": "Avatar: Os Sete Refúgios",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 127.6,
-   "tipo": "tv",
-   "chave": "tv:284833",
-   "n": 9.0,
-   "v": 179
-  },
-  {
-   "t": "Donas de Casa Desesperadas",
-   "a": "2004",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 124.4,
-   "tipo": "tv",
-   "chave": "tv:693",
-   "n": 7.9,
-   "v": 2169
-  },
-  {
-   "t": "Marshals: Uma História de Yellowstone",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 100.9,
-   "tipo": "tv",
-   "chave": "tv:290856",
-   "n": 8.0,
-   "v": 421
-  },
-  {
-   "t": "Premonição 6: Laços de Sangue",
-   "a": "2025",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 28.5,
-   "tipo": "movie",
-   "chave": "movie:574475",
-   "n": 7.0,
-   "v": 3241
-  },
-  {
-   "t": "Mad Max: Estrada da Fúria",
-   "a": "2015",
-   "plataformas": [
-    "Apple TV+"
-   ],
-   "p": 25.1,
-   "tipo": "movie",
-   "chave": "movie:76341",
-   "n": 7.6,
-   "v": 24891
-  },
-  {
-   "t": "Os Suspeitos",
-   "a": "2013",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 17.4,
-   "tipo": "movie",
-   "chave": "movie:146233",
-   "n": 8.1,
-   "v": 13712
-  },
-  {
-   "t": "O Grinch",
-   "a": "2000",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 16.6,
-   "tipo": "movie",
-   "chave": "movie:8871",
-   "n": 6.8,
-   "v": 8542
-  },
-  {
-   "t": "Sing - Quem Canta Seus Males Espanta",
-   "a": "2016",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 16.5,
-   "tipo": "movie",
-   "chave": "movie:335797",
-   "n": 7.1,
-   "v": 8652
-  },
-  {
-   "t": "Sing 2",
-   "a": "2021",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 13.4,
-   "tipo": "movie",
-   "chave": "movie:438695",
-   "n": 7.8,
-   "v": 4956
-  },
-  {
-   "t": "Resistência",
-   "a": "2023",
-   "plataformas": [
-    "Paramount+"
-   ],
-   "p": 13.1,
-   "tipo": "movie",
-   "chave": "movie:670292",
-   "n": 7.0,
-   "v": 4273
-  },
-  {
-   "t": "As Crônicas de Nárnia: A Viagem do Peregrino da Alvorada",
-   "a": "2010",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 11.4,
-   "tipo": "movie",
-   "chave": "movie:10140",
-   "n": 6.4,
-   "v": 6073
-  },
-  {
-   "t": "Tratamento de Choque",
-   "a": "2003",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 11.2,
-   "tipo": "movie",
-   "chave": "movie:9506",
-   "n": 6.2,
-   "v": 3620
-  },
-  {
-   "t": "O Homem Duplicado",
-   "a": "2014",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 10.3,
-   "tipo": "movie",
-   "chave": "movie:181886",
-   "n": 6.8,
-   "v": 6678
-  },
-  {
-   "t": "Betty em Nova York",
-   "a": "2019",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 9.7,
-   "tipo": "tv",
-   "chave": "tv:86189",
-   "n": 8.1,
-   "v": 207
-  },
-  {
-   "t": "Mamma Mia!",
-   "a": "2008",
-   "plataformas": [
-    "Apple TV+"
-   ],
-   "p": 9.3,
-   "tipo": "movie",
-   "chave": "movie:11631",
-   "n": 7.0,
-   "v": 7215
-  }
- ],
  "2026-11-04": [
   {
    "t": "Minha Melhor Amiga",
@@ -1067,6 +885,56 @@
    "chave": "movie:1238200",
    "n": 6.9,
    "v": 65
+  }
+ ],
+ "2026-11-10": [
+  {
+   "t": "Tulsa King",
+   "a": "2022",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 234.0,
+   "tipo": "tv",
+   "chave": "tv:153312",
+   "n": 8.3,
+   "v": 2927
+  },
+  {
+   "t": "とと姉ちゃん",
+   "a": "2016",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 14.4,
+   "tipo": "tv",
+   "chave": "tv:72294",
+   "n": 9.5,
+   "v": 2
+  },
+  {
+   "t": "Final Feliz",
+   "a": "1982",
+   "plataformas": [
+    "Globoplay"
+   ],
+   "p": 13.5,
+   "tipo": "tv",
+   "chave": "tv:263072",
+   "n": 8.0,
+   "v": 2
+  },
+  {
+   "t": "Todo Tempo Que Temos",
+   "a": "2024",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 8.7,
+   "tipo": "movie",
+   "chave": "movie:1100099",
+   "n": 7.2,
+   "v": 1451
   }
  ]
 }
