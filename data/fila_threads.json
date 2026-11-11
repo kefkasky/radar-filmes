@@ -1,40 +1,5 @@
 [
  {
-  "quando": "2026-11-11T12:20:00-03:00",
-  "rede": "instagram",
-  "tipo": "carrossel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. This Is Us · Paramount+\n2. Um Bom Advogado · Netflix\n3. O Grinch · Netflix\n4. Um Segredo de Natal na Escócia · Prime Video\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "imagens_url": [
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/resumo-7cfdc8e617.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/alerta_1-fa45e92b2b.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/alerta_2-f196cb11de.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/alerta_3-9c9a3c1bea.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/extra_1-4dace958e7.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/saiu_1-e94a8df71a.jpg"
-  ]
- },
- {
-  "quando": "2026-11-11T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova no Paramount+: This Is Us (2016)\n⭐ 8,2 · Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Paramount+",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/alerta_1-fa45e92b2b.jpg"
- },
- {
-  "quando": "2026-11-11T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje na Netflix: Um Bom Advogado (2026)\nThriller, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Netflix",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/alerta_2-f196cb11de.jpg"
- },
- {
-  "quando": "2026-11-11T19:00:00-03:00",
-  "rede": "instagram",
-  "tipo": "reel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. This Is Us · Paramount+\n2. Um Bom Advogado · Netflix\n3. O Grinch · Netflix\n4. Um Segredo de Natal na Escócia · Prime Video\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/reel-d428f8b5ff.mp4"
- },
- {
   "quando": "2026-11-11T19:00:00-03:00",
   "tipo": "enquete",
   "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
@@ -44,21 +9,8 @@
    "option_c": "O Grinch",
    "option_d": "Um Segredo de Natal na E…"
   },
-  "topico": "Streaming"
- },
- {
-  "quando": "2026-11-11T19:00:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje na Netflix: O Grinch (2000)\n⭐ 6,8 · Família, Comédia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Netflix",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/alerta_3-9c9a3c1bea.jpg"
- },
- {
-  "quando": "2026-11-11T19:00:00-03:00",
-  "tipo": "saiu",
-  "texto": "👋 Saiu da Netflix: Weeds (2005)\n⭐ 7,5 · Comédia, Crime\n\nQuem viu, viu. Vai fazer falta? 💔",
-  "topico": "Netflix",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-11/saiu_1-e94a8df71a.jpg"
+  "topico": "Streaming",
+  "tentativas": 1
  },
  {
   "quando": "2026-11-11T21:00:00-03:00",
