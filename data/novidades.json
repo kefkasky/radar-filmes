@@ -1,102 +1,4 @@
 {
- "2026-11-04": [
-  {
-   "t": "Minha Melhor Amiga",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 27.8,
-   "tipo": "movie",
-   "chave": "movie:1257147",
-   "n": 8.4,
-   "v": 29
-  },
-  {
-   "t": "Meu AmigãoZão",
-   "a": "2010",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 18.9,
-   "tipo": "tv",
-   "chave": "tv:46759",
-   "n": 6.4,
-   "v": 9
-  },
-  {
-   "t": "A Árvore Familiar dos Croods",
-   "a": "2021",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 16.0,
-   "tipo": "tv",
-   "chave": "tv:132559",
-   "n": 7.2,
-   "v": 761
-  },
-  {
-   "t": "Mãe",
-   "a": "2016",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 13.8,
-   "tipo": "tv",
-   "chave": "tv:68569",
-   "n": 8.4,
-   "v": 78
-  },
-  {
-   "t": "Barbie em O Quebra-Nozes",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 12.3,
-   "tipo": "movie",
-   "chave": "movie:1760311",
-   "n": 1.0,
-   "v": 1
-  },
-  {
-   "t": "Feriado Sangrento",
-   "a": "2023",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 8.9,
-   "tipo": "movie",
-   "chave": "movie:1071215",
-   "n": 6.5,
-   "v": 1690
-  },
-  {
-   "t": "Vis a Vis: Oásis",
-   "a": "2020",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 6.4,
-   "tipo": "tv",
-   "chave": "tv:45871",
-   "n": 7.8,
-   "v": 2018
-  },
-  {
-   "t": "Adult Swim Yule Log",
-   "a": "2022",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 1.8,
-   "tipo": "movie",
-   "chave": "movie:1060421",
-   "n": 6.2,
-   "v": 42
-  }
- ],
  "2026-11-05": [
   {
    "t": "Scandal: Os Bastidores do Poder",
@@ -935,6 +837,56 @@
    "chave": "movie:1100099",
    "n": 7.2,
    "v": 1451
+  }
+ ],
+ "2026-11-11": [
+  {
+   "t": "This Is Us",
+   "a": "2016",
+   "plataformas": [
+    "Paramount+"
+   ],
+   "p": 55.9,
+   "tipo": "tv",
+   "chave": "tv:67136",
+   "n": 8.2,
+   "v": 1692
+  },
+  {
+   "t": "Um Bom Advogado",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 44.4,
+   "tipo": "movie",
+   "chave": "movie:1616419",
+   "n": 7.0,
+   "v": 17
+  },
+  {
+   "t": "O Grinch",
+   "a": "2000",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 21.5,
+   "tipo": "movie",
+   "chave": "movie:8871",
+   "n": 6.8,
+   "v": 8570
+  },
+  {
+   "t": "Um Segredo de Natal na Escócia",
+   "a": "2023",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 1.6,
+   "tipo": "movie",
+   "chave": "movie:1145635",
+   "n": 6.2,
+   "v": 54
   }
  ]
 }
