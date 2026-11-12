@@ -1,186 +1,4 @@
 {
- "2026-11-05": [
-  {
-   "t": "Scandal: Os Bastidores do Poder",
-   "a": "2012",
-   "plataformas": [
-    "Paramount+"
-   ],
-   "p": 60.3,
-   "tipo": "tv",
-   "chave": "tv:39269",
-   "n": 7.2,
-   "v": 629
-  },
-  {
-   "t": "Bass ex Machina",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 47.3,
-   "tipo": "tv",
-   "chave": "tv:314271",
-   "n": 7.5,
-   "v": 6
-  },
-  {
-   "t": "Will Trent: Agente Especial",
-   "a": "2023",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 45.4,
-   "tipo": "tv",
-   "chave": "tv:208569",
-   "n": 7.3,
-   "v": 215
-  },
-  {
-   "t": "Homem-Aranha: No Aranhaverso",
-   "a": "2018",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 36.6,
-   "tipo": "movie",
-   "chave": "movie:324857",
-   "n": 8.4,
-   "v": 18154
-  },
-  {
-   "t": "Homem-Aranha: Longe de Casa",
-   "a": "2019",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 26.2,
-   "tipo": "movie",
-   "chave": "movie:429617",
-   "n": 7.4,
-   "v": 17856
-  },
-  {
-   "t": "O Espetacular Homem-Aranha",
-   "a": "2012",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 20.6,
-   "tipo": "movie",
-   "chave": "movie:1930",
-   "n": 6.8,
-   "v": 19315
-  },
-  {
-   "t": "O Espetacular Homem-Aranha 2: A Ameaça de Electro",
-   "a": "2014",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 20.1,
-   "tipo": "movie",
-   "chave": "movie:102382",
-   "n": 6.6,
-   "v": 14924
-  },
-  {
-   "t": "O Grinch",
-   "a": "2018",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 17.1,
-   "tipo": "movie",
-   "chave": "movie:360920",
-   "n": 6.9,
-   "v": 4565
-  },
-  {
-   "t": "O Grinch",
-   "a": "2000",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 16.9,
-   "tipo": "movie",
-   "chave": "movie:8871",
-   "n": 6.8,
-   "v": 8546
-  },
-  {
-   "t": "Obsess",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 16.6,
-   "tipo": "tv",
-   "chave": "tv:311853",
-   "n": 3.4,
-   "v": 5
-  },
-  {
-   "t": "Um Lugar Silencioso",
-   "a": "2018",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 14.0,
-   "tipo": "movie",
-   "chave": "movie:447332",
-   "n": 7.4,
-   "v": 15910
-  },
-  {
-   "t": "Trovão Tropical",
-   "a": "2008",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 12.2,
-   "tipo": "movie",
-   "chave": "movie:7446",
-   "n": 6.7,
-   "v": 7324
-  },
-  {
-   "t": "Um Duende em Nova York",
-   "a": "2003",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 10.4,
-   "tipo": "movie",
-   "chave": "movie:10719",
-   "n": 6.7,
-   "v": 4757
-  },
-  {
-   "t": "As Tartarugas Ninja: Fora das Sombras",
-   "a": "2016",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 9.9,
-   "tipo": "movie",
-   "chave": "movie:308531",
-   "n": 6.1,
-   "v": 3923
-  },
-  {
-   "t": "A Nova Cinderela",
-   "a": "2004",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 9.4,
-   "tipo": "movie",
-   "chave": "movie:11247",
-   "n": 6.6,
-   "v": 3471
-  }
- ],
  "2026-11-06": [
   {
    "t": "Fuga Mortal",
@@ -887,6 +705,164 @@
    "chave": "movie:1145635",
    "n": 6.2,
    "v": 54
+  }
+ ],
+ "2026-11-12": [
+  {
+   "t": "O Corpo",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 63.2,
+   "tipo": "tv",
+   "chave": "tv:291507",
+   "n": 7.9,
+   "v": 12
+  },
+  {
+   "t": "Gospel de Natal",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 24.1,
+   "tipo": "movie",
+   "chave": "movie:1559980",
+   "n": 5.3,
+   "v": 3
+  },
+  {
+   "t": "A Lei de Alicia",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 13.8,
+   "tipo": "tv",
+   "chave": "tv:338562",
+   "n": 6.5,
+   "v": 4
+  },
+  {
+   "t": "ChiaroScuro",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 13.5,
+   "tipo": "tv",
+   "chave": "tv:336243",
+   "n": 8.0,
+   "v": 2
+  },
+  {
+   "t": "Matilda",
+   "a": "1996",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 9.2,
+   "tipo": "movie",
+   "chave": "movie:10830",
+   "n": 7.2,
+   "v": 5031
+  },
+  {
+   "t": "Como Se Fosse a Primeira Vez",
+   "a": "2004",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 8.0,
+   "tipo": "movie",
+   "chave": "movie:1824",
+   "n": 6.9,
+   "v": 8029
+  },
+  {
+   "t": "Os Caça-Fantasmas 2",
+   "a": "1989",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 6.8,
+   "tipo": "movie",
+   "chave": "movie:2978",
+   "n": 6.6,
+   "v": 5085
+  },
+  {
+   "t": "Anjos da Noite: O Despertar",
+   "a": "2012",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 5.0,
+   "tipo": "movie",
+   "chave": "movie:52520",
+   "n": 6.3,
+   "v": 4513
+  },
+  {
+   "t": "Máfia no Divã",
+   "a": "1999",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 3.8,
+   "tipo": "movie",
+   "chave": "movie:9535",
+   "n": 6.5,
+   "v": 2246
+  },
+  {
+   "t": "Conselhos De Um Serial Killer Aposentado",
+   "a": "2025",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 1.9,
+   "tipo": "movie",
+   "chave": "movie:681434",
+   "n": 6.8,
+   "v": 83
+  },
+  {
+   "t": "Hammarskjöld: Luta pela Paz",
+   "a": "2023",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 1.5,
+   "tipo": "movie",
+   "chave": "movie:1084145",
+   "n": 6.3,
+   "v": 46
+  },
+  {
+   "t": "Bingo: O Rei das Manhãs",
+   "a": "2017",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 1.5,
+   "tipo": "movie",
+   "chave": "movie:429210",
+   "n": 8.0,
+   "v": 426
+  },
+  {
+   "t": "Herói de Sangue",
+   "a": "2023",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 1.4,
+   "tipo": "movie",
+   "chave": "movie:967874",
+   "n": 6.0,
+   "v": 265
   }
  ]
 }
