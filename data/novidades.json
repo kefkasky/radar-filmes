@@ -1,186 +1,4 @@
 {
- "2026-11-06": [
-  {
-   "t": "Fuga Mortal",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 219.4,
-   "tipo": "movie",
-   "chave": "movie:1294189",
-   "n": 6.1,
-   "v": 48
-  },
-  {
-   "t": "O Natal Perfeito de um Cachorro",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 84.1,
-   "tipo": "movie",
-   "chave": "movie:1570488",
-   "n": 8.5,
-   "v": 10
-  },
-  {
-   "t": "Muhammad Ali: O Maior",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 46.2,
-   "tipo": "tv",
-   "chave": "tv:258989",
-   "n": 5.2,
-   "v": 13
-  },
-  {
-   "t": "Stick",
-   "a": "2025",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 42.8,
-   "tipo": "tv",
-   "chave": "tv:248830",
-   "n": 7.3,
-   "v": 142
-  },
-  {
-   "t": "Matrix",
-   "a": "1999",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 39.5,
-   "tipo": "movie",
-   "chave": "movie:603",
-   "n": 8.3,
-   "v": 29167
-  },
-  {
-   "t": "Anestesia",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 22.8,
-   "tipo": "tv",
-   "chave": "tv:312006",
-   "n": 8.0,
-   "v": 3
-  },
-  {
-   "t": "Antes do Amanhecer",
-   "a": "1995",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 16.6,
-   "tipo": "movie",
-   "chave": "movie:76",
-   "n": 8.0,
-   "v": 4953
-  },
-  {
-   "t": "O Código da Vinci",
-   "a": "2006",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 11.2,
-   "tipo": "movie",
-   "chave": "movie:591",
-   "n": 6.7,
-   "v": 10440
-  },
-  {
-   "t": "Anjos e Demônios",
-   "a": "2009",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 9.5,
-   "tipo": "movie",
-   "chave": "movie:13448",
-   "n": 6.7,
-   "v": 7600
-  },
-  {
-   "t": "Passageiros",
-   "a": "2016",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 9.3,
-   "tipo": "movie",
-   "chave": "movie:274870",
-   "n": 7.0,
-   "v": 14656
-  },
-  {
-   "t": "Todos os Homens do Presidente",
-   "a": "1976",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 6.1,
-   "tipo": "movie",
-   "chave": "movie:891",
-   "n": 7.7,
-   "v": 2193
-  },
-  {
-   "t": "Antes do Pôr do Sol",
-   "a": "2004",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 5.6,
-   "tipo": "movie",
-   "chave": "movie:80",
-   "n": 7.8,
-   "v": 3986
-  },
-  {
-   "t": "Pedro Coelho",
-   "a": "2018",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 5.4,
-   "tipo": "movie",
-   "chave": "movie:381719",
-   "n": 6.7,
-   "v": 2004
-  },
-  {
-   "t": "Agente Rebelde",
-   "a": "2022",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 3.7,
-   "tipo": "movie",
-   "chave": "movie:846956",
-   "n": 6.3,
-   "v": 287
-  },
-  {
-   "t": "रॉकस्टार",
-   "a": "2011",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 2.9,
-   "tipo": "movie",
-   "chave": "movie:79464",
-   "n": 7.3,
-   "v": 244
-  }
- ],
  "2026-11-07": [
   {
    "t": "A Imperatriz Se Casou Novamente",
@@ -863,6 +681,104 @@
    "chave": "movie:967874",
    "n": 6.0,
    "v": 265
+  }
+ ],
+ "2026-11-13": [
+  {
+   "t": "Milagres da Sala de Emergência",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 30.5,
+   "tipo": "tv",
+   "chave": "tv:312661",
+   "n": 8.5,
+   "v": 2
+  },
+  {
+   "t": "Transformação de Natal",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 20.9,
+   "tipo": "movie",
+   "chave": "movie:1757174",
+   "n": 6.6,
+   "v": 9
+  },
+  {
+   "t": "The Killing - Além de um Crime",
+   "a": "2011",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 18.8,
+   "tipo": "tv",
+   "chave": "tv:34415",
+   "n": 7.8,
+   "v": 926
+  },
+  {
+   "t": "Ne Zha 2: O Renascer da Alma",
+   "a": "2025",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 16.3,
+   "tipo": "movie",
+   "chave": "movie:980477",
+   "n": 8.2,
+   "v": 867
+  },
+  {
+   "t": "Lobos de Perto com Bertie Gregory",
+   "a": "2026",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 12.1,
+   "tipo": "movie",
+   "chave": "movie:1798383",
+   "n": 6.9,
+   "v": 44
+  },
+  {
+   "t": "O Massacre da Serra Elétrica",
+   "a": "1974",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 11.3,
+   "tipo": "movie",
+   "chave": "movie:30497",
+   "n": 7.3,
+   "v": 4082
+  },
+  {
+   "t": "Um Príncipe no Paraíso",
+   "a": "2023",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 1.9,
+   "tipo": "movie",
+   "chave": "movie:1012669",
+   "n": 7.2,
+   "v": 56
+  },
+  {
+   "t": "Hora do Massacre",
+   "a": "2024",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 1.7,
+   "tipo": "movie",
+   "chave": "movie:1165466",
+   "n": 6.7,
+   "v": 154
   }
  ]
 }
