@@ -1,1 +1,91 @@
-[]
+[
+ {
+  "quando": "2026-11-15T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "top10",
+  "texto": "🔟 Top 10 que chegaram no streaming essa semana\n\n1. Tulsa King · Prime Video\n2. Sem Desistir · Netflix\n3. 12 12 12 · Apple TV+\n4. No Coração de Nashville · Netflix\n5. Allen · Netflix\n6. O Corpo · Netflix\n7. This Is Us · Paramount+\n8. O Fim da Rua · HBO Max\n9. Um Bom Advogado · Netflix\n10. రణబాలి · Netflix\n\nSalva pra não esquecer e marca quem precisa ver 👀\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/top10_01-fa08df8ac5.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/top10_02-b3c28f26e9.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/top10_03-d29092a093.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/top10_04-13c05f345f.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/top10_05-786a03c3c4.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/top10_06-cd3b2a634a.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/top10_07-9f01a96c25.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/top10_08-4f449cbc44.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/top10_09-740ec98987.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/top10_10-96f069e8e2.jpg"
+  ]
+ },
+ {
+  "quando": "2026-11-15T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: No Coração de Nashville (2026)\n⭐ 7,0 · Thriller, Mistério\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/alerta_1-752b983be9.jpg"
+ },
+ {
+  "quando": "2026-11-15T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na HBO Max: O Fim da Rua (2026)\n⭐ 7,0 · Ficção científica, Mistério\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "HBO Max",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/alerta_2-4140da89c6.jpg"
+ },
+ {
+  "quando": "2026-11-15T12:20:00-03:00",
+  "tipo": "previa_indicacao",
+  "texto": "😂 Hoje às 18h tem indicação de domingo: uma comédia pra fechar o fim de semana rindo.\n\nSai aqui e no Insta @radardatela 👀",
+  "topico": "Filmes"
+ },
+ {
+  "quando": "2026-11-15T12:20:00-03:00",
+  "tipo": "gancho_top10",
+  "texto": "🔟 O que mais bombou no streaming essa semana:\n\n1. Tulsa King · Prime Video\n2. Sem Desistir · Netflix\n3. 12 12 12 · Apple TV+\n\n…o top 10 completo tá no nosso Insta @radardatela 👀",
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-11-15T12:20:00-03:00",
+  "rede": "x",
+  "tipo": "gancho_top10",
+  "texto": "🔟 O que mais bombou no streaming essa semana:\n\n1. Tulsa King · Prime Video\n2. Sem Desistir · Netflix\n3. 12 12 12 · Apple TV+\n\n…o top 10 completo tá no nosso Insta (@radardatela) 👀"
+ },
+ {
+  "quando": "2026-11-15T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. No Coração de Nashville · Netflix\n2. O Fim da Rua · HBO Max\n3. రణబాలి · Netflix\n4. दायरा · Netflix\n5. O Expresso Polar · Netflix\n6. Uma Equipe Muito Especial · Netflix\n7. A Grande Doutora · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/reel-34ad6f6699.mp4"
+ },
+ {
+  "quando": "2026-11-15T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "No Coração de Nashville",
+   "option_b": "O Fim da Rua",
+   "option_c": "రణబాలి",
+   "option_d": "दायरा"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-11-15T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: రణబాలి (2026)\nHistória, Ação\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/alerta_3-a9b95bfbd5.jpg"
+ },
+ {
+  "quando": "2026-11-15T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu da HBO Max: The Killing - Além de um Crime (2011)\n⭐ 7,8 · Drama, Crime\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "HBO Max",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-15/saiu_1-3487323444.jpg"
+ },
+ {
+  "quando": "2026-11-15T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "💬 Deixa aqui uma dica pra galera: qual filme você assistiu e acha que vale a pena todo mundo ver? 🍿",
+  "topico": "Filmes"
+ }
+]
