@@ -1,66 +1,4 @@
 {
- "2026-11-09": [
-  {
-   "t": "Homem-Aranha: Sem Volta Para Casa",
-   "a": "2021",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 36.5,
-   "tipo": "movie",
-   "chave": "movie:634649",
-   "n": 7.9,
-   "v": 23536
-  },
-  {
-   "t": "Desprotegida: O Crime de Pazos",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 14.5,
-   "tipo": "movie",
-   "chave": "movie:1794569",
-   "n": 6.4,
-   "v": 5
-  },
-  {
-   "t": "Insaciável",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 5.5,
-   "tipo": "movie",
-   "chave": "movie:1363387",
-   "n": 7.2,
-   "v": 321
-  },
-  {
-   "t": "Noryang: O Mar da Morte",
-   "a": "2023",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 2.1,
-   "tipo": "movie",
-   "chave": "movie:660360",
-   "n": 6.4,
-   "v": 168
-  },
-  {
-   "t": "Sem Instruções",
-   "a": "2024",
-   "plataformas": [
-    "Paramount+"
-   ],
-   "p": 0.7,
-   "tipo": "movie",
-   "chave": "movie:1238200",
-   "n": 6.9,
-   "v": 65
-  }
- ],
  "2026-11-10": [
   {
    "t": "Tulsa King",
@@ -719,6 +657,80 @@
    "chave": "movie:296271",
    "n": 6.4,
    "v": 499
+  }
+ ],
+ "2026-11-16": [
+  {
+   "t": "Dexter: Ressurreição",
+   "a": "2025",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 100.9,
+   "tipo": "tv",
+   "chave": "tv:259909",
+   "n": 8.5,
+   "v": 761
+  },
+  {
+   "t": "Obsessão",
+   "a": "2026",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 74.9,
+   "tipo": "movie",
+   "chave": "movie:1339713",
+   "n": 8.2,
+   "v": 6641
+  },
+  {
+   "t": "Black Butler",
+   "a": "2008",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 37.9,
+   "tipo": "tv",
+   "chave": "tv:50712",
+   "n": 7.8,
+   "v": 298
+  },
+  {
+   "t": "O Grinch",
+   "a": "2018",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 21.4,
+   "tipo": "movie",
+   "chave": "movie:360920",
+   "n": 6.9,
+   "v": 4579
+  },
+  {
+   "t": "O Cinema por Philomena Cunk",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 19.2,
+   "tipo": "tv",
+   "chave": "tv:335981",
+   "n": 7.4,
+   "v": 9
+  },
+  {
+   "t": "Charlie Brown e o Dia de Ação de Graças",
+   "a": "1973",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 3.7,
+   "tipo": "movie",
+   "chave": "movie:13479",
+   "n": 7.3,
+   "v": 311
   }
  ]
 }
