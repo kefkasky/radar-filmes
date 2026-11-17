@@ -1,29 +1,5 @@
 [
  {
-  "quando": "2026-11-17T12:20:00-03:00",
-  "rede": "instagram",
-  "tipo": "carrossel",
-  "texto": "🍿 Chegou hoje no Prime Video: Sequestro (2012)\n⭐ 6,8 · Thriller, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "imagens_url": [
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-17/alerta_1-fd38028529.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-17/saiu_1-13e8166240.jpg"
-  ]
- },
- {
-  "quando": "2026-11-17T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje no Prime Video: Sequestro (2012)\n⭐ 6,8 · Thriller, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-17/alerta_1-fd38028529.jpg"
- },
- {
-  "quando": "2026-11-17T19:00:00-03:00",
-  "tipo": "saiu",
-  "texto": "👋 Saiu do Disney+: Encantada (2007)\n⭐ 6,9 · Comédia, Família\n\nQuem viu, viu. Vai fazer falta? 💔",
-  "topico": "Disney+",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-17/saiu_1-13e8166240.jpg"
- },
- {
   "quando": "2026-11-17T21:00:00-03:00",
   "tipo": "dica",
   "texto": "🍿 Qual filme você indicaria pra alguém que não sabe o que assistir hoje? Deixa a dica aqui 👇",
