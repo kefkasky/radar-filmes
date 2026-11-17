@@ -1,54 +1,4 @@
 {
- "2026-11-10": [
-  {
-   "t": "Tulsa King",
-   "a": "2022",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 234.0,
-   "tipo": "tv",
-   "chave": "tv:153312",
-   "n": 8.3,
-   "v": 2927
-  },
-  {
-   "t": "とと姉ちゃん",
-   "a": "2016",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 14.4,
-   "tipo": "tv",
-   "chave": "tv:72294",
-   "n": 9.5,
-   "v": 2
-  },
-  {
-   "t": "Final Feliz",
-   "a": "1982",
-   "plataformas": [
-    "Globoplay"
-   ],
-   "p": 13.5,
-   "tipo": "tv",
-   "chave": "tv:263072",
-   "n": 8.0,
-   "v": 2
-  },
-  {
-   "t": "Todo Tempo Que Temos",
-   "a": "2024",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 8.7,
-   "tipo": "movie",
-   "chave": "movie:1100099",
-   "n": 7.2,
-   "v": 1451
-  }
- ],
  "2026-11-11": [
   {
    "t": "This Is Us",
@@ -730,6 +680,20 @@
    "tipo": "movie",
    "chave": "movie:13479",
    "n": 7.3,
+   "v": 311
+  }
+ ],
+ "2026-11-17": [
+  {
+   "t": "Sequestro",
+   "a": "2012",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 1.1,
+   "tipo": "movie",
+   "chave": "movie:127846",
+   "n": 6.8,
    "v": 311
   }
  ]
