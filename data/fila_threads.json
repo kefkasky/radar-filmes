@@ -1,1 +1,57 @@
-[]
+[
+ {
+  "quando": "2026-11-18T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "texto": "🍿 Chegou hoje no Disney+: O Expresso Polar (2004)\n⭐ 6,7 · Aventura, Animação\n\nJá tá liberado pra dar o play. Vai assistir? 👀\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-18/alerta_1-abf8fe8952.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-18/alerta_2-32388fe5e3.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-18/saiu_1-d752cb2cbb.jpg"
+  ]
+ },
+ {
+  "quando": "2026-11-18T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Disney+: O Expresso Polar (2004)\n⭐ 6,7 · Aventura, Animação\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Disney+",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-18/alerta_1-abf8fe8952.jpg"
+ },
+ {
+  "quando": "2026-11-18T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: Nos Vemos Em Vênus (2023)\n⭐ 7,0 · Romance, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-18/alerta_2-32388fe5e3.jpg"
+ },
+ {
+  "quando": "2026-11-18T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "🍿 Chegou hoje no Disney+: O Expresso Polar (2004)\n⭐ 6,7 · Aventura, Animação\n\nJá tá liberado pra dar o play. Vai assistir? 👀\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-18/reel-74062b3c14.mp4"
+ },
+ {
+  "quando": "2026-11-18T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "O Expresso Polar",
+   "option_b": "Nos Vemos Em Vênus"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-11-18T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu da HBO Max: A Noite do Jogo (2018)\n⭐ 6,8 · Mistério, Comédia\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "HBO Max",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-18/saiu_1-d752cb2cbb.jpg"
+ },
+ {
+  "quando": "2026-11-18T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "📺 Vale série também: qual você acha que todo mundo deveria ver? Comenta aí que a gente monta a lista 👇",
+  "topico": "Filmes"
+ }
+]

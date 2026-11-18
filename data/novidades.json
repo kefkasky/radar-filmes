@@ -1,54 +1,4 @@
 {
- "2026-11-11": [
-  {
-   "t": "This Is Us",
-   "a": "2016",
-   "plataformas": [
-    "Paramount+"
-   ],
-   "p": 55.9,
-   "tipo": "tv",
-   "chave": "tv:67136",
-   "n": 8.2,
-   "v": 1692
-  },
-  {
-   "t": "Um Bom Advogado",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 44.4,
-   "tipo": "movie",
-   "chave": "movie:1616419",
-   "n": 7.0,
-   "v": 17
-  },
-  {
-   "t": "O Grinch",
-   "a": "2000",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 21.5,
-   "tipo": "movie",
-   "chave": "movie:8871",
-   "n": 6.8,
-   "v": 8570
-  },
-  {
-   "t": "Um Segredo de Natal na Escócia",
-   "a": "2023",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 1.6,
-   "tipo": "movie",
-   "chave": "movie:1145635",
-   "n": 6.2,
-   "v": 54
-  }
- ],
  "2026-11-12": [
   {
    "t": "O Corpo",
@@ -695,6 +645,32 @@
    "chave": "movie:127846",
    "n": 6.8,
    "v": 311
+  }
+ ],
+ "2026-11-18": [
+  {
+   "t": "O Expresso Polar",
+   "a": "2004",
+   "plataformas": [
+    "Disney+"
+   ],
+   "p": 14.7,
+   "tipo": "movie",
+   "chave": "movie:5255",
+   "n": 6.7,
+   "v": 7147
+  },
+  {
+   "t": "Nos Vemos Em Vênus",
+   "a": "2023",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 3.2,
+   "tipo": "movie",
+   "chave": "movie:1122932",
+   "n": 7.0,
+   "v": 234
   }
  ]
 }
