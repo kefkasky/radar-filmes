@@ -1,1 +1,73 @@
-[]
+[
+ {
+  "quando": "2026-11-19T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Protegendo Estrelas · Netflix\n2. Madden: O Homem e o Jogo · Prime Video\n3. Sword Art Online · Netflix\n4. Blue Exorcist · Netflix\n5. A Lei dos Monstros · Netflix\n6. Gordon · Netflix\n7. Os 12 Signos de Valentina · Netflix\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/resumo-596598417c.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/alerta_1-66c1e49c90.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/alerta_2-f1eb151327.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/alerta_3-827c7de6d7.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/extra_1-34e548acc7.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/extra_2-7f8f80dbb2.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/extra_3-6fd1e9c674.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/extra_4-eae2e9667e.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/extra_5-fa3a3cf863.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/saiu_1-01e3d32121.jpg"
+  ]
+ },
+ {
+  "quando": "2026-11-19T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje na Netflix: Protegendo Estrelas (2026)\n⭐ 7,4 · Romance, Comédia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/alerta_1-66c1e49c90.jpg"
+ },
+ {
+  "quando": "2026-11-19T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Prime Video: Madden: O Homem e o Jogo (2026)\nDrama, História\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/alerta_2-f1eb151327.jpg"
+ },
+ {
+  "quando": "2026-11-19T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Protegendo Estrelas · Netflix\n2. Madden: O Homem e o Jogo · Prime Video\n3. Sword Art Online · Netflix\n4. Blue Exorcist · Netflix\n5. A Lei dos Monstros · Netflix\n6. Gordon · Netflix\n7. Os 12 Signos de Valentina · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/reel-858796e28d.mp4"
+ },
+ {
+  "quando": "2026-11-19T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "Protegendo Estrelas",
+   "option_b": "Madden: O Homem e o Jogo",
+   "option_c": "Sword Art Online",
+   "option_d": "Blue Exorcist"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-11-19T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova na Netflix: Sword Art Online (2012)\n⭐ 8,1 · Animação, Sci-Fi & Fantasy\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/alerta_3-827c7de6d7.jpg"
+ },
+ {
+  "quando": "2026-11-19T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu da HBO Max: Sou Luna (2016)\n⭐ 8,0 · Soap, Família\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "HBO Max",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-19/saiu_1-01e3d32121.jpg"
+ },
+ {
+  "quando": "2026-11-19T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "💡 Dica de ouro: um filme que pouca gente conhece mas que vale muito a pena. Qual é o seu? 👇",
+  "topico": "Filmes"
+ }
+]
