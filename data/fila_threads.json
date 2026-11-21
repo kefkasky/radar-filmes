@@ -1,43 +1,5 @@
 [
  {
-  "quando": "2026-11-21T12:20:00-03:00",
-  "rede": "instagram",
-  "tipo": "carrossel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Sobrenatural: Agora Entre Nós · HBO Max\n2. Tipo Irmãs · Netflix\n3. Estrada das Lágrimas · Netflix\n4. Ilha do Medo · Netflix\n5. Vicentina Pede Desculpas · Netflix\n6. Um Duende em Nova York · Netflix\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "imagens_url": [
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/resumo-bfaf179af5.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/alerta_1-d0dadc1d9c.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/alerta_2-30774893ca.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/alerta_3-6630c72d3f.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/extra_1-c5821652fb.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/extra_2-46585ce62d.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/extra_3-29ca59e22e.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/extra_4-3f65b018d6.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/extra_5-de0d9e56d2.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/saiu_1-48a1624f17.jpg"
-  ]
- },
- {
-  "quando": "2026-11-21T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje na HBO Max: Sobrenatural: Agora Entre Nós (2026)\n⭐ 7,7 · Terror, Thriller\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "HBO Max",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/alerta_1-d0dadc1d9c.jpg"
- },
- {
-  "quando": "2026-11-21T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje na Netflix: Tipo Irmãs (2026)\nAnimação, Família\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Netflix",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/alerta_2-30774893ca.jpg"
- },
- {
-  "quando": "2026-11-21T12:20:00-03:00",
-  "tipo": "previa_indicacao",
-  "texto": "💘 Hoje às 18h tem indicação de sábado: um romance pra ver a dois.\n\nSai aqui e no Insta @radardatela 👀",
-  "topico": "Filmes"
- },
- {
   "quando": "2026-11-21T19:00:00-03:00",
   "rede": "instagram",
   "tipo": "reel",
