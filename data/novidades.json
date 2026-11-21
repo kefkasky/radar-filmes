@@ -1,174 +1,4 @@
 {
- "2026-11-14": [
-  {
-   "t": "Sem Desistir",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 150.1,
-   "tipo": "movie",
-   "chave": "movie:1616687",
-   "n": 7.4,
-   "v": 16
-  },
-  {
-   "t": "12 12 12",
-   "a": "2026",
-   "plataformas": [
-    "Apple TV+"
-   ],
-   "p": 105.0,
-   "tipo": "tv",
-   "chave": "tv:254630",
-   "n": 4.6,
-   "v": 17
-  },
-  {
-   "t": "Allen",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 67.7,
-   "tipo": "movie",
-   "chave": "movie:1518204",
-   "n": 7.2,
-   "v": 18
-  },
-  {
-   "t": "Alvinnn!!! E os Esquilos",
-   "a": "2015",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 28.8,
-   "tipo": "tv",
-   "chave": "tv:64572",
-   "n": 7.2,
-   "v": 80
-  },
-  {
-   "t": "O Crime de Pazos",
-   "a": "2026",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 20.4,
-   "tipo": "tv",
-   "chave": "tv:303182",
-   "n": 7.0,
-   "v": 4
-  },
-  {
-   "t": "O Preço do Amanhã",
-   "a": "2011",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 15.8,
-   "tipo": "movie",
-   "chave": "movie:49530",
-   "n": 7.0,
-   "v": 12581
-  },
-  {
-   "t": "Jackass: O Último é o Melhor",
-   "a": "2026",
-   "plataformas": [
-    "Paramount+"
-   ],
-   "p": 10.4,
-   "tipo": "movie",
-   "chave": "movie:1612018",
-   "n": 7.3,
-   "v": 297
-  },
-  {
-   "t": "POV: Presença Oculta",
-   "a": "2026",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 2.9,
-   "tipo": "movie",
-   "chave": "movie:1510745",
-   "n": 6.0,
-   "v": 145
-  },
-  {
-   "t": "Jester: Não Dá para Enganar A Morte Duas Vezes",
-   "a": "2025",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 2.4,
-   "tipo": "movie",
-   "chave": "movie:1519168",
-   "n": 6.8,
-   "v": 161
-  },
-  {
-   "t": "Dois Lados do Amor",
-   "a": "2014",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 2.1,
-   "tipo": "movie",
-   "chave": "movie:157829",
-   "n": 6.2,
-   "v": 319
-  },
-  {
-   "t": "Amanhecer Sangrento",
-   "a": "2025",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 1.4,
-   "tipo": "movie",
-   "chave": "movie:1180906",
-   "n": 6.3,
-   "v": 73
-  },
-  {
-   "t": "Zona de Confronto",
-   "a": "2020",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 1.3,
-   "tipo": "movie",
-   "chave": "movie:711017",
-   "n": 6.3,
-   "v": 249
-  },
-  {
-   "t": "Gundala: A Ascensão de um Herói",
-   "a": "2019",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 0.9,
-   "tipo": "movie",
-   "chave": "movie:516700",
-   "n": 6.2,
-   "v": 349
-  },
-  {
-   "t": "As Mães de Chico Xavier",
-   "a": "2011",
-   "plataformas": [
-    "HBO Max"
-   ],
-   "p": 0.8,
-   "tipo": "movie",
-   "chave": "movie:69885",
-   "n": 7.8,
-   "v": 47
-  }
- ],
  "2026-11-15": [
   {
    "t": "No Coração de Nashville",
@@ -683,6 +513,128 @@
    "chave": "movie:475132",
    "n": 6.7,
    "v": 579
+  }
+ ],
+ "2026-11-21": [
+  {
+   "t": "Sobrenatural: Agora Entre Nós",
+   "a": "2026",
+   "plataformas": [
+    "HBO Max"
+   ],
+   "p": 64.9,
+   "tipo": "movie",
+   "chave": "movie:1291595",
+   "n": 7.7,
+   "v": 1083
+  },
+  {
+   "t": "Tipo Irmãs",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 50.8,
+   "tipo": "movie",
+   "chave": "movie:1595124",
+   "n": 6.5,
+   "v": 18
+  },
+  {
+   "t": "Estrada das Lágrimas",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 41.3,
+   "tipo": "tv",
+   "chave": "tv:300523",
+   "n": 7.8,
+   "v": 5
+  },
+  {
+   "t": "Ilha do Medo",
+   "a": "2010",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 20.3,
+   "tipo": "movie",
+   "chave": "movie:11324",
+   "n": 8.2,
+   "v": 26862
+  },
+  {
+   "t": "Vicentina Pede Desculpas",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 13.7,
+   "tipo": "movie",
+   "chave": "movie:1307474",
+   "n": 8.4,
+   "v": 4
+  },
+  {
+   "t": "Um Duende em Nova York",
+   "a": "2003",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 12.7,
+   "tipo": "movie",
+   "chave": "movie:10719",
+   "n": 6.7,
+   "v": 4798
+  },
+  {
+   "t": "Rush: No Limite da Emoção",
+   "a": "2013",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 10.3,
+   "tipo": "movie",
+   "chave": "movie:96721",
+   "n": 7.7,
+   "v": 8180
+  },
+  {
+   "t": "A Grande Aposta",
+   "a": "2015",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 10.2,
+   "tipo": "movie",
+   "chave": "movie:318846",
+   "n": 7.4,
+   "v": 10275
+  },
+  {
+   "t": "13 Horas: Os Soldados Secretos de Benghazi",
+   "a": "2016",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 8.9,
+   "tipo": "movie",
+   "chave": "movie:300671",
+   "n": 7.3,
+   "v": 4150
+  },
+  {
+   "t": "Em Um Mundo Melhor",
+   "a": "2010",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 1.9,
+   "tipo": "movie",
+   "chave": "movie:44716",
+   "n": 7.1,
+   "v": 483
   }
  ]
 }
