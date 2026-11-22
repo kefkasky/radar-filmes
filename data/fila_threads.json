@@ -1,13 +1,6 @@
 [
  {
   "quando": "2026-11-21T19:00:00-03:00",
-  "rede": "instagram",
-  "tipo": "reel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Sobrenatural: Agora Entre Nós · HBO Max\n2. Tipo Irmãs · Netflix\n3. Estrada das Lágrimas · Netflix\n4. Ilha do Medo · Netflix\n5. Vicentina Pede Desculpas · Netflix\n6. Um Duende em Nova York · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/reel-13b853967c.mp4"
- },
- {
-  "quando": "2026-11-21T19:00:00-03:00",
   "tipo": "enquete",
   "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
   "poll": {
@@ -16,26 +9,7 @@
    "option_c": "Estrada das Lágrimas",
    "option_d": "Ilha do Medo"
   },
-  "topico": "Streaming"
- },
- {
-  "quando": "2026-11-21T19:00:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova na Netflix: Estrada das Lágrimas (2026)\nCrime, Mistério\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Netflix",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/alerta_3-6630c72d3f.jpg"
- },
- {
-  "quando": "2026-11-21T19:00:00-03:00",
-  "tipo": "saiu",
-  "texto": "👋 Saiu do Prime Video: Dexter: Ressurreição (2025)\n⭐ 8,5 · Crime, Drama\n\nQuem viu, viu. Vai fazer falta? 💔",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-21/saiu_1-48a1624f17.jpg"
- },
- {
-  "quando": "2026-11-21T21:00:00-03:00",
-  "tipo": "dica",
-  "texto": "🛋️ Plano pra hoje à noite: deixa a sua indicação de filme que vale o play 👇",
-  "topico": "Filmes"
+  "topico": "Streaming",
+  "tentativas": 1
  }
 ]
