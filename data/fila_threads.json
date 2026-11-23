@@ -1,1 +1,57 @@
-[]
+[
+ {
+  "quando": "2026-11-23T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "texto": "🍿 Série nova no Prime Video: The Nanny (1993)\n⭐ 8,0 · Comédia, Família\n\nJá tá liberado pra dar o play. Vai assistir? 👀\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-23/alerta_1-dd548d3970.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-23/alerta_2-2d562405e5.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-23/saiu_1-da6b96b744.jpg"
+  ]
+ },
+ {
+  "quando": "2026-11-23T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova no Prime Video: The Nanny (1993)\n⭐ 8,0 · Comédia, Família\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-23/alerta_1-dd548d3970.jpg"
+ },
+ {
+  "quando": "2026-11-23T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Chegou hoje no Prime Video: Custódia (2018)\n⭐ 7,5 · Drama, Thriller\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Prime Video",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-23/alerta_2-2d562405e5.jpg"
+ },
+ {
+  "quando": "2026-11-23T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "🍿 Série nova no Prime Video: The Nanny (1993)\n⭐ 8,0 · Comédia, Família\n\nJá tá liberado pra dar o play. Vai assistir? 👀\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-23/reel-bf046b3ea4.mp4"
+ },
+ {
+  "quando": "2026-11-23T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "The Nanny",
+   "option_b": "Custódia"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-11-23T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu da Netflix: The Resident (2018)\n⭐ 8,4 · Drama\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-23/saiu_1-da6b96b744.jpg"
+ },
+ {
+  "quando": "2026-11-23T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "🎬 Bora montar a lista da semana juntos: comenta um filme que você recomenda de olhos fechados 👇",
+  "topico": "Filmes"
+ }
+]
