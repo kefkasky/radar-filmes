@@ -1,18 +1,4 @@
 {
- "2026-11-17": [
-  {
-   "t": "Sequestro",
-   "a": "2012",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 1.1,
-   "tipo": "movie",
-   "chave": "movie:127846",
-   "n": 6.8,
-   "v": 311
-  }
- ],
  "2026-11-18": [
   {
    "t": "O Expresso Polar",
@@ -527,6 +513,92 @@
    "chave": "movie:451657",
    "n": 7.5,
    "v": 747
+  }
+ ],
+ "2026-11-24": [
+  {
+   "t": "Yellowjackets",
+   "a": "2021",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 76.6,
+   "tipo": "tv",
+   "chave": "tv:117488",
+   "n": 7.4,
+   "v": 1086
+  },
+  {
+   "t": "Correndo para o Natal",
+   "a": "2026",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 46.3,
+   "tipo": "movie",
+   "chave": "movie:1611767",
+   "n": 6.3,
+   "v": 28
+  },
+  {
+   "t": "Crimes Graves",
+   "a": "2012",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 39.8,
+   "tipo": "tv",
+   "chave": "tv:39483",
+   "n": 7.4,
+   "v": 217
+  },
+  {
+   "t": "Horimiya: The Missing Pieces",
+   "a": "2023",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 14.1,
+   "tipo": "tv",
+   "chave": "tv:228663",
+   "n": 7.7,
+   "v": 81
+  },
+  {
+   "t": "Tyler Perry's Zatima",
+   "a": "2022",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 8.2,
+   "tipo": "tv",
+   "chave": "tv:210805",
+   "n": 7.9,
+   "v": 46
+  },
+  {
+   "t": "Dinheiro Fácil",
+   "a": "2023",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 5.8,
+   "tipo": "movie",
+   "chave": "movie:792293",
+   "n": 6.7,
+   "v": 896
+  },
+  {
+   "t": "Rastreado",
+   "a": "2025",
+   "plataformas": [
+    "Paramount+"
+   ],
+   "p": 3.8,
+   "tipo": "movie",
+   "chave": "movie:1371151",
+   "n": 6.5,
+   "v": 148
   }
  ]
 }
