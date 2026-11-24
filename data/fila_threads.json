@@ -1,43 +1,5 @@
 [
  {
-  "quando": "2026-11-24T12:20:00-03:00",
-  "rede": "instagram",
-  "tipo": "carrossel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Yellowjackets · Prime Video\n2. Correndo para o Natal · Prime Video\n3. Crimes Graves · Prime Video\n4. Horimiya: The Missing Pieces · Netflix\n5. Tyler Perry's Zatima · Prime Video\n6. Dinheiro Fácil · Netflix\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "imagens_url": [
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/resumo-635ad80d63.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/alerta_1-e3b246e0cc.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/alerta_2-227d47db7c.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/alerta_3-8fda86a1eb.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/extra_1-88f276d9d0.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/extra_2-42e4a464b4.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/extra_3-75153f6099.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/extra_4-f84dee47e1.jpg",
-   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/saiu_1-336175f1bd.jpg"
-  ]
- },
- {
-  "quando": "2026-11-24T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova no Prime Video: Yellowjackets (2021)\n⭐ 7,4 · Drama, Mistério\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/alerta_1-e3b246e0cc.jpg"
- },
- {
-  "quando": "2026-11-24T12:20:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Chegou hoje no Prime Video: Correndo para o Natal (2026)\n⭐ 6,3 · Romance, Comédia\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/alerta_2-227d47db7c.jpg"
- },
- {
-  "quando": "2026-11-24T19:00:00-03:00",
-  "rede": "instagram",
-  "tipo": "reel",
-  "texto": "📡 Chegou hoje no streaming:\n\n1. Yellowjackets · Prime Video\n2. Correndo para o Natal · Prime Video\n3. Crimes Graves · Prime Video\n4. Horimiya: The Missing Pieces · Netflix\n5. Tyler Perry's Zatima · Prime Video\n6. Dinheiro Fácil · Netflix\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
-  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/reel-aef49912e2.mp4"
- },
- {
   "quando": "2026-11-24T19:00:00-03:00",
   "tipo": "enquete",
   "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
@@ -47,26 +9,7 @@
    "option_c": "Crimes Graves",
    "option_d": "Horimiya: The Missing Pi…"
   },
-  "topico": "Streaming"
- },
- {
-  "quando": "2026-11-24T19:00:00-03:00",
-  "tipo": "alerta",
-  "texto": "🍿 Série nova no Prime Video: Crimes Graves (2012)\n⭐ 7,4 · Crime, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
-  "topico": "Prime Video",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/alerta_3-8fda86a1eb.jpg"
- },
- {
-  "quando": "2026-11-24T19:00:00-03:00",
-  "tipo": "saiu",
-  "texto": "👋 Saiu do Disney+: Irmão Urso 2 (2006)\n⭐ 6,7 · Aventura, Animação\n\nQuem viu, viu. Vai fazer falta? 💔",
-  "topico": "Disney+",
-  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-24/saiu_1-336175f1bd.jpg"
- },
- {
-  "quando": "2026-11-24T21:00:00-03:00",
-  "tipo": "dica",
-  "texto": "🍿 Qual filme você indicaria pra alguém que não sabe o que assistir hoje? Deixa a dica aqui 👇",
-  "topico": "Filmes"
+  "topico": "Streaming",
+  "tentativas": 1
  }
 ]
