@@ -1,30 +1,4 @@
 {
- "2026-11-18": [
-  {
-   "t": "O Expresso Polar",
-   "a": "2004",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 14.7,
-   "tipo": "movie",
-   "chave": "movie:5255",
-   "n": 6.7,
-   "v": 7147
-  },
-  {
-   "t": "Nos Vemos Em Vênus",
-   "a": "2023",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 3.2,
-   "tipo": "movie",
-   "chave": "movie:1122932",
-   "n": 7.0,
-   "v": 234
-  }
- ],
  "2026-11-19": [
   {
    "t": "Protegendo Estrelas",
@@ -599,6 +573,20 @@
    "chave": "movie:1371151",
    "n": 6.5,
    "v": 148
+  }
+ ],
+ "2026-11-25": [
+  {
+   "t": "Weeds",
+   "a": "2005",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 54.8,
+   "tipo": "tv",
+   "chave": "tv:186",
+   "n": 7.5,
+   "v": 1066
   }
  ]
 }
