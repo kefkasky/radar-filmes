@@ -1,1 +1,79 @@
-[]
+[
+ {
+  "quando": "2026-11-27T12:20:00-03:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Fool Night · Netflix\n2. Pronto-Socorro · Netflix\n3. Toos: Um Sequestro Entre os Van der Valk · Netflix\n4. Sorria · Netflix\n5. Encontro Explosivo · Prime Video\n6. Novocaine: À Prova de Dor · Paramount+\n\nQual vai pra sua lista? 🍿\n\n👉 Arrasta pro lado pra ver todos\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "imagens_url": [
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/resumo-3035f4026e.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/alerta_1-7711981112.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/alerta_2-9b721795fb.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/alerta_3-a43c5a1f5d.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/extra_1-afd880e283.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/extra_2-ba28980cac.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/extra_3-335d19cef8.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/extra_4-1c68dfe8bd.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/extra_5-e7324aefa7.jpg",
+   "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/saiu_1-68020ede83.jpg"
+  ]
+ },
+ {
+  "quando": "2026-11-27T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova na Netflix: Fool Night (2026)\nAnimação, Drama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/alerta_1-7711981112.jpg"
+ },
+ {
+  "quando": "2026-11-27T12:20:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova na Netflix: Pronto-Socorro (2026)\nDrama\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/alerta_2-9b721795fb.jpg"
+ },
+ {
+  "quando": "2026-11-27T12:20:00-03:00",
+  "tipo": "previa_indicacao",
+  "texto": "🎖️ Hoje às 18h tem indicação: um filme de guerra baseado em fatos reais, direto do streaming.\n\nSai aqui e no Insta @radardatela 👀",
+  "topico": "Filmes"
+ },
+ {
+  "quando": "2026-11-27T19:00:00-03:00",
+  "rede": "instagram",
+  "tipo": "reel",
+  "texto": "📡 Chegou hoje no streaming:\n\n1. Fool Night · Netflix\n2. Pronto-Socorro · Netflix\n3. Toos: Um Sequestro Entre os Van der Valk · Netflix\n4. Sorria · Netflix\n5. Encontro Explosivo · Prime Video\n6. Novocaine: À Prova de Dor · Paramount+\n\nQual vai pra sua lista? 🍿\n\n#streaming #filmes #series #oqueassistir #lancamentos",
+  "video_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/reel-d2b451a207.mp4"
+ },
+ {
+  "quando": "2026-11-27T19:00:00-03:00",
+  "tipo": "enquete",
+  "texto": "📊 Chegou hoje no streaming. Qual desses você assiste primeiro? Vota aí 👇",
+  "poll": {
+   "option_a": "Fool Night",
+   "option_b": "Pronto-Socorro",
+   "option_c": "Toos: Um Sequestro Entre…",
+   "option_d": "Sorria"
+  },
+  "topico": "Streaming"
+ },
+ {
+  "quando": "2026-11-27T19:00:00-03:00",
+  "tipo": "alerta",
+  "texto": "🍿 Série nova na Netflix: Toos: Um Sequestro Entre os Van der Valk (2026)\nDrama, Crime\n\nJá tá liberado pra dar o play. Vai assistir? 👀",
+  "topico": "Netflix",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/alerta_3-a43c5a1f5d.jpg"
+ },
+ {
+  "quando": "2026-11-27T19:00:00-03:00",
+  "tipo": "saiu",
+  "texto": "👋 Saiu do Paramount+: The Ultimate Fighter (2005)\n⭐ 6,6 · Reality\n\nQuem viu, viu. Vai fazer falta? 💔",
+  "topico": "Paramount+",
+  "imagem_url": "https://raw.githubusercontent.com/kefkasky/radar-da-tela-midia/main/posts/2026-11-27/saiu_1-68020ede83.jpg"
+ },
+ {
+  "quando": "2026-11-27T21:00:00-03:00",
+  "tipo": "dica",
+  "texto": "🎞️ Aquele filme que você assistiu e ficou pensando dias depois. Indica aqui pra galera 👇",
+  "topico": "Filmes"
+ }
+]

@@ -1,90 +1,4 @@
 {
- "2026-11-20": [
-  {
-   "t": "A Última Refeição",
-   "a": "2026",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 22.3,
-   "tipo": "movie",
-   "chave": "movie:1561834",
-   "n": 7.5,
-   "v": 5
-  },
-  {
-   "t": "O Jogo de Viena",
-   "a": "2026",
-   "plataformas": [
-    "Disney+"
-   ],
-   "p": 20.0,
-   "tipo": "tv",
-   "chave": "tv:288120",
-   "n": 9.0,
-   "v": 3
-  },
-  {
-   "t": "Snatch: Um Novo Golpe",
-   "a": "2017",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 5.4,
-   "tipo": "tv",
-   "chave": "tv:69659",
-   "n": 6.8,
-   "v": 95
-  },
-  {
-   "t": "Tarde lo conocí",
-   "a": "2017",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 4.6,
-   "tipo": "tv",
-   "chave": "tv:82130",
-   "n": 7.5,
-   "v": 184
-  },
-  {
-   "t": "O Comando 10 de Navarone",
-   "a": "1978",
-   "plataformas": [
-    "Netflix"
-   ],
-   "p": 4.4,
-   "tipo": "movie",
-   "chave": "movie:17339",
-   "n": 6.3,
-   "v": 369
-  },
-  {
-   "t": "A Família da Noiva",
-   "a": "2005",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 2.8,
-   "tipo": "movie",
-   "chave": "movie:11638",
-   "n": 6.1,
-   "v": 1065
-  },
-  {
-   "t": "Uma Guerra Pessoal",
-   "a": "2018",
-   "plataformas": [
-    "Prime Video"
-   ],
-   "p": 2.1,
-   "tipo": "movie",
-   "chave": "movie:475132",
-   "n": 6.7,
-   "v": 579
-  }
- ],
  "2026-11-21": [
   {
    "t": "Sobrenatural: Agora Entre Nós",
@@ -503,6 +417,128 @@
    "chave": "movie:352431",
    "n": 6.1,
    "v": 63
+  }
+ ],
+ "2026-11-27": [
+  {
+   "t": "Fool Night",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 34.7,
+   "tipo": "tv",
+   "chave": "tv:326247",
+   "n": 8.7,
+   "v": 3
+  },
+  {
+   "t": "Pronto-Socorro",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 17.0,
+   "tipo": "tv",
+   "chave": "tv:338930",
+   "n": 8.1,
+   "v": 4
+  },
+  {
+   "t": "Toos: Um Sequestro Entre os Van der Valk",
+   "a": "2026",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 14.5,
+   "tipo": "tv",
+   "chave": "tv:302837",
+   "n": 0,
+   "v": 0
+  },
+  {
+   "t": "Sorria",
+   "a": "2022",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 13.1,
+   "tipo": "movie",
+   "chave": "movie:882598",
+   "n": 6.7,
+   "v": 4416
+  },
+  {
+   "t": "Encontro Explosivo",
+   "a": "2010",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 6.2,
+   "tipo": "movie",
+   "chave": "movie:37834",
+   "n": 6.2,
+   "v": 5139
+  },
+  {
+   "t": "Novocaine: À Prova de Dor",
+   "a": "2025",
+   "plataformas": [
+    "Paramount+"
+   ],
+   "p": 6.2,
+   "tipo": "movie",
+   "chave": "movie:1195506",
+   "n": 6.7,
+   "v": 1891
+  },
+  {
+   "t": "Uma Vida de Esperança",
+   "a": "2024",
+   "plataformas": [
+    "Netflix"
+   ],
+   "p": 3.8,
+   "tipo": "movie",
+   "chave": "movie:974036",
+   "n": 7.7,
+   "v": 455
+  },
+  {
+   "t": "Monte Carlo",
+   "a": "2011",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 3.8,
+   "tipo": "movie",
+   "chave": "movie:59860",
+   "n": 6.8,
+   "v": 2364
+  },
+  {
+   "t": "El Bronx",
+   "a": "2019",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 3.5,
+   "tipo": "tv",
+   "chave": "tv:86346",
+   "n": 7.6,
+   "v": 191
+  },
+  {
+   "t": "Tigerland - A Caminho da Guerra",
+   "a": "2000",
+   "plataformas": [
+    "Prime Video"
+   ],
+   "p": 2.2,
+   "tipo": "movie",
+   "chave": "movie:10687",
+   "n": 6.6,
+   "v": 662
   }
  ]
 }
